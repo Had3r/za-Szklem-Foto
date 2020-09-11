@@ -1,1 +1,5 @@
-export { default as IndexPage } from './IndexPage/IndexPage.react';
+import React from 'react';
+
+export default () => {
+  return <div>some text</div>;
+};
