@@ -1,5 +1,3 @@
-import React from 'react';
+import Layout from './layout';
 
-export default () => {
-  return <div>some text</div>;
-};
+export { Layout };
