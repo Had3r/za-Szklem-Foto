@@ -1,5 +1,14 @@
 import React from 'react';
 
-export default () => {
-  return <div>layout</div>;
+import Navbar from './Navbar';
+import Footer from './Footer';
+
+export default ({ children }) => {
+  return (
+    <>
+      <Navbar />
+      {children}
+      <Footer />
+    </>
+  );
 };
