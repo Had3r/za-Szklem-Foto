@@ -6,4 +6,18 @@
 
 @tailwind components;
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  @apply text-6xl;
+}
+
+@screen md {
+  h1 {
+    @apply text-base;
+  }
+}
+
 @tailwind utilities;

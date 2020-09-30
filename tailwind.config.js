@@ -4,7 +4,11 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'color-primary': '#C7E0F3',
+      },
+    },
   },
   variants: {},
   plugins: [],

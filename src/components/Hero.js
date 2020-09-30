@@ -8,16 +8,20 @@ export default () => {
   return (
     <Wrapper>
       <Background>
-        <article>
+        <Article>
           <h3>If you can cream it, we can create it</h3>
           <h1>let your home be unique and stylish</h1>
           <Link to="/">link</Link>
-        </article>
+        </Article>
       </Background>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  ${tw``}
+  ${tw`text-color-primary `}
+`;
+
+const Article = styled.article`
+  ${tw`flex flex-col justify-center items-center h-full`}
 `;
