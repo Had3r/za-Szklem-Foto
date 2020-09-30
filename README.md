@@ -12,6 +12,8 @@
 
 ## Technologies (and why I used it)
 
+#### Main tools
+
 - Tailwindcss:
   - implementing custom designs is really fast
   - helps to achive professional looking results without expercienced designer
@@ -25,6 +27,12 @@
   - gave me unlimited semantic elements. HTML5 provide `header`, `footer`, `section`, and others. Styled components are semantically clear, their purpose is incredibly understandable ex: `Logo`, `Navbar`, `Toolbar`,
   - I really like feature called prop injection (props can be passed to styled components)
 - CMS
+
+#### Other tools
+
+- linting tool:
+  - I am using Gatsby built-in ESLint setup. It means, that ESLint shows feedback into the terminal window in dev mode,
+    and also to the console in browser developer tools. This is to speed up my work, I don't have to focus on my own configuration (sometimes you need to improve the configuration while writing the code)
 
 ## Documentation files
 
