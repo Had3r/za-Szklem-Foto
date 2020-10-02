@@ -5,23 +5,30 @@ import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 
 export default () => {
+  // logo nie powinno mieć  background-color: rgba(0, 0, 0, .4);
   return (
-    <Wrapper>
+    <Section>
       <Background>
-        <Article>
+        <Header>
           <h3>If you can cream it, we can create it</h3>
-          <h1>let your home be unique and stylish</h1>
-          <Link to="/">link</Link>
-        </Article>
+          <HeadingPrimary>Za Szkłem Fotografia</HeadingPrimary>
+          <Link className="link-primary" to="/">
+            zobacz więcej
+          </Link>
+        </Header>
       </Background>
-    </Wrapper>
+    </Section>
   );
 };
 
-const Wrapper = styled.section`
-  ${tw`text-color-primary `}
+const Section = styled.section`
+  ${tw`text-white`}
 `;
 
-const Article = styled.article`
-  ${tw`flex flex-col justify-center items-center h-full`}
+const Header = styled.header`
+  ${tw`flex flex-col justify-center items-center h-full text-center p-4`}
+`;
+
+const HeadingPrimary = styled.h1`
+  ${tw`my-5`}
 `;

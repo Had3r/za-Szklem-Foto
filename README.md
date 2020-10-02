@@ -1,6 +1,6 @@
 # Za Szkłem Fotografia
 
-## My helpers
+## My helpers, which I referred to when building the site
 
 #### Naming branches
 
@@ -9,6 +9,10 @@
 #### Naming commits
 
 - https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
+
+#### Semantics
+
+- https://tutorials.comandeer.pl/html5-blog.html
 
 ## Technologies (and why I used it)
 

@@ -7,16 +7,52 @@
 @tailwind components;
 
 body {
+  /*
+    This defines what 1 rem is:
+    100% - 16px
+    62.5% - 10px, so 1rem = 10px
+  */
+  font-size: 62.5%;
   font-family: 'Lato', sans-serif;
 }
 
-h1 {
-  @apply text-6xl;
+::selection {
+  color: red;
 }
 
-@screen md {
+h1 {
+  @apply text-4xl leading-tight uppercase;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+.link-primary {
+  @apply text-white text-base p-3 relative uppercase bg-transparent tracking-wider border border-white;
+  transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.link-primary:hover {
+  @apply bg-white text-gray-900;
+}
+
+@screen sm {
   h1 {
-    @apply text-base;
+    @apply text-5xl leading-normal;
+  }
+}
+
+@screen lg {
+  h1 {
+    @apply text-6xl;
+  }
+  .link-primary {
+    @apply text-xl;
   }
 }
 
