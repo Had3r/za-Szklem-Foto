@@ -33,11 +33,11 @@ const Background = ({ children, className }) => {
 
 const fadeIn = keyframes`
   from {
-    background-color: rgb(255,255,255,0.2)
-  }
-  to {
-    background-color: rgba(0, 0, 0, .4);
-  }
+      background-color:rgb(0,0,0,0.8);
+    }
+    to {
+      background-color:rgba(0,0,0,0.4);
+    }
 `;
 
 const Wrapper = styled.section`

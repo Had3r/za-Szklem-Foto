@@ -41,6 +41,10 @@ h3 {
   @apply bg-white text-gray-900;
 }
 
+a {
+  @apply cursor-pointer;
+}
+
 @screen sm {
   h1 {
     @apply text-5xl leading-normal;
