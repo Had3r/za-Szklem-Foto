@@ -1,5 +1,5 @@
-import React from 'react';
+// Components globally available
+import Layout from './layout';
+import Hero from './Hero';
 
-export default () => {
-  return <div>some text</div>;
-};
+export { Layout, Hero };
