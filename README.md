@@ -40,13 +40,13 @@
 
 ## Important notes
 
-`tailwind.macro` is not an official project and not really maintained currently. It hasn't been updated to match new Tailwind features. <br />
+`tailwind.macro` which I am using is not an official project and not maintained currently. It hasn't been updated to match new Tailwind features. <br />
 
-For this reason I used some workaround for few features, ex:
+For this reason I used some workaround, ex:
 
-- instead to create custom animation in tailwind.config.js, I used animation inside component itself:
+- instead to create custom animation in `tailwind.config.js`, I used animation inside component itself:
 
-New Tailwind feature provide in `tailwind.confing.js`:
+New Tailwind feature provide in `tailwind.confing.js` the following solution:
 
 ```javascript
  animation: {
@@ -79,7 +79,7 @@ const StyledBackground = styled(Background)`
 
 - another example is the `container` class. Those classes not being defined in `static-styles.js` or `dynamic-styles.js` The workaround was to add the container class directly to my styled component.
 
-Some solution could be <a href="https://github.com/ben-rogerson/twin.macro">twin.macro</a>, but still I would have to use the container as a class. So I decided to leave for now `tailwind.macro v1.0.0-alpha.10`.
+Some solution could be <a href="https://github.com/ben-rogerson/twin.macro">twin.macro</a>, but still I would have to use the container as a class. So I decided to stick with `tailwind.macro v1.0.0-alpha.10`.
 
 ## Documentation files
 
