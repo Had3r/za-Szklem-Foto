@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+
+import OptimizedImage from '../OptimizedImage';
 
 const NavigationLinks = ({ className, image }) => {
   return (
     <List>
       <ListItem>
         <Link to="/">
-          <Img fluid={image.img} className={className} />
+          <OptimizedImage className={className} src="logo.png" />
         </Link>
       </ListItem>
       <ListItem>
@@ -29,13 +30,15 @@ const NavigationLinks = ({ className, image }) => {
 };
 
 const NavLinks = styled(NavigationLinks)`
-  ${tw`w-32`}
+  ${tw`w-32 `}
 `;
 
 const List = styled.ul`
-  ${tw``}
+  ${tw`flex text-white text-base items-center capitalize`}
 `;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  ${tw`mx-5`}
+`;
 
 export default NavLinks;

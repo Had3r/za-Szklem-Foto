@@ -1,42 +1,27 @@
 import React from 'react';
-import BackgroundImage from 'gatsby-background-image-es5';
-import { useStaticQuery, graphql } from 'gatsby';
+// import BackgroundImage from 'gatsby-background-image-es5';
+// import { useStaticQuery, graphql } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import tw from 'tailwind.macro';
 
-const query = graphql`
-  {
-    file(relativePath: { eq: "mainBcg.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
+import OptimizedImage from './OptimizedImage';
 
 const Background = ({ children, className }) => {
-  const {
-    file: {
-      childImageSharp: { fluid },
-    },
-  } = useStaticQuery(query);
   return (
     <Wrapper>
-      <BackgroundImage preserveStackingContext Tag="div" fluid={fluid} className={className}>
+      <OptimizedImage className={className} background src="mainBcg.jpg">
         {children}
-      </BackgroundImage>
+      </OptimizedImage>
     </Wrapper>
   );
 };
 
 const fadeIn = keyframes`
   from {
-      background-color:rgb(0,0,0,0.8);
+      background-color: rgb(0,0,0,0.8);
     }
     to {
-      background-color:rgba(0,0,0,0.4);
+      background-color: rgb(0,0,0,0.3);
     }
 `;
 

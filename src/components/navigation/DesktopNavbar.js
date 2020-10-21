@@ -6,12 +6,12 @@ import NavLinks from './Navlinks';
 
 export default img => {
   return (
-    <Navbar>
-      <NavLinks image={img} />
+    <Navbar className="container">
+      <NavLinks />
     </Navbar>
   );
 };
 
 const Navbar = styled.nav`
-  ${tw`h-20 sticky top-0`}
+  ${tw`hidden md:block h-20 sticky top-0 z-10 mx-auto`}
 `;
