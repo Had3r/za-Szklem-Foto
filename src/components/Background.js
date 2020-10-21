@@ -1,6 +1,4 @@
 import React from 'react';
-// import BackgroundImage from 'gatsby-background-image-es5';
-// import { useStaticQuery, graphql } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import tw from 'tailwind.macro';
 

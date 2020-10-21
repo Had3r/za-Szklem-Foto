@@ -91,9 +91,9 @@ A quick look at the files and directories you'll see in my Gatsby project.
     │   ├── styles
     │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind styles. Global.css is imported within gatsby-browser.js
     │   ├── components
-    │        ├── index.js    # imported components that are used globally
-    │        └──
-    │
+    │   │    ├── index.js    # imported components that are used globally
+    │   │    └──
+    │   └── graphql          # graphql queries
     │
     │
     └── ...

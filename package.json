@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "description": "A bare-bones Tailwind CSS + Styled-Components",
+  "name": "za-szklem-fotografia",
+  "description": "",
   "version": "1.0.0",
-  "author": "Dennis Vash <dennisvash@gmail.com>",
+  "author": "Adrian Zawadzki <adrian.zawadzki@outlook.com>",
   "license": "MIT",
   "keywords": [
     "gatsby",
