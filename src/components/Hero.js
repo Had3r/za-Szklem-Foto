@@ -5,7 +5,6 @@ import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 
 export default () => {
-  // logo nie powinno mieć  background-color: rgba(0, 0, 0, .4);
   return (
     <Section>
       <Background>

@@ -30,7 +30,13 @@
   - CSS in JS abstracts style to the component level. With naming methodologies like BEM, we can get pseudo encapsulation. With Shadow DOM (spec introduced in web components to isolate styling to a particular subset of the DOM), I got true encapsulation at the component level.
   - gave me unlimited semantic elements. HTML5 provide `header`, `footer`, `section`, and others. Styled components are semantically clear, their purpose is incredibly understandable ex: `Logo`, `Navbar`, `Toolbar`,
   - I really like feature called prop injection (props can be passed to styled components)
-- CMS
+- CMS: The choice of CMS was probably the most difficult. I really liked Forestry, but the free version archives the site after 3 months of inactivity and for this reason I had to exclude it. Contentful was my choice. Reasones:
+  - It has many languages, including Polish, which is important for the person who manages it
+  - supports Cloundinary
+  - does not require technical knowledge of git or md files to create changes to the site
+  - intuitive admin panel
+  - Contantful images API offers media processing of various formats
+  - **pricing**: I'm oriented towards the free version (for now). My free micro space includes 24 content types. Additionally, I can get up to 5000 records and 10 free users to manage all content. This is all I need to build this website
 
 #### Other tools
 
