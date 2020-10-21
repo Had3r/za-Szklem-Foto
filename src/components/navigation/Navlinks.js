@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 import OptimizedImage from '../OptimizedImage';
 
-const NavigationLinks = ({ className, image }) => {
+const NavigationLinks = ({ className }) => {
   return (
     <List>
       <ListItem>
@@ -39,6 +39,10 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   ${tw`mx-5`}
+
+  a {
+    ${tw`text-white`}
+  }
 `;
 
 export default NavLinks;

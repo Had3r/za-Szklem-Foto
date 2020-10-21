@@ -42,7 +42,7 @@ h3 {
 }
 
 a {
-  @apply cursor-pointer;
+  @apply cursor-pointer no-underline;
 }
 
 @screen sm {
