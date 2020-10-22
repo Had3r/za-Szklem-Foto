@@ -1,7 +1,7 @@
 import React from 'react';
 import Background from './Background';
 import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import tw from 'twin.macro';
 import { Link } from 'gatsby';
 
 export default () => {

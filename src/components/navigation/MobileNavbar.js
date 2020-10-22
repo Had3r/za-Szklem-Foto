@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import tw from 'twin.macro';
 import OptimizedImage from '../OptimizedImage';
 import { Link } from 'gatsby';
 

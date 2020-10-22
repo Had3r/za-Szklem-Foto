@@ -48,7 +48,8 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
-    "styled-components": "^5.0.0-rc.1"
+    "styled-components": "^5.0.0-rc.1",
+    "twin.macro": "^1.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
@@ -57,7 +58,6 @@
     "babel-preset-gatsby": "^0.2.20",
     "gatsby-plugin-styled-components": "^3.1.11",
     "postcss-preset-env": "^6.7.0",
-    "tailwind.macro": "^1.0.0-alpha.10",
     "tailwindcss": "^1.9.0"
   }
 }
