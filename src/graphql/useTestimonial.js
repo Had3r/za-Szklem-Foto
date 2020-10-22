@@ -6,10 +6,12 @@ export default function useTestimonial() {
       allContentfulTestimonial {
         edges {
           node {
+            id
+            customerId
             personsName
             authorPhoto {
-              fluid {
-                ...GatsbyContentfulFluid_withWebp
+              fixed(width: 150, height: 150) {
+                ...GatsbyContentfulFixed_withWebp
               }
             }
             customerOpinion {

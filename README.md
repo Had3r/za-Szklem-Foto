@@ -24,7 +24,7 @@
   - don’t need to name things
     - CSS naming methodologies like BEM exist to solve this exact problem, like name collision and CSS globals (we have also other solutions like Atomic CSS, OOCSS, SMACSS, SUITCSS). However they introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming could be hard.
   - small size with PurgeCss
-  - for more information check my Tailwind tutorial -> <a href="https://github.com/Had3r/Learning-Code/tree/master/tailwindcss-adamWathan#tailwindcss">tailwind tutorial</a>
+  - for more information check my Tailwind tutorial from Adam Wathan -> <a href="https://github.com/Had3r/Learning-Code/tree/master/tailwindcss-adamWathan#tailwindcss">tailwind tutorial</a>
 - Styled Components:
   - it creats one source of truth for all application constants (sometimes we need share things like colors, breakpoints, etc. between CSS and JavaScript)
   - CSS in JS abstracts style to the component level. With naming methodologies like BEM, we can get pseudo encapsulation. With Shadow DOM (spec introduced in web components to isolate styling to a particular subset of the DOM), I got true encapsulation at the component level.
@@ -44,8 +44,13 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 #### Other tools
 
 - linting tool:
+
   - I am using Gatsby built-in ESLint setup. It means, that ESLint shows feedback into the terminal window in dev mode,
     and also to the console in browser developer tools. This is to speed up my work, I don't have to focus on my own configuration (sometimes you need to improve the configuration while writing the code)
+
+- images:
+
+  - they are optimized with gatsby-image to increase performance. Images are optimized with <a href="https://www.gatsbyjs.com/plugins/gatsby-image/?=gatsby-ima#gatsby-image">gatsby-image</a> to increase performance. For those where the exact dimension is known (eg Testimonial), I use the "Fixed" type, while if the height and width are different depending on the screen (eg Hero), the "Fluid" type.
 
 ## Documentation files
 

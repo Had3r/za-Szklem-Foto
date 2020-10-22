@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         'color-primary': '#C7E0F3',
       },
+      spacing: {
+        '96': '24rem',
+      },
       keyframes: {
         brightenBg: {
           '0%': { backgroundColor: 'rgb(0,0,0,0.8)' },
