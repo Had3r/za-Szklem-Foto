@@ -50,7 +50,7 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 
 - images:
 
-  - they are optimized with gatsby-image to increase performance. Images are optimized with <a href="https://www.gatsbyjs.com/plugins/gatsby-image/?=gatsby-ima#gatsby-image">gatsby-image</a> to increase performance. For those where the exact dimension is known (eg Testimonial), I use the "Fixed" type, while if the height and width are different depending on the screen (eg Hero), the "Fluid" type.
+  - images are optimized with <a href="https://www.gatsbyjs.com/plugins/gatsby-image/?=gatsby-ima#gatsby-image">gatsby-image</a> to increase performance. For those where the exact dimension is known (eg Testimonial), I use the "Fixed" type, while if the height and width are different depending on the screen (eg Hero), the "Fluid" type.
 
 ## Documentation files
 

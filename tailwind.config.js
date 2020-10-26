@@ -10,6 +10,7 @@ module.exports = {
       },
       spacing: {
         '96': '24rem',
+        '120': '30rem',
       },
       keyframes: {
         brightenBg: {
