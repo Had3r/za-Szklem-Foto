@@ -56,7 +56,6 @@ const Slider = ({ slides }) => {
   const changeOrder = slides => {
     const newArr = [...slides];
     const lastImage = newArr.shift();
-    return result.map(el => el);
   };
   return (
     <SliderCSS>
