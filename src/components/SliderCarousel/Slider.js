@@ -70,22 +70,11 @@ const Slider = ({ slides }) => {
     setState({
       ...state,
       activeIndex: activeIndex - 1,
-      translateSmall: -sideElementWidth,
-      translateLarge: -centerElementWidth,
+      translateSmall: (activeIndex - 1) * sideElementWidth,
+      translateLarge: (activeIndex - 1) * centerElementWidth,
     });
   };
 
-  const changeOrder = (slides, version) => {
-    const newArr = [...slides];
-    console.log('oryginally', slides);
-    if (version === 'left') {
-      const firstImage = newArr[0];
-      newArr.shift();
-      newArr.push(firstImage);
-      return newArr;
-    }
-  };
-  console.log(changeOrder(slides, 'left'));
   return (
     <SliderCSS>
       <Wrapper>
@@ -105,7 +94,7 @@ const Slider = ({ slides }) => {
               translate={translateLarge}
               transition={transition}
               width={centerElementWidth * slides.length}>
-              {changeOrder(slides, 'left').map(slide => {
+              {slides.map(slide => {
                 return <Slide content={slide} />;
               })}
             </SliderContent>
