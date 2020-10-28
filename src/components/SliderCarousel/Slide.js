@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default ({ content }) => {
-  return <SlideLeft content={content} />;
+  return <Slide content={content} />;
 };
 
-const SlideLeft = styled.div`
+const Slide = styled.div`
   height: 100%;
   width: 100%;
   background-image: url('${props => props.content}');

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import SliderContent from './SliderContent';
 import Slide from './Slide';
@@ -10,21 +10,41 @@ import SlideRight from './SlideRight';
  * @function Slider
  */
 const Slider = ({ slides }) => {
-  const getWidth = () => window.innerWidth;
-
   const [state, setState] = useState({
     activeIndex: 0,
-    translate: 0,
+    translateSmall: 0,
+    translateLarge: 0,
     transition: 2,
   });
 
-  const { translate, transition, activeIndex } = state;
+  const [sideElementWidth, setSideElementWidth] = useState(0);
+  const [centerElementWidth, setCenterElementWidth] = useState(0);
+
+  const { translateSmall, translateLarge, transition, activeIndex } = state;
+  const sideElementMarker = useRef();
+  const centralElementMarker = useRef();
+
+  useEffect(() => {
+    const reportWindowSize = () => {
+      setSideElementWidth(sideElementMarker.current.getBoundingClientRect().width);
+      setCenterElementWidth(centralElementMarker.current.getBoundingClientRect().width);
+    };
+
+    window.addEventListener('resize', reportWindowSize);
+
+    reportWindowSize();
+
+    return () => {
+      window.removeEventListener('resize', reportWindowSize);
+    };
+  }, []);
 
   const nextSlide = () => {
     if (activeIndex === slides.length - 1) {
       return setState({
         ...state,
-        translate: 0,
+        translateSmall: 0,
+        translateLarge: 0,
         activeIndex: 0,
       });
     }
@@ -32,7 +52,8 @@ const Slider = ({ slides }) => {
     setState({
       ...state,
       activeIndex: activeIndex + 1,
-      translate: (activeIndex + 1) * getWidth(),
+      translateSmall: (activeIndex + 1) * sideElementWidth,
+      translateLarge: (activeIndex + 1) * centerElementWidth,
     });
   };
 
@@ -40,41 +61,68 @@ const Slider = ({ slides }) => {
     if (activeIndex === 0) {
       return setState({
         ...state,
-        translate: (slides.length - 1) * getWidth(),
-        activeIndex: slides.length - 1,
+        translateSmall: (slides.length - 3) * sideElementWidth,
+        translateLarge: (slides.length - 3) * centerElementWidth,
+        activeIndex: slides.length - 3,
       });
     }
 
     setState({
       ...state,
       activeIndex: activeIndex - 1,
-      translate: (activeIndex - 1) * getWidth(),
+      translateSmall: -sideElementWidth,
+      translateLarge: -centerElementWidth,
     });
   };
 
-  // TODO: start from there, to return changed array of images
-  const changeOrder = slides => {
+  const changeOrder = (slides, version) => {
     const newArr = [...slides];
-    const lastImage = newArr.shift();
+    console.log('oryginally', slides);
+    if (version === 'left') {
+      const firstImage = newArr[0];
+      newArr.shift();
+      newArr.push(firstImage);
+      return newArr;
+    }
   };
+  console.log(changeOrder(slides, 'left'));
   return (
     <SliderCSS>
-      <SliderContent
-        translate={translate}
-        transition={transition}
-        width={getWidth() * slides.length}>
-        {slides.map(slide => {
-          console.log('my fn', changeOrder(slides));
-          console.log('slides', slides);
-
-          return (
-            <>
-              <Slide content={changeOrder(slides)} />
-              <SlideRight content={slide} />
-            </>
-          );
-        })}
-      </SliderContent>
+      <Wrapper>
+        <Left ref={sideElementMarker}>
+          <SliderContent
+            translate={translateSmall}
+            transition={transition}
+            width={sideElementWidth * slides.length}>
+            {slides.map(slide => {
+              return <SlideLeft content={slide} />;
+            })}
+          </SliderContent>
+        </Left>
+        <Center>
+          <ImagePart ref={centralElementMarker}>
+            <SliderContent
+              translate={translateLarge}
+              transition={transition}
+              width={centerElementWidth * slides.length}>
+              {changeOrder(slides, 'left').map(slide => {
+                return <Slide content={slide} />;
+              })}
+            </SliderContent>
+          </ImagePart>
+          <TextPart>area with text</TextPart>
+        </Center>
+        <Right ref={sideElementMarker}>
+          <SliderContent
+            translate={translateSmall}
+            transition={transition}
+            width={sideElementWidth * slides.length}>
+            {slides.map(slide => {
+              return <SlideRight content={slide} />;
+            })}
+          </SliderContent>
+        </Right>
+      </Wrapper>
       <Arrow direction="left" handleClick={prevSlide} />
       <Arrow direction="right" handleClick={nextSlide} />
     </SliderCSS>
@@ -83,9 +131,41 @@ const Slider = ({ slides }) => {
 
 const SliderCSS = styled.div`
   position: relative;
-  height: 100vh;
+  height: 30rem;
   width: 100vw;
-  margin: 0 auto;
+  max-width: 100%;
   overflow: hidden;
 `;
+
+const Wrapper = styled.div`
+  display: flex;
+`;
+
+const Left = styled.div`
+  height: 20rem;
+  width: 15%;
+  overflow: hidden;
+`;
+const Right = styled.div`
+  background: #eee;
+  height: 20rem;
+  margin-top: 10rem;
+  width: 15%;
+  overflow: hidden;
+`;
+const Center = styled.div`
+  width: 70%;
+  display: flex;
+  overflow: hidden;
+`;
+const ImagePart = styled.div`
+  /* width: 350px; */
+  width: 50%;
+  overflow: hidden;
+`;
+const TextPart = styled.div`
+  width: 50%;
+  background: #eed;
+`;
+
 export default Slider;

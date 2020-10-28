@@ -12,4 +12,5 @@ const SlideLeft = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  filter: grayscale();
 `;
