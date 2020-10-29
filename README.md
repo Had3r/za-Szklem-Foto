@@ -34,7 +34,7 @@
 
 The choice of CMS was probably the most difficult. I really liked Forestry, but the free version archives the site after 3 months of inactivity and for this reason I had to exclude it. Contentful was my choice. Reasones:
 
-- It has many languages, including Polish, which is important for the person who manages it
+- It has many languages, including polish, which is important for the person who manages it
 - supports Cloundinary
 - does not require technical knowledge of git or md files to create changes to the site
 - intuitive admin panel

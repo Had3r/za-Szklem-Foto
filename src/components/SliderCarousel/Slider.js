@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import tw from 'twin.macro';
+
 import SliderContent from './SliderContent';
 import Slide from './Slide';
 import Arrow from './Arrow';
 import SlideLeft from './SlideLeft';
 import SlideRight from './SlideRight';
+import TextPart from './TextPart';
 
 /**
  * @function Slider
@@ -75,10 +78,29 @@ const Slider = ({ slides }) => {
     });
   };
 
+  // images order:
+  // left:  [element1, element2,  element3, element4]
+
+  // center: [element2, element3, element4, element5]
+
+  // right: [element3, element4, element5, element6]
+
+  const changeOrder = (slides, version) => {
+    const newArr = [...slides];
+    if (version === 'left') {
+      const firstImage = newArr.shift();
+      newArr.push(firstImage);
+      return newArr;
+    } else {
+      const firstImages = newArr.splice(0, 2);
+      newArr.push(firstImages);
+      return newArr.flat();
+    }
+  };
   return (
     <SliderCSS>
       <Wrapper>
-        <Left ref={sideElementMarker}>
+        <LeftCard ref={sideElementMarker}>
           <SliderContent
             translate={translateSmall}
             transition={transition}
@@ -87,30 +109,33 @@ const Slider = ({ slides }) => {
               return <SlideLeft content={slide} />;
             })}
           </SliderContent>
-        </Left>
-        <Center>
+        </LeftCard>
+        <CenterCard>
           <ImagePart ref={centralElementMarker}>
             <SliderContent
               translate={translateLarge}
               transition={transition}
               width={centerElementWidth * slides.length}>
-              {slides.map(slide => {
+              {changeOrder(slides, 'left').map(slide => {
                 return <Slide content={slide} />;
               })}
             </SliderContent>
           </ImagePart>
-          <TextPart>area with text</TextPart>
-        </Center>
-        <Right ref={sideElementMarker}>
+          <TextPart
+            longText={`Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia`}
+            shortText={'John Doe'}
+          />
+        </CenterCard>
+        <RightCard ref={sideElementMarker}>
           <SliderContent
             translate={translateSmall}
             transition={transition}
             width={sideElementWidth * slides.length}>
-            {slides.map(slide => {
+            {changeOrder(slides).map(slide => {
               return <SlideRight content={slide} />;
             })}
           </SliderContent>
-        </Right>
+        </RightCard>
       </Wrapper>
       <Arrow direction="left" handleClick={prevSlide} />
       <Arrow direction="right" handleClick={nextSlide} />
@@ -119,42 +144,28 @@ const Slider = ({ slides }) => {
 };
 
 const SliderCSS = styled.div`
-  position: relative;
-  height: 30rem;
-  width: 100vw;
-  max-width: 100%;
-  overflow: hidden;
+  ${tw`relative h-120 w-full max-w-full overflow-hidden`}
 `;
 
 const Wrapper = styled.div`
-  display: flex;
+  ${tw`flex`}
 `;
 
-const Left = styled.div`
-  height: 20rem;
-  width: 15%;
-  overflow: hidden;
+// TODO: unificate left and right card to single one
+const LeftCard = styled.div`
+  ${tw`h-80 w-1/7 overflow-hidden`}
 `;
-const Right = styled.div`
-  background: #eee;
-  height: 20rem;
-  margin-top: 10rem;
-  width: 15%;
-  overflow: hidden;
+
+const RightCard = styled.div`
+  ${tw`h-80 mt-40 w-1/7 overflow-hidden`}
 `;
-const Center = styled.div`
-  width: 70%;
-  display: flex;
-  overflow: hidden;
+
+const CenterCard = styled.div`
+  ${tw`w-5/7 flex overflow-hidden`}
 `;
+
 const ImagePart = styled.div`
-  /* width: 350px; */
-  width: 50%;
-  overflow: hidden;
-`;
-const TextPart = styled.div`
-  width: 50%;
-  background: #eed;
+  ${tw`w-6/12 overflow-hidden`}
 `;
 
 export default Slider;

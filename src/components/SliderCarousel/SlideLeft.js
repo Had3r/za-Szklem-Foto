@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default ({ content }) => {
-  return <SlideLeft content={content} />;
+  return (
+    <SlideLeft content={content}>
+      <BgLayer />
+    </SlideLeft>
+  );
 };
 
 const SlideLeft = styled.div`
@@ -12,5 +16,9 @@ const SlideLeft = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: grayscale();
+`;
+const BgLayer = styled.div`
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.8);
 `;

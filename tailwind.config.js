@@ -5,10 +5,16 @@ module.exports = {
   },
   theme: {
     extend: {
+      width: {
+        '1/7': '15%',
+        '5/7': '70%',
+      },
       colors: {
         'color-primary': '#C7E0F3',
+        'color-dark-gray': '#2D2D2D',
       },
       spacing: {
+        '80': '20rem',
         '96': '24rem',
         '120': '30rem',
       },
