@@ -12,7 +12,7 @@ import TextPart from './TextPart';
 /**
  * @function Slider
  */
-const Slider = ({ slides }) => {
+const Slider = ({ slides, autoPlay }) => {
   const [state, setState] = useState({
     activeIndex: 0,
     translateSmall: 0,
@@ -26,6 +26,7 @@ const Slider = ({ slides }) => {
   const { translateSmall, translateLarge, transition, activeIndex } = state;
   const sideElementMarker = useRef();
   const centralElementMarker = useRef();
+  const autoPlayRef = useRef();
 
   useEffect(() => {
     const reportWindowSize = () => {
@@ -41,6 +42,22 @@ const Slider = ({ slides }) => {
       window.removeEventListener('resize', reportWindowSize);
     };
   }, []);
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+    if (autoPlay !== null) {
+      const interval = setInterval(play, autoPlay * 1000);
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [autoPlay]);
+
+  useEffect(() => {
+    autoPlayRef.current = nextSlide;
+  });
 
   const nextSlide = () => {
     if (activeIndex === slides.length - 1) {
@@ -64,9 +81,9 @@ const Slider = ({ slides }) => {
     if (activeIndex === 0) {
       return setState({
         ...state,
-        translateSmall: (slides.length - 3) * sideElementWidth,
-        translateLarge: (slides.length - 3) * centerElementWidth,
-        activeIndex: slides.length - 3,
+        translateSmall: (slides.length - 1) * sideElementWidth,
+        translateLarge: (slides.length - 1) * centerElementWidth,
+        activeIndex: slides.length - 1,
       });
     }
 
@@ -141,6 +158,11 @@ const Slider = ({ slides }) => {
       <Arrow direction="right" handleClick={nextSlide} />
     </SliderCSS>
   );
+};
+
+Slider.defaultProps = {
+  slides: [],
+  autoPlay: null,
 };
 
 const SliderCSS = styled.div`

@@ -19,21 +19,19 @@ const styledTextPart = ({ longText, shortText, className }) => {
 };
 
 const TextPart = styled.div`
-  ${tw`w-6/12 bg-color-dark-gray relative`};
+  ${tw`relative w-6/12 bg-color-dark-gray`};
 
   .quoteSVG {
-    font-size: 3.5rem;
-    position: absolute;
+    ${tw`absolute text-5-1/2-xl`};
+
     left: -106px;
     top: 90px;
-    z-index: 100;
   }
 
   &::after {
-    content: '';
-    z-index: 10;
+    ${tw`absolute`};
 
-    position: absolute;
+    content: '';
     top: 25px;
     left: -80px;
     width: 110%;
@@ -48,20 +46,20 @@ const Blockquote = styled.blockquote`
   ${tw`text-white h-full p-12 flex flex-col`};
 
   &::after {
+    ${tw`absolute bg-white`};
+
     content: '';
-    position: absolute;
     width: 3px;
     height: 8%;
-    background: white;
     top: 25px;
     left: -80px;
   }
   &::before {
+    ${tw`absolute bg-white`};
+
     content: '';
-    position: absolute;
     width: 3px;
     height: 60.5%;
-    background: white;
     top: 165px;
     left: -80px;
   }
@@ -72,9 +70,9 @@ const Cite = styled.cite`
 `;
 
 const ParagraphText = styled.p`
-  ${tw`text-xl`}
-  height: 80%;
+  ${tw`text-xl`};
 
+  height: 80%;
   margin-top: 10%;
 `;
 

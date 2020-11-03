@@ -12,6 +12,6 @@ const images = [
 export default () => (
   <Layout>
     <Hero />
-    <Slider slides={images} />
+    <Slider slides={images} autoPlay={3} />
   </Layout>
 );

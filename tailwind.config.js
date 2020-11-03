@@ -5,6 +5,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontSize: {
+        '5-1/2-xl': '3.5rem',
+      },
       width: {
         '1/7': '15%',
         '5/7': '70%',
