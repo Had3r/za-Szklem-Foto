@@ -7,7 +7,6 @@ export default function useTestimonial() {
         edges {
           node {
             id
-            customerId
             personsName
             positionOrCompany
             authorPhoto {

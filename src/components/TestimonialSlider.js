@@ -15,7 +15,6 @@ const Carousel = ({ className }) => {
       <Heading>Co mówią ludzie...</Heading>
       <MiltipleCarousel>
         {testimonial.map(singleOpinion => {
-          console.log(singleOpinion);
           const {
             id,
             personsName,
