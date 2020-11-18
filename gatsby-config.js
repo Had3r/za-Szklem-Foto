@@ -19,7 +19,6 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        // Learn about environment variables: https://gatsby.dev/env-vars
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
@@ -37,8 +36,20 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-resolve-src',
-    `gatsby-plugin-playground`, // gatsby-plugin-purgecss should be AFTER other css/postcss plugins
-    `gatsby-plugin-purgecss`,
+    `gatsby-plugin-playground`,
+    // gatsby-plugin-purgecss should be AFTER other css/postcss plugins
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        ignore: [
+          // PurgeCss was removing styles from react-slick during build, causing the page to crash.
+          // The solution comes from https://github.com/gatsbyjs/gatsby/issues/8188#issuecomment-455530292
+          '/node_modules/slick-carousel/slick/slick.css',
+          '/node_modules/slick-carousel/slick/slick-theme.css',
+        ],
+      },
+    },
+    // only for debugging:
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
     //   options: {
