@@ -9,9 +9,10 @@ export default function useTestimonial() {
             id
             customerId
             personsName
+            positionOrCompany
             authorPhoto {
-              fixed(width: 150, height: 150) {
-                ...GatsbyContentfulFixed_withWebp
+              fluid {
+                ...GatsbyContentfulFluid_withWebp
               }
             }
             customerOpinion {

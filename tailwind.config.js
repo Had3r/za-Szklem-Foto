@@ -13,13 +13,14 @@ module.exports = {
         '5/7': '70%',
       },
       colors: {
-        'color-primary': '#C7E0F3',
-        'color-dark-gray': '#2D2D2D',
+        primary: '#DBEAF9',
+        'primary-darker': '#4995e1',
+        'primary-gray': '#3D4842',
       },
       spacing: {
         '80': '20rem',
         '96': '24rem',
-        '120': '30rem',
+        '144': '36rem',
       },
       keyframes: {
         brightenBg: {
@@ -29,6 +30,12 @@ module.exports = {
       },
       animation: {
         brightenBg: '2s ease-in-out 1 forwards',
+      },
+      container: {
+        center: true,
+      },
+      zIndex: {
+        '-10': '-10',
       },
     },
   },

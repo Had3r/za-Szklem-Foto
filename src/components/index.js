@@ -1,6 +1,6 @@
 // Components globally available
 import Layout from './layout';
 import Hero from './Hero';
-import Slider from './SliderCarousel/Slider';
+import TestimonialSlider from './TestimonialSlider';
 
-export { Layout, Hero, Slider };
+export { Layout, Hero, TestimonialSlider };
