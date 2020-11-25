@@ -58,7 +58,11 @@ const styledMultipleCarousel = styled(Carousel)`
 
 const Wrapper = styled.section`
   background-color: rgb(242, 242, 242);
-  ${tw`py-10`};
+  ${tw`py-10 px-4`};
+
+  @media screen and (min-width: 500px) {
+    ${tw`px-12`};
+  }
 
   .slick-slider {
     ${tw`container bg-white shadow-xl rounded-sm`};
@@ -74,11 +78,19 @@ const Wrapper = styled.section`
 `;
 
 const SingleSlide = styled.div`
-  ${tw`flex relative h-144`};
+  ${tw`sm:flex relative h-160 sm:h-96 xl:h-144`};
 `;
 
 const TestimonialImage = styled.div`
-  ${tw`w-2/5 py-12 px-12`};
+  ${tw`w-full sm:w-2/5 sm:p-12 sm:pr-2 md:px-12`};
+  height: 12rem;
+
+  @media only screen and (min-width: 470px) {
+    ${tw`h-80`}
+  }
+  @media only screen and (min-width: 640px) {
+    ${tw`h-full`}
+  }
 `;
 
 const ImageColorLayer = styled.div`
@@ -92,44 +104,62 @@ const ImageColorLayer = styled.div`
 `;
 
 const TestimonialText = styled.div`
-  ${tw` px-24 flex flex-col justify-center items-center`};
-  width: 55%;
+  ${tw` sm:h-full px-4 pt-8 sm:pt-0 xl:px-24 flex flex-col justify-center items-center`};
+  height: 28rem;
+
+  @media only screen and (min-width: 470px) {
+    height: 20rem;
+  }
+
+  @media only screen and (min-width: 640px) {
+    width: 55%;
+    height: 100%;
+  }
 `;
 
 const Blockquote = styled.blockquote`
-  ${tw`leading-9 text-primary-gray`};
+  ${tw`flex flex-col justify-evenly sm:justify-center h-full  xl:leading-9 text-primary-gray`};
 `;
 
 const Text = styled.div`
-  ${tw`text-lg relative`};
+  ${tw`text-base lg:text-lg relative`};
 
   &::before {
-    ${tw`bg-no-repeat w-20 h-20 block absolute`};
+    ${tw`sm:hidden xl:block absolute bg-no-repeat w-8 h-8 xl:w-20 xl:h-20`};
     content: '';
     background-image: url(${quoteSVG});
-    left: -95px;
-    top: -50px;
+    left: 0px;
+    top: -35px;
+
+    @media screen and (min-width: 640px) {
+      left: -95px;
+      top: -50px;
+    }
   }
 
   &::after {
-    ${tw`bg-no-repeat w-20 h-20 block absolute`};
+    ${tw`sm:hidden xl:block absolute bg-no-repeat w-8 h-8 xl:w-20 xl:h-20`};
     content: '';
     background-image: url(${quoteSVG});
     transform: rotate(180deg);
-    right: -95px;
+    right: 0;
+
+    @media screen and (min-width: 640px) {
+      right: -95px;
+    }
   }
 `;
 
 const Cite = styled.cite`
-  ${tw` mt-10 block tracking-wide`};
+  ${tw`sm:mt-4 xl:mt-10 block tracking-wide`};
 `;
 
 const PersonsName = styled.div`
-  ${tw`font-bold text-primary-darker text-3xl`};
+  ${tw`font-bold text-primary-darker text-lg lg:text-3xl`};
 `;
 
 const Position = styled.div`
-  ${tw`text-lg `}
+  ${tw`text-base lg:text-lg `}
 `;
 
 export default styledMultipleCarousel;

@@ -21,6 +21,7 @@ module.exports = {
         '80': '20rem',
         '96': '24rem',
         '144': '36rem',
+        '160': '40rem',
       },
       keyframes: {
         brightenBg: {

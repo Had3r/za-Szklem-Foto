@@ -9,7 +9,7 @@ export default ({ children }) => {
   const settings = {
     dots: true,
     fade: true,
-    autoplay: true,
+    // autoplay: true,
     infinite: true,
     nextArrow: <NextArrow />,
     lazyLoad: true,
