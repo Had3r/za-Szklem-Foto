@@ -7,13 +7,13 @@ import 'slick-carousel/slick/slick-theme.css';
 
 export default ({ children }) => {
   const settings = {
-    dots: true,
+    dots: false,
     fade: true,
-    // autoplay: true,
+    autoplay: true,
+    autoplaySpeed: 6500,
     infinite: true,
     nextArrow: <NextArrow />,
     lazyLoad: true,
-    dots: false,
     speed: 500,
     slidesToShow: 1,
   };

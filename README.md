@@ -19,11 +19,11 @@
 #### Main tools
 
 - Tailwindcss:
-  - implementing custom designs is really fast
-  - helps to achive professional looking results without expercienced designer
-  - don’t need to name things
+  - makes me easy to implement custom design in a fast way
+  - helps me to achieve fast professional looking results without experience designer
+  - it doesn't require naming things
     - CSS naming methodologies like BEM exist to solve this exact problem, like name collision and CSS globals (we have also other solutions like Atomic CSS, OOCSS, SMACSS, SUITCSS). However they introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming could be hard.
-  - small size with PurgeCss
+  - provides small size with PurgeCss
   - for more information check my Tailwind tutorial from Adam Wathan -> <a href="https://github.com/Had3r/Learning-Code/tree/master/tailwindcss-adamWathan#tailwindcss">tailwind tutorial</a>
 - Styled Components:
   - it creats one source of truth for all application constants (sometimes we need share things like colors, breakpoints, etc. between CSS and JavaScript)
@@ -50,7 +50,7 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 
 - images:
 
-  - images are optimized with <a href="https://www.gatsbyjs.com/plugins/gatsby-image/?=gatsby-ima#gatsby-image">gatsby-image</a> to increase performance. For those where the exact dimension is known (eg Testimonial), I use the "Fixed" type, while if the height and width are different depending on the screen (eg Hero), the "Fluid" type.
+  - images are optimized with <a href="https://www.gatsbyjs.com/plugins/gatsby-image/?=gatsby-ima#gatsby-image">gatsby-image</a> to increase performance. For those where the exact dimension is known, I use the "Fixed" type, while if the height and width are different depending on the screen (eg Hero, Testimonial), the "Fluid" type.
 
 ## Documentation files
 
@@ -66,5 +66,7 @@ A quick look at the files and directories you'll see in my Gatsby project.
     │   │    └──
     │   └── graphql          # graphql queries
     │
+    │
+    ├── tailwind.config.js   # customization of Tailwind default design system
     │
     └── ...
