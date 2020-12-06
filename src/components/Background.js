@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import OptimizedImage from './OptimizedImage';
+import BackgroundImage from 'gatsby-background-image-es5';
 
-const Background = ({ children, className }) => {
+const Background = ({ children, className, image }) => {
   return (
     <Wrapper>
-      <OptimizedImage className={className} background src="mainBcg.jpg">
+      <BackgroundImage className={className} fluid={image}>
         {children}
-      </OptimizedImage>
+      </BackgroundImage>
     </Wrapper>
   );
 };

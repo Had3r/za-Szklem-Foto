@@ -9,8 +9,12 @@ module.exports = {
         '5-1/2-xl': '3.5rem',
       },
       width: {
+        '14': '3.5rem',
         '1/7': '15%',
         '5/7': '70%',
+      },
+      height: {
+        '14': '3.5rem',
       },
       colors: {
         primary: '#DBEAF9',
