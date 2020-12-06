@@ -17,11 +17,11 @@ body {
 }
 
 ::selection {
-  color: red;
+  color: #4995e1;
 }
 
 h1 {
-  @apply text-4xl leading-tight uppercase;
+  @apply text-4xl leading-snug uppercase font-bold tracking-wide;
 }
 
 h2 {
@@ -29,7 +29,7 @@ h2 {
 }
 
 h3 {
-  @apply text-xl;
+  @apply text-base font-light leading-7;
 }
 
 .link-primary {
@@ -47,14 +47,11 @@ a {
 
 @screen sm {
   h1 {
-    @apply text-5xl leading-normal;
+    @apply text-5xl leading-tight;
   }
 }
 
 @screen lg {
-  h1 {
-    @apply text-6xl;
-  }
   .link-primary {
     @apply text-xl;
   }

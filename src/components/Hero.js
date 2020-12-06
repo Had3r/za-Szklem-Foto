@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Background from './Background';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import tw from 'twin.macro';
 import useHeroImages from '../graphql/useHeroImages';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from '../../assets/icons/icons';
@@ -27,11 +27,14 @@ export default () => {
       <Background image={images[index]}>
         <Header>
           <Top />
-          <Center className="">
-            <h3>If you can cream it, we can create it</h3>
+          <Center>
             <HeadingPrimary>Za Szkłem Fotografia</HeadingPrimary>
+            <h3>
+              Forzo is an excellent solution for those who value their reputation and value style.
+              Elegant and modern showcase will emphasize the attractiveness of your work.
+            </h3>
           </Center>
-          <Bottom className="">
+          <Bottom>
             <Dots>
               {images.map((_, btnIndex) => {
                 return (
@@ -43,14 +46,16 @@ export default () => {
                 );
               })}
             </Dots>
-            <div className="">scoll down</div>
+            <ScrollDown onClick={() => console.log('clicked!')}>
+              <span />
+            </ScrollDown>
             <Buttons>
-              <ScrollArr className="left" onClick={() => setIndex(index - 1)}>
+              <Button className="left" onClick={() => setIndex(index - 1)}>
                 <FaLongArrowAltLeft />
-              </ScrollArr>
-              <ScrollArr className="right" onClick={() => setIndex(index + 1)}>
+              </Button>
+              <Button className="right" onClick={() => setIndex(index + 1)}>
                 <FaLongArrowAltRight />
-              </ScrollArr>
+              </Button>
             </Buttons>
           </Bottom>
         </Header>
@@ -70,7 +75,7 @@ const Header = styled.header`
 const Top = styled.div``;
 
 const Center = styled.div`
-  ${tw``};
+  ${tw`p-4 md:p-8 sm:w-7/12`};
 `;
 
 const HeadingPrimary = styled.h1`
@@ -78,14 +83,14 @@ const HeadingPrimary = styled.h1`
 `;
 
 const Bottom = styled.div`
-  ${tw`flex justify-between `}
+  ${tw`flex justify-between`}
 `;
 
 const Buttons = styled.div`
   ${tw`bg-white`};
 `;
 
-const ScrollArr = styled.button`
+const Button = styled.button`
   ${tw`w-14 h-14 `};
 
   &:hover svg {
@@ -105,9 +110,52 @@ const ScrollArr = styled.button`
 `;
 
 const Dots = styled.div`
-  ${tw`cursor-pointer flex`};
+  ${tw`flex items-baseline ml-4 md:ml-8 mb-4`};
 `;
 
 const SingleDot = styled.div`
-  ${tw`cursor-pointer bg-white flex h-3`};
+  ${tw`cursor-pointer bg-white flex mr-4 w-0.5`};
+  height: 35%;
+
+  &.active {
+    ${tw`bg-primary-darker`}
+    height: 90%;
+  }
+`;
+
+const moveDots = y => keyframes`
+   0% {
+    opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      top: ${y}px;
+    }
+`;
+
+// TODO: convert to Tailwind util classes
+const ScrollDown = styled.button`
+  ${tw`w-8`};
+  span {
+    position: relative;
+  }
+  span::before,
+  span::after {
+    opacity: 1;
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 100%;
+  }
+
+  span::before {
+    top: -35px;
+    animation: ${() => moveDots(-15)} 2s ease-in-out infinite;
+  }
+  span::after {
+    top: -15px;
+    animation: ${() => moveDots(5)} 2s ease-in-out infinite;
+  }
 `;
