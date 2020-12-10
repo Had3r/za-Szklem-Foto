@@ -13,7 +13,7 @@ const Carousel = ({ className }) => {
   return (
     <Wrapper className={className}>
       <Heading>Co mówią ludzie...</Heading>
-      <MiltipleCarousel>
+      <MiltipleCarousel isFade>
         {testimonial.map(singleOpinion => {
           const {
             id,
