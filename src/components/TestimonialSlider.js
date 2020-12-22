@@ -11,53 +11,56 @@ const Carousel = ({ className }) => {
   const testimonial = useTestimonial();
 
   return (
-    <Wrapper className={className}>
-      <Heading>Co mówią ludzie...</Heading>
-      <MiltipleCarousel fade autoplay arrType="testimonial">
-        {testimonial.map(singleOpinion => {
-          const {
-            id,
-            personsName,
-            authorPhoto,
-            customerOpinion,
-            positionOrCompany,
-          } = singleOpinion.node;
-          return (
-            <div key={id}>
-              <SingleSlide>
-                <TestimonialImage>
-                  <ImageColorLayer className="test">
-                    <BackgroundImage preserveStackingContext fluid={authorPhoto.fluid} />
-                  </ImageColorLayer>
-                </TestimonialImage>
-                <TestimonialText>
-                  <Blockquote>
-                    <Text>{documentToReactComponents(customerOpinion.json)}</Text>
-                    <Cite>
-                      <PersonsName>{personsName}</PersonsName>
-                      <Position>{positionOrCompany || ''}</Position>
-                    </Cite>
-                  </Blockquote>
-                </TestimonialText>
-              </SingleSlide>
-            </div>
-          );
-        })}
-      </MiltipleCarousel>
-    </Wrapper>
+    <ContainerFluid className={className}>
+      <Wrapper>
+        <h3>Referencje</h3>
+        <Heading>Co mówią ludzie...</Heading>
+        <MiltipleCarousel fade autoplay arrType="testimonial">
+          {testimonial.map(singleOpinion => {
+            const {
+              id,
+              personsName,
+              authorPhoto,
+              customerOpinion,
+              positionOrCompany,
+            } = singleOpinion.node;
+            return (
+              <div key={id}>
+                <SingleSlide>
+                  <TestimonialImage>
+                    <ImageColorLayer className="test">
+                      <BackgroundImage preserveStackingContext fluid={authorPhoto.fluid} />
+                    </ImageColorLayer>
+                  </TestimonialImage>
+                  <TestimonialText>
+                    <Blockquote>
+                      <Text>{documentToReactComponents(customerOpinion.json)}</Text>
+                      <Cite>
+                        <PersonsName>{personsName}</PersonsName>
+                        <Position>{positionOrCompany || ''}</Position>
+                      </Cite>
+                    </Blockquote>
+                  </TestimonialText>
+                </SingleSlide>
+              </div>
+            );
+          })}
+        </MiltipleCarousel>
+      </Wrapper>
+    </ContainerFluid>
   );
 };
 
 const Heading = styled.h2`
-  ${tw`container`}
+  ${tw``}
 `;
 
 const styledMultipleCarousel = styled(Carousel)`
   ${tw`relative`};
 `;
 
-const Wrapper = styled.section`
-  ${tw`py-10 px-4 bg-secondary-gray`};
+const ContainerFluid = styled.section`
+  ${tw`bg-secondary-gray`};
 
   @media screen and (min-width: 500px) {
     ${tw`px-12`};
@@ -74,6 +77,10 @@ const Wrapper = styled.section`
       display: none !important;
     }
   }
+`;
+
+const Wrapper = styled.div`
+  ${tw`py-16 px-4 md:py-20 container`};
 `;
 
 const SingleSlide = styled.div`
