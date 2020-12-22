@@ -29,15 +29,6 @@ module.exports = {
         '144': '36rem',
         '160': '40rem',
       },
-      keyframes: {
-        brightenBg: {
-          '0%': { backgroundColor: 'rgb(0,0,0,0.8)' },
-          '100%': { backgroundColor: 'rgb(0,0,0,0.3)' },
-        },
-      },
-      animation: {
-        brightenBg: '2s ease-in-out 1 forwards',
-      },
       container: {
         center: true,
       },

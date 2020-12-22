@@ -1,13 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
-import NextArrow from './NextArrow';
 import SliderArrow from './SliderArrow';
-import PropTypes from 'prop-types';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-// TODO: start from arrows below
 export const MultipleCarousel = ({
   children,
   appendDots,

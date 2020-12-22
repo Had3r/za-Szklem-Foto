@@ -9,7 +9,7 @@ export default () => {
   const heroData = useHeroSliderData();
   return (
     <Section>
-      <MultipleCarousel appendDots autoplay autoplaySpeed={3000} arrType="hero">
+      <MultipleCarousel appendDots autoplay={false} autoplaySpeed={4500} arrType="hero">
         {heroData.map(singleItem => {
           const { image, headingPrimary, headingSecondary, id } = singleItem.node;
           return (
@@ -44,16 +44,14 @@ const Section = styled.section`
   *  React-slick styles are overridden by the declaration of important.
   */
   .slick-slider {
-    height: 100vh;
+    ${tw`h-screen`};
   }
 
-  /* Slider nav buttons */
+  /* Slider navigation buttons (horizontal lines) */
   .slick-dots {
-    ${tw`items-end`};
-    width: auto;
+    ${tw`items-end relative w-auto p-4 sm:p-0 container`};
     display: flex !important;
-    bottom: 10px;
-    left: 10px;
+    margin-top: -90px;
 
     &:first-child {
       margin-left: 15px;
@@ -63,8 +61,7 @@ const Section = styled.section`
       content: none;
     }
     li {
-      height: auto;
-      ${tw`w-2`};
+      ${tw`w-2 h-auto`};
     }
     li.slick-active button {
       ${tw`h-8`};
@@ -73,22 +70,6 @@ const Section = styled.section`
       ${tw`p-0 bg-primary-darker`};
       width: 2px;
       height: 12px;
-    }
-  }
-
-  /* Slider arrows */
-  .slick-arrow {
-    ${tw`z-20`};
-    background: #fff;
-    padding: 2rem;
-
-    &.slick-next {
-      right: 0;
-      bottom: 0;
-
-      &::before {
-        background: red;
-      }
     }
   }
 `;

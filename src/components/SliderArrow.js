@@ -24,11 +24,7 @@ export default ({ onClick, type }) => {
         className={`${direction === 'next' ? 'next' : 'prev'}`}
         tabIndex="0"
         onClick={onClick}>
-        {direction === 'next' ? (
-          <FaLongArrowAltRight className={`icon`} />
-        ) : (
-          <FaLongArrowAltLeft className={`icon`} />
-        )}
+        {direction === 'next' ? <FaLongArrowAltRight /> : <FaLongArrowAltLeft />}
       </HeroArrow>
     );
   };
@@ -58,25 +54,22 @@ const TestimonialArrow = styled.div`
 `;
 
 const HeroArrow = styled.div`
-  ${tw`absolute bg-white cursor-pointer p-4 sm:p-8`};
-  z-index: 10;
+  ${tw`absolute bg-white cursor-pointer p-4 sm:p-8 z-10`};
+
+  &.next,
+  &.prev {
+    ${tw`text-xl text-primary-darker`};
+  }
 
   &.next {
-    bottom: 0;
-    right: 0;
-    .icon {
-      ${tw`text-xl text-primary-darker `};
-    }
+    ${tw`bottom-0 right-0`};
   }
   &.prev {
-    bottom: 0;
+    ${tw`bottom-0`};
     right: 52px;
 
     @media screen and (min-width: 640px) {
       right: 84px;
-    }
-    .icon {
-      ${tw`text-xl text-primary-darker`};
     }
   }
 `;
