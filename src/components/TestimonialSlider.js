@@ -13,7 +13,7 @@ const Carousel = ({ className }) => {
   return (
     <Wrapper className={className}>
       <Heading>Co mówią ludzie...</Heading>
-      <MiltipleCarousel isFade>
+      <MiltipleCarousel fade autoplay arrType="testimonial">
         {testimonial.map(singleOpinion => {
           const {
             id,
@@ -57,8 +57,7 @@ const styledMultipleCarousel = styled(Carousel)`
 `;
 
 const Wrapper = styled.section`
-  background-color: rgb(242, 242, 242);
-  ${tw`py-10 px-4`};
+  ${tw`py-10 px-4 bg-secondary-gray`};
 
   @media screen and (min-width: 500px) {
     ${tw`px-12`};
