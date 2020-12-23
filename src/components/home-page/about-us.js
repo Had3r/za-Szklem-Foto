@@ -29,31 +29,33 @@ export default () => {
 };
 
 const Section = styled.section`
-  ${tw`container py-16 px-4 md:py-20 flex flex-col md:flex-row `}
+  ${tw`container py-16 px-4 md:py-20 flex flex-col md:flex-row`};
 `;
 
 const TextPart = styled.div`
-  ${tw`flex-1`}
+  ${tw`flex-1`};
 `;
 
 const ImagePart = styled.div`
-  ${tw`flex-1 relative`};
+  ${tw`flex-1 relative mt-8 md:mt-0`};
 `;
 
 const Frame = styled.div`
-  ${tw`p-8 shadow-xl relative mx-auto md:ml-12`};
-  max-width: 20rem;
+  ${tw`p-8 xl:p-12 shadow-xl relative mx-auto md:mr-0 max-w-xs lg:max-w-sm xl:max-w-md`};
 
-  @media screen and (min-width: 768px) {
-    &::before {
-      ${tw`border-gray-900`};
-      content: '';
-      width: 60px;
-      height: 1px;
-      left: -60px;
-      top: 80px;
-      border-bottom: solid 1px;
-      position: absolute;
+  &::before {
+    ${tw`absolute border-gray-900 w-12 h-1 lg:w-20 xl:w-32`};
+    content: '';
+    border-bottom: solid 1px;
+    @media screen and (min-width: 768px) {
+      left: -48px;
+      top: 115px;
+    }
+    @media screen and (min-width: 1024px) {
+      left: -80px;
+    }
+    @media screen and (min-width: 1280px) {
+      left: -128px;
     }
   }
 `;
