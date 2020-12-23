@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import useHeroSliderData from '../graphql/useHeroSliderData';
 import MultipleCarousel from './MultipleCarousel';
 import BackgroundImage from 'gatsby-background-image-es5';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default () => {
   const heroData = useHeroSliderData();
@@ -25,9 +26,11 @@ export default () => {
           );
         })}
       </MultipleCarousel>
-      <ScrollDown onClick={() => console.log('navigate to specific section')}>
-        <span />
-      </ScrollDown>
+      <AnchorLink to="/#about-me">
+        <ScrollDown onClick={() => console.log('navigate to specific section')}>
+          <span />
+        </ScrollDown>
+      </AnchorLink>
     </Section>
   );
 };
@@ -101,7 +104,7 @@ const moveDots = y => keyframes`
 `;
 
 const ScrollDown = styled.button`
-  ${tw`w-8 h-8 absolute`};
+  ${tw`w-8 h-8 absolute focus:outline-none`};
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 15px;

@@ -6,7 +6,7 @@ import OptimizedImage from '../OptimizedImage';
 
 export default () => {
   return (
-    <Section>
+    <Section id="about-me">
       <TextPart>
         <h3>o mnie</h3>
         <h2>Jestem bardzo dobrym fotografem.</h2>
