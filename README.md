@@ -14,6 +14,10 @@
 
 - https://tutorials.comandeer.pl/html5-blog.html
 
+#### Code review
+
+- https://www.ulam.io/blog/how-to-do-code-review/
+
 ## Technologies (and why I used it)
 
 #### Main tools
