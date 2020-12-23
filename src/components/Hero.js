@@ -4,20 +4,21 @@ import tw from 'twin.macro';
 import useHeroSliderData from '../graphql/useHeroSliderData';
 import MultipleCarousel from './MultipleCarousel';
 import BackgroundImage from 'gatsby-background-image-es5';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default () => {
   const heroData = useHeroSliderData();
   return (
     <Section>
-      <MultipleCarousel appendDots autoplay={false} autoplaySpeed={4500} arrType="hero">
+      <MultipleCarousel appendDots autoplaySpeed={4500} arrType="hero">
         {heroData.map(singleItem => {
-          const { image, headingPrimary, headingSecondary, id } = singleItem.node;
+          const { image, headingPrimary, headingSecondary: paragraphText, id } = singleItem.node;
           return (
             <div key={id}>
               <Wrapper>
                 <TextContent>
                   <HeadingPrimary>{headingPrimary}</HeadingPrimary>
-                  <HeadingTertiary>{headingSecondary}</HeadingTertiary>
+                  <Paragraph>{paragraphText}</Paragraph>
                 </TextContent>
               </Wrapper>
               <BackgroundImage className="background" preserveStackingContext fluid={image.fluid} />
@@ -25,9 +26,11 @@ export default () => {
           );
         })}
       </MultipleCarousel>
-      <ScrollDown onClick={() => console.log('navigate to specific section')}>
-        <span />
-      </ScrollDown>
+      <AnchorLink to="/#about-me">
+        <ScrollDown onClick={() => console.log('navigate to specific section')}>
+          <span />
+        </ScrollDown>
+      </AnchorLink>
     </Section>
   );
 };
@@ -86,8 +89,8 @@ const TextContent = styled.div`
 const HeadingPrimary = styled.h1`
   ${tw`my-5`};
 `;
-const HeadingTertiary = styled.h3`
-  ${tw`sm:w-7/12`};
+const Paragraph = styled.p`
+  ${tw`sm:w-7/12 text-base font-light leading-7`};
 `;
 
 const moveDots = y => keyframes`
@@ -101,7 +104,7 @@ const moveDots = y => keyframes`
 `;
 
 const ScrollDown = styled.button`
-  ${tw`w-8 h-8 absolute`};
+  ${tw`w-8 h-8 absolute focus:outline-none`};
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 15px;

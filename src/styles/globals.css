@@ -25,20 +25,24 @@ h1 {
 }
 
 h2 {
-  @apply text-4xl my-10 font-bold tracking-wide text-gray-800;
+  @apply text-4xl my-8 font-bold tracking-wide text-gray-800 leading-tight;
 }
 
 h3 {
-  @apply text-base font-light leading-7;
+  @apply text-gray-600 text-sm uppercase tracking-widest font-semibold;
+}
+
+p {
+  @apply text-sm leading-7;
 }
 
 .link-primary {
-  @apply text-white text-base p-3 relative uppercase bg-transparent tracking-wider border border-white;
+  @apply text-white text-base p-3 relative uppercase bg-primary-darker tracking-wider border border-white inline-block;
   transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .link-primary:hover {
-  @apply bg-white text-gray-900;
+  @apply bg-white border-primary-darker text-primary-darker;
 }
 
 a {
@@ -48,6 +52,12 @@ a {
 @screen sm {
   h1 {
     @apply text-5xl leading-tight;
+  }
+}
+
+@screen sm {
+  h2 {
+    @apply text-5xl;
   }
 }
 

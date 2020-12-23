@@ -12,12 +12,14 @@ export const MultipleCarousel = ({
   fade,
   autoplay,
   autoplaySpeed,
+  pauseOnHover,
 }) => {
   const settings = {
     dots: appendDots,
     fade,
     autoplay,
     autoplaySpeed,
+    pauseOnHover,
     infinite: true,
     nextArrow: <SliderArrow type={{ component: arrType, direction: 'next' }} />,
     prevArrow: <SliderArrow type={{ component: arrType, direction: 'prev' }} />,
@@ -35,4 +37,5 @@ MultipleCarousel.defaultProps = {
   appendDots: false,
   autoplay: true,
   autoplaySpeed: 6500,
+  pauseOnHover: false,
 };

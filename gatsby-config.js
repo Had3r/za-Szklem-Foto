@@ -37,6 +37,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-resolve-src',
     `gatsby-plugin-playground`,
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: 0,
+      },
+    },
     // gatsby-plugin-purgecss should be AFTER other css/postcss plugins
     {
       resolve: 'gatsby-plugin-purgecss',

@@ -70,3 +70,9 @@ A quick look at the files and directories you'll see in my Gatsby project.
     ├── tailwind.config.js   # customization of Tailwind default design system
     │
     └── ...
+
+## Hints
+
+Spacing between sections should be:
+
+`${tw'container py-16 px-4 md:py-20'}`
