@@ -2,6 +2,6 @@
 import Layout from './layout';
 import Hero from './Hero';
 import TestimonialSlider from './TestimonialSlider';
-import AboutUs from './home-page/about-us';
+import AboutMe from './home-page/about-me';
 
-export { Layout, Hero, TestimonialSlider, AboutUs };
+export { Layout, Hero, TestimonialSlider, AboutMe };

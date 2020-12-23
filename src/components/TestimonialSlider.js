@@ -28,7 +28,7 @@ const Carousel = ({ className }) => {
               <div key={id}>
                 <SingleSlide>
                   <TestimonialImage>
-                    <ImageColorLayer className="test">
+                    <ImageColorLayer>
                       <BackgroundImage preserveStackingContext fluid={authorPhoto.fluid} />
                     </ImageColorLayer>
                   </TestimonialImage>
@@ -124,7 +124,7 @@ const TestimonialText = styled.div`
 `;
 
 const Blockquote = styled.blockquote`
-  ${tw`flex flex-col justify-evenly sm:justify-center h-full  xl:leading-9 text-primary-gray`};
+  ${tw`flex flex-col justify-evenly sm:justify-center h-full xl:leading-9 text-primary-gray`};
 `;
 
 const Text = styled.div`
