@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 export default () => {
   const featuredWorks = useFeaturedWorks();
   return (
-    <ContainerFluid className="long-line">
+    <section className="long-line">
       <Wrapper>
         <Heading className="short-line">Wyróżnione prace.</Heading>
         <Paragraph>
@@ -27,13 +27,9 @@ export default () => {
           </GridRow>
         </PhotographyGrid>
       </Wrapper>
-    </ContainerFluid>
+    </section>
   );
 };
-
-const ContainerFluid = styled.section`
-  ${tw``};
-`;
 
 const Wrapper = styled.div`
   ${tw`container py-16 px-4 md:py-20`};
@@ -52,10 +48,8 @@ const PhotographyGrid = styled.div`
 `;
 
 const GridRow = styled.div`
-  width: 100%;
-  display: grid;
+  ${tw`w-full grid gap-5`};
   grid-template-rows: repeat(7, 200px);
-  gap: 20px;
 
   @media screen and (min-width: 640px) {
     grid-template-columns: 1fr 1fr;
@@ -71,14 +65,13 @@ const GridRow = styled.div`
 const GridItem = styled.figure`
   ${tw`relative cursor-pointer overflow-hidden`};
   &:hover figcaption {
-    ${tw`text-opacity-100`};
-    transform: translate(-50%, -50%);
+    ${tw`text-opacity-100 transform -translate-y-1/2 -translate-x-1/2`};
   }
   &:hover .gatsby-image-wrapper {
-    transform: scale(1.4);
+    ${tw`transform scale-150`}
   }
   &:hover .gatsby-image-wrapper img {
-    transform: scale(1.4);
+    ${tw`transform scale-150`}
     filter: blur(1px) brightness(80%);
   }
 
