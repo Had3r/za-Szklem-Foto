@@ -4,5 +4,6 @@ import Hero from './Hero';
 import TestimonialSlider from './TestimonialSlider';
 import AboutMe from './home-page/AboutMe';
 import FeaturedWorks from './home-page/FeaturedWorks';
+import Banner from './Banner';
 
-export { Layout, Hero, TestimonialSlider, AboutMe, FeaturedWorks };
+export { Layout, Hero, TestimonialSlider, AboutMe, FeaturedWorks, Banner };

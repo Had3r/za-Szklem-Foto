@@ -27,7 +27,7 @@ export default () => {
         })}
       </MultipleCarousel>
       <AnchorLink to="/#about-me">
-        <ScrollDown onClick={() => console.log('navigate to specific section')}>
+        <ScrollDown>
           <span />
         </ScrollDown>
       </AnchorLink>

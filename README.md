@@ -69,8 +69,8 @@ A quick look at the files and directories you'll see in my Gatsby project.
     │   │    ├── index.js    # imported components that are used globally
     │   │    └──
     │   └── graphql          # graphql queries
-    │
-    │
+    │         ├── useFeaturedWorks.js   # query for data for the "featured" section based on a boolean value
+    │         └── ...
     ├── tailwind.config.js   # customization of Tailwind default design system
     │
     └── ...

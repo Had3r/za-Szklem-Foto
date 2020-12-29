@@ -1,16 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-// todo: delete this file (move to gatsby-node)
-export default function useFeaturedWorks() {
+export default function useSessionData() {
   const data = useStaticQuery(graphql`
-    {
-      allContentfulFeaturedWorks {
+    query useFeaturedData {
+      allContentfulPhotoSession(filter: { featuredSession: { eq: true } }) {
         edges {
           node {
             slug
             shortDescription
             id
-            image {
+            mainImage {
               fluid {
                 ...GatsbyContentfulFluid_withWebp
               }
@@ -20,5 +19,5 @@ export default function useFeaturedWorks() {
       }
     }
   `);
-  return data.allContentfulFeaturedWorks.edges;
+  return data.allContentfulPhotoSession.edges;
 }

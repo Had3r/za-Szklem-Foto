@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import useFeaturedWorks from '../../graphql/useFeaturedWorks';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
 export default () => {
   const featuredWorks = useFeaturedWorks();
+
   return (
     <section className="long-line">
       <Wrapper>
@@ -16,11 +18,13 @@ export default () => {
         <PhotographyGrid>
           <GridRow>
             {featuredWorks.map(({ node }) => {
-              const { shortDescription, id, image } = node;
+              const { shortDescription, id, mainImage, slug } = node;
               return (
                 <GridItem key={id}>
-                  <Img fluid={image.fluid} />
-                  <Figcaption>{shortDescription}</Figcaption>
+                  <Link to={`/galeria/${slug}`}>
+                    <Img fluid={mainImage.fluid} />
+                    <Figcaption>{`${shortDescription || 'Zobacz więcej'}`} </Figcaption>
+                  </Link>
                 </GridItem>
               );
             })}
