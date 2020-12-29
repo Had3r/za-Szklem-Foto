@@ -48,10 +48,12 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         ignore: [
-          // PurgeCss was removing styles from react-slick during build, causing the page to crash.
+          // PurgeCss was removing styles from packages like react-slick or react-medium-image-zoom during build,
+          // causing the page to crash.
           // The solution comes from https://github.com/gatsbyjs/gatsby/issues/8188#issuecomment-455530292
           '/node_modules/slick-carousel/slick/slick.css',
           '/node_modules/slick-carousel/slick/slick-theme.css',
+          '/node_modules/react-medium-image-zoom/dist/styles.css',
         ],
       },
     },
