@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from '../components/index';
+import { Layout, Banner } from '../components/index';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Img from 'gatsby-image';
-
-import { Banner } from '../components/index';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 export const query = graphql`
   query getSessionData($slug: String) {
@@ -31,6 +31,10 @@ export const query = graphql`
 
 export default ({ data: { singleSessionData } }) => {
   const { id, mainImage, multipleImages } = singleSessionData.edges[0].node;
+  const wrapperStyle = {
+    width: '100%',
+    height: '100%',
+  };
   return (
     <Layout>
       <Banner image={mainImage} />
@@ -43,9 +47,9 @@ export default ({ data: { singleSessionData } }) => {
       <GridGallery>
         {multipleImages.map((singleImage, index) => {
           return (
-            <div key={id + index}>
-              <Img fluid={singleImage.fluid} />
-            </div>
+            <Zoom key={id + index}>
+              <Img style={wrapperStyle} fluid={singleImage.fluid} />
+            </Zoom>
           );
         })}
       </GridGallery>
