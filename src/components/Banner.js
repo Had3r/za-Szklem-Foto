@@ -4,13 +4,13 @@ import BackgroundImage from 'gatsby-background-image-es5';
 
 export default ({ image }) => {
   return (
-    <Section>
+    <Container>
       <BackgroundImage fluid={image.fluid} />
-    </Section>
+    </Container>
   );
 };
 
-const Section = styled.section`
+const Container = styled.div`
   & div:first-child {
     min-height: 40vh;
     @media screen and (min-width: 640px) {
