@@ -7,27 +7,27 @@ import Img from 'gatsby-image';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
-export const query = graphql`
-  query getSessionData($slug: String) {
-    singleSessionData: allContentfulPhotoSession(filter: { slug: { eq: $slug } }) {
-      edges {
-        node {
-          id
-          multipleImages {
-            fluid {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          mainImage {
-            fluid {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query getSessionData($slug: String) {
+//     singleSessionData: allContentfulPhotoSession(filter: { slug: { eq: $slug } }) {
+//       edges {
+//         node {
+//           id
+//           multipleImages {
+//             fluid {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           mainImage {
+//             fluid {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default ({ data: { singleSessionData } }) => {
   const { id, mainImage, multipleImages } = singleSessionData.edges[0].node;
@@ -41,7 +41,7 @@ export default ({ data: { singleSessionData } }) => {
       <section className="long-line">
         <Wrapper>
           <Heading className="short-line">Galeria.</Heading>
-          <Paragraph>Spójrz na rezultat mojej pracy. Jest świetny! Dupa</Paragraph>
+          <Paragraph>Spójrz na rezultat mojej pracy. Jest świetny!</Paragraph>
         </Wrapper>
       </section>
       <GridGallery>

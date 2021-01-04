@@ -11,24 +11,24 @@ export default () => {
   return (
     <section className="long-line">
       <Wrapper>
-        <Heading className="short-line">Wyróżnione prace.</Heading>
+        <Heading className="short-line">Wyróżnione zdjęcia.</Heading>
         <Paragraph>
           Spójrz na kilka moich projektów. Do każdej sesji zdjęciowej podchodzę ze szczególną uwagę.
         </Paragraph>
         <PhotographyGrid>
-          <GridRow>
+          {/* <GridRow>
             {featuredWorks.map(({ node }) => {
-              const { shortDescription, id, mainImage, slug } = node;
+              const { id, mainImage, slug } = node;
               return (
                 <GridItem key={id}>
                   <Link to={`/galeria/${slug}`}>
                     <Img fluid={mainImage.fluid} />
-                    <Figcaption>{`${shortDescription || 'Zobacz więcej'}`} </Figcaption>
+                    <Figcaption>Zobacz więcej</Figcaption>
                   </Link>
                 </GridItem>
               );
             })}
-          </GridRow>
+          </GridRow> */}
         </PhotographyGrid>
       </Wrapper>
     </section>

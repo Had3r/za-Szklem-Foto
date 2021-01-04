@@ -9,27 +9,27 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   };
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const result = await graphql(`
-    {
-      sessionData: allContentfulPhotoSession {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `);
-  result.data.sessionData.edges.forEach(({ node }) => {
-    createPage({
-      path: `/galeria/${node.slug}`,
-      component: path.resolve(`src/templates/gallery-template.js`),
-      context: {
-        // variable passed form gatsby node to other query
-        slug: node.slug,
-      },
-    });
-  });
-};
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions;
+//   const result = await graphql(`
+//     {
+//       sessionData: allContentfulPhotoSession {
+//         edges {
+//           node {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   `);
+//   result.data.sessionData.edges.forEach(({ node }) => {
+//     createPage({
+//       path: `/galeria/${node.slug}`,
+//       component: path.resolve(`src/templates/gallery-template.js`),
+//       context: {
+//         // variable passed form gatsby node to other query
+//         slug: node.slug,
+//       },
+//     });
+//   });
+// };

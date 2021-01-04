@@ -45,6 +45,19 @@ p {
   @apply bg-white border-primary-darker text-primary-darker;
 }
 
+.btn-primary {
+  @apply border border-gray-700 text-gray-700 rounded-md px-4 py-2 m-2 select-none uppercase text-sm tracking-wide;
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+  @apply text-white bg-gray-800;
+}
+
+.btn-primary:focus {
+  @apply outline-none shadow-outline;
+}
+
 a {
   @apply cursor-pointer no-underline;
 }
