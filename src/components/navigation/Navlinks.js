@@ -20,7 +20,7 @@ const NavigationLinks = ({ className }) => {
         <Link to="/">oferta</Link>
       </ListItem>
       <ListItem>
-        <Link to="/">galeria</Link>
+        <Link to="/galeria">galeria</Link>
       </ListItem>
       <ListItem>
         <Link to="/">kontakt</Link>

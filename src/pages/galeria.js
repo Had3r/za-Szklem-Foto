@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, Banner } from '../components/index';
+import { nanoid } from 'nanoid';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -11,15 +12,50 @@ import useSessionsData from '../graphql/useSessionsData';
 export default () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selected, setSelected] = useState('Wszystko');
-  const [images, setImages] = useState({ allImages: [], mainImage: {} });
+  const [filteredImages, setFilteredImages] = useState({ allImages: [], mainImage: {} });
+  const [slicedImages, setSlicedImages] = useState([].slice(10));
   const [categories, setCategories] = useState([]);
+  const [hasMore, setMore] = useState(filteredImages.length > 10);
+
+  const loadImages = () => {
+    const currentLength = slicedImages.length;
+    const more = currentLength < filteredImages.allImages.length;
+    const nextEdges = more ? filteredImages.allImages.slice(currentLength, currentLength + 20) : [];
+
+    setMore(more);
+    setSlicedImages([...slicedImages, ...nextEdges]);
+  };
 
   const sessions = useSessionsData();
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    window.addEventListener('touchend', handleTouchEnd);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [hasMore, slicedImages]);
 
   useEffect(() => {
     filterData('Wszystko');
     createCategories(sessions);
   }, []);
+
+  const handleTouchEnd = () => {
+    handleScroll();
+  };
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight
+    ) {
+      loadImages();
+    }
+  };
 
   const handleSelectWrapper = () => {
     setDropdownOpen(!dropdownOpen);
@@ -47,13 +83,15 @@ export default () => {
   const filterData = category => {
     if (category === 'Wszystko') {
       const allImages = sessions.map(el => el.node.multipleImages).flat();
-      setImages({
+      setSlicedImages(allImages.slice(0, 10));
+      setFilteredImages({
         allImages,
         mainImage: allImages[0],
       });
     } else {
       const filteredData = sessions.filter(el => el.node.category === category)[0].node;
-      setImages({
+      setSlicedImages(filteredData.multipleImages.slice(0, 10));
+      setFilteredImages({
         allImages: filteredData.multipleImages,
         mainImage: filteredData.mainImage,
       });
@@ -64,10 +102,9 @@ export default () => {
     width: '100%',
     height: '100%',
   };
-
   return (
     <Layout>
-      <Banner image={images.mainImage} />
+      <Banner image={filteredImages.mainImage} />
       <Section className="long-line">
         <Wrapper>
           <Heading className="short-line">Galeria.</Heading>
@@ -82,7 +119,7 @@ export default () => {
                 active: category === selected,
               });
               return (
-                <NavItem>
+                <NavItem key={nanoid()}>
                   <NavButton className={btnClasses} onClick={() => handleImageChange(category)}>
                     {category}
                   </NavButton>
@@ -94,13 +131,13 @@ export default () => {
         <SelectWrapper onClick={handleSelectWrapper} onKeyDown={handleSelectWrapper}>
           <Selection className={classNames({ open: dropdownOpen })}>
             <SelectTrigger>
-              <span>{selected}</span>
+              <SelectedText>{selected}</SelectedText>
               <Arrow />
             </SelectTrigger>
             <Options className="custom-options">
               {categories.map(category => (
                 <Option
-                  key={category}
+                  key={nanoid()}
                   onClick={() => handleImageChange(category)}
                   onKeyDown={() => handleImageChange(category)}
                   role="button"
@@ -114,14 +151,15 @@ export default () => {
         </SelectWrapper>
       </CategoryNavigation>
       <GridGallery>
-        {images.allImages.map(image => {
+        {slicedImages.map(image => {
           return (
-            <Zoom>
+            <Zoom key={nanoid()}>
               <Img style={wrapperStyle} fluid={image.fluid} />
             </Zoom>
           );
         })}
       </GridGallery>
+      {hasMore && <AdditionalText>Przewiń w dół, aby załadować więcej...</AdditionalText>}
     </Layout>
   );
 };
@@ -139,11 +177,11 @@ const Heading = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  ${tw`text-center mb-10`}
+  ${tw`text-center`}
 `;
 
 const GridGallery = styled.div`
-  ${tw`grid `};
+  ${tw`grid mt-16 md:pt-20`};
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(auto, 100px);
   gap: 1px;
@@ -166,6 +204,10 @@ const GridGallery = styled.div`
   .gatsby-image-wrapper {
     ${tw`rounded-sm h-full`};
   }
+`;
+
+const AdditionalText = styled.div`
+  ${tw`container mt-3 text-sm md:text-base`}
 `;
 
 const CategoryNavigation = styled.div`
@@ -196,7 +238,7 @@ const Selection = styled.div`
   ${tw`relative bg-white flex flex-col border-primary-darker border-r-2 border-l-2 text-base`};
 
   &.open .custom-options {
-    ${tw`opacity-100 visible `};
+    ${tw`opacity-100 visible uppercase`};
     pointer-events: all;
   }
 `;
@@ -205,8 +247,12 @@ const SelectTrigger = styled.div`
   ${tw`relative flex justify-between items-center text-base px-4 text-black h-10 leading-tight cursor-pointer border-primary-darker border-t-2 border-b-2`};
 `;
 
+const SelectedText = styled.span`
+  ${tw`uppercase text-sm tracking-wide`};
+`;
+
 const Options = styled.div`
-  ${tw`absolute block bg-white left-0 right-0 border-primary-darker border-2 opacity-0 invisible pointer-events-none z-10 transition-all duration-500`};
+  ${tw`absolute block bg-white tracking-wide text-sm left-0 right-0 border-primary-darker border-2 opacity-0 invisible pointer-events-none z-10 transition-all duration-500`};
   border-top: 0;
   top: 100%;
 `;
