@@ -9,9 +9,9 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import useSessionsData from '../graphql/useSessionsData';
 
-export default () => {
+export default ({ location }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selected, setSelected] = useState('Wszystko');
+  const [selected, setSelected] = useState(location.state.category || 'Wszystko');
   const [filteredImages, setFilteredImages] = useState({ allImages: [], mainImage: {} });
   const [slicedImages, setSlicedImages] = useState([].slice(10));
   const [categories, setCategories] = useState([]);

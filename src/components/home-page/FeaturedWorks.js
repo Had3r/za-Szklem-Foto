@@ -4,10 +4,10 @@ import tw from 'twin.macro';
 import useFeaturedWorks from '../../graphql/useFeaturedWorks';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
+import { nanoid } from 'nanoid';
 
 export default () => {
   const featuredWorks = useFeaturedWorks();
-
   return (
     <section className="long-line">
       <Wrapper>
@@ -16,19 +16,19 @@ export default () => {
           Spójrz na kilka moich projektów. Do każdej sesji zdjęciowej podchodzę ze szczególną uwagę.
         </Paragraph>
         <PhotographyGrid>
-          {/* <GridRow>
+          <GridRow>
             {featuredWorks.map(({ node }) => {
-              const { id, mainImage, slug } = node;
+              const { category, image, shortDescription } = node;
               return (
-                <GridItem key={id}>
-                  <Link to={`/galeria/${slug}`}>
-                    <Img fluid={mainImage.fluid} />
-                    <Figcaption>Zobacz więcej</Figcaption>
+                <GridItem key={nanoid()}>
+                  <Link to="/galeria/" state={{ category: category }}>
+                    <Img fluid={image.fluid} />
+                    <Figcaption>{shortDescription}</Figcaption>
                   </Link>
                 </GridItem>
               );
             })}
-          </GridRow> */}
+          </GridRow>
         </PhotographyGrid>
       </Wrapper>
     </section>
