@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import OptimizedImage from './OptimizedImage';
 
-export default () => {
+export default ({ image }) => {
   return (
     <Container>
-      <OptimizedImage background src="/photo-bg.jpg" />
+      <OptimizedImage background src={image} />
     </Container>
   );
 };

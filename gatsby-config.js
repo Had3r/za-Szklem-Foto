@@ -4,9 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Za Szkłem',
+    title: 'Za Szkłem Fotografia',
     shortName: 'Za Szkłem',
-    siteUrl: 'https://www.google.io/',
   },
   plugins: [
     {

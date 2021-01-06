@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import classNames from 'classnames';
 
 import {
   MdKeyboardArrowRight,
@@ -19,11 +20,12 @@ export default ({ onClick, type }) => {
         </TestimonialArrow>
       );
     }
+    const arrClass = classNames({
+      next: direction === 'next',
+      prev: direction === 'prev',
+    });
     return (
-      <HeroArrow
-        className={`${direction === 'next' ? 'next' : 'prev'}`}
-        tabIndex="0"
-        onClick={onClick}>
+      <HeroArrow className={arrClass} tabIndex="0" onClick={onClick}>
         {direction === 'next' ? <FaLongArrowAltRight /> : <FaLongArrowAltLeft />}
       </HeroArrow>
     );

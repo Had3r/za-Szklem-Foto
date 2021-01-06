@@ -18,15 +18,6 @@ export default ({ location }) => {
   const [categories, setCategories] = useState([]);
   const [hasMore, setMore] = useState(filteredImages.length > 10);
 
-  const loadImages = () => {
-    const currentLength = slicedImages.length;
-    const more = currentLength < filteredImages.length;
-    const nextEdges = more ? filteredImages.slice(currentLength, currentLength + 20) : [];
-
-    setMore(more);
-    setSlicedImages([...slicedImages, ...nextEdges]);
-  };
-
   const sessions = useSessionsData();
 
   useEffect(() => {
@@ -44,6 +35,15 @@ export default ({ location }) => {
     filterData('Wszystko');
     createCategories(sessions);
   }, []);
+
+  const loadImages = () => {
+    const currentLength = slicedImages.length;
+    const more = currentLength < filteredImages.length;
+    const nextEdges = more ? filteredImages.slice(currentLength, currentLength + 20) : [];
+
+    setMore(more);
+    setSlicedImages([...slicedImages, ...nextEdges]);
+  };
 
   const handleTouchEnd = () => {
     handleScroll();
