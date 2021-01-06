@@ -10,7 +10,7 @@ export default function useSessionData() {
             shortDescription
             image {
               fluid {
-                src
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }

@@ -2,8 +2,21 @@
 import Layout from './layout';
 import Hero from './Hero';
 import TestimonialSlider from './TestimonialSlider';
-import AboutMe from './home-page/AboutMe';
-import FeaturedWorks from './home-page/FeaturedWorks';
 import Banner from './Banner';
 
-export { Layout, Hero, TestimonialSlider, AboutMe, FeaturedWorks, Banner };
+import AboutMe from './home-page/AboutMe';
+import FeaturedWorks from './home-page/FeaturedWorks';
+
+import GalleryHeader from './gallery-page/Header';
+import GalleryContent from './gallery-page/GalleryContent';
+
+export {
+  Layout,
+  Hero,
+  TestimonialSlider,
+  AboutMe,
+  FeaturedWorks,
+  Banner,
+  GalleryHeader,
+  GalleryContent,
+};

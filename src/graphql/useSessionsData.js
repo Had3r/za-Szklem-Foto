@@ -7,12 +7,6 @@ export default function useSessionData() {
         edges {
           node {
             category
-            id
-            mainImage {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
-            }
             multipleImages {
               fluid {
                 ...GatsbyContentfulFluid

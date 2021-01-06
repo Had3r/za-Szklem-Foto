@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image-es5';
+import OptimizedImage from './OptimizedImage';
 
-export default ({ image }) => {
+export default () => {
   return (
     <Container>
-      <BackgroundImage fluid={image.fluid} />
+      <OptimizedImage background src="/photo-bg.jpg" />
     </Container>
   );
 };
