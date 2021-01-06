@@ -45,8 +45,45 @@ p {
   @apply bg-white border-primary-darker text-primary-darker;
 }
 
+.btn-primary {
+  @apply border border-gray-700 text-gray-700 rounded-md px-4 py-2 m-2 select-none uppercase text-sm tracking-wide;
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+  @apply text-white bg-gray-800;
+}
+
+.btn-primary:focus {
+  @apply outline-none shadow-outline;
+}
+
 a {
   @apply cursor-pointer no-underline;
+}
+
+.long-line {
+  @apply relative;
+}
+
+.long-line::before {
+  content: '';
+  border-bottom: solid 1px;
+  top: 180px;
+  @apply h-1 border-gray-900 w-20 absolute hidden;
+}
+
+.short-line {
+  @apply relative;
+}
+
+.short-line::after {
+  content: '';
+  border-bottom: solid 2px;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  @apply border-gray-900 w-12 absolute;
 }
 
 @screen sm {
@@ -64,6 +101,9 @@ a {
 @screen lg {
   .link-primary {
     @apply text-xl;
+  }
+  .long-line::before {
+    @apply block;
   }
 }
 

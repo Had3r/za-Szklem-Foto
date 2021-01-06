@@ -14,7 +14,7 @@ const Carousel = ({ className }) => {
     <ContainerFluid className={className}>
       <Wrapper>
         <h3>Referencje</h3>
-        <Heading>Co mówią ludzie...</Heading>
+        <Heading>Co mówią ludzie.</Heading>
         <MiltipleCarousel fade autoplay arrType="testimonial">
           {testimonial.map(singleOpinion => {
             const {

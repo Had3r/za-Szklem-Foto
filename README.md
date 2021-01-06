@@ -14,6 +14,10 @@
 
 - https://tutorials.comandeer.pl/html5-blog.html
 
+#### Code review
+
+- https://www.ulam.io/blog/how-to-do-code-review/
+
 ## Technologies (and why I used it)
 
 #### Main tools
@@ -41,7 +45,7 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 - Contantful images API offers media processing of various formats
 - **pricing**: I'm oriented towards the free version (for now). My free micro space includes 24 content types. Additionally, I can get up to 5000 records and 10 free users to manage all content. This is all I need to build this website
 
-#### Other tools
+#### Other tools and features
 
 - linting tool:
 
@@ -51,6 +55,10 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 - images:
 
   - images are optimized with <a href="https://www.gatsbyjs.com/plugins/gatsby-image/?=gatsby-ima#gatsby-image">gatsby-image</a> to increase performance. For those where the exact dimension is known, I use the "Fixed" type, while if the height and width are different depending on the screen (eg Hero, Testimonial), the "Fluid" type.
+
+- infinite scroll
+
+  - The gallery page contains dozens of photos and their number will grow, so I needed a way to present the data in user-friendly ways. For this purpose, I created my own infinite scroll. It is also optimized for touch screens. So I added event listeners for `touchend` and `resize` (to handle situations where someone resizes their browser).
 
 ## Documentation files
 
@@ -65,8 +73,8 @@ A quick look at the files and directories you'll see in my Gatsby project.
     │   │    ├── index.js    # imported components that are used globally
     │   │    └──
     │   └── graphql          # graphql queries
-    │
-    │
+    │         ├── useOptimizedImage.js   # query for images by filtering by extension
+    │         └── ...
     ├── tailwind.config.js   # customization of Tailwind default design system
     │
     └── ...
