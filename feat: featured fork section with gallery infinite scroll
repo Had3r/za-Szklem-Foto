@@ -1,0 +1,39 @@
+squash fc3a876 feat [WIP]: creating an image grid
+squash 95423b7 feat: image grid
+squash 683dcda refactor: code review
+squash c06b55f feat [WIP]: creating slug for template
+squash 4e4977f feat [WIP]: created pages for featured work
+squash 5d35e9c refactor [WIP]: styles corrected
+squash 9eed3bb feat: implementing image zoom
+squash a7ca07f fix: removed react-zoom styles
+squash 0ea0f30 feat: custom dropdown
+squash d04d644 feat: infinite scroll
+squash 8d3db42 feat: featured works
+squash 1f0dc07 feat: featured section links work properly
+pick 7c45a51 refactor: code review
+
+# Rebase 3b8fecb..7c45a51 onto 1f0dc07 (13 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
