@@ -52,7 +52,7 @@ export default ({ location }) => {
   const handleScroll = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight
+      document.documentElement.offsetHeight - 250
     ) {
       loadImages();
     }
@@ -97,7 +97,7 @@ export default ({ location }) => {
     height: '100%',
   };
   return (
-    <>
+    <Wrapper>
       <CategoryNavigation>
         <Navigation>
           <NavList>
@@ -147,12 +147,15 @@ export default ({ location }) => {
         })}
       </GridGallery>
       {hasMore && <AdditionalText>Przewiń w dół, aby załadować więcej...</AdditionalText>}
-    </>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  ${tw`pb-16 md:pb-20`};
+`
 const GridGallery = styled.div`
-  ${tw`grid mt-16 md:pt-20`};
+  ${tw`grid mt-16 md:pt-20 pt-16 md:pt-20`};
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(auto, 100px);
   gap: 1px;
@@ -178,7 +181,7 @@ const GridGallery = styled.div`
 `;
 
 const AdditionalText = styled.div`
-  ${tw`container mt-3 text-sm md:text-base`}
+  ${tw`container mt-3 text-sm md:text-base`};
 `;
 
 const CategoryNavigation = styled.div`

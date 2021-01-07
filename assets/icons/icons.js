@@ -1,5 +1,5 @@
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import { FaQuoteRight, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
+import { FaQuoteRight, FaLongArrowAltLeft, FaLongArrowAltRight, FaFacebookF } from 'react-icons/fa';
 import { BsDash } from 'react-icons/bs';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
@@ -11,4 +11,5 @@ export {
   FaLongArrowAltRight,
   BsDash,
   MdKeyboardArrowRight,
+  FaFacebookF
 };

@@ -2,21 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import { FaFacebookF } from '../../assets/icons/icons';
+
 export default () => {
   return (
     <Footer className="long-line">
       <Wrapper>
-        <Paragraph>Tel: 111 111 111</Paragraph>
-        <Paragraph>Email: email@email.com</Paragraph>
-        <Paragraph>Adres: ul.Dummy 10</Paragraph>
-        <Icons>icons</Icons>
+        <Paragraph>Tel: <a href="tel:601 995 363">+48 601 995 363</a></Paragraph>
+        <Paragraph>Email: <a href="mailto: zaszklemfotografia@outlook.com">zaszklemfotografia@outlook.com</a></Paragraph>
+        <Paragraph>Adres: ul. Feliksa Stamma 59-300 Lubin</Paragraph>
+        <Icons><a href='https://www.facebook.com/zaszklemfotografia'><FaFacebookF /></a></Icons>
       </Wrapper>
     </Footer>
   );
 };
 
 const Footer = styled.footer`
-  ${tw``};
   &.long-line::before {
     ${tw`block`}
     top: 1rem;
@@ -24,14 +25,17 @@ const Footer = styled.footer`
 `;
 
 const Wrapper = styled.div`
-  ${tw`container py-16 px-4 md:py-20`};
+  ${tw`container py-16 px-4 md:py-20 `};
 `;
 
 const Paragraph = styled.p`
-  ${tw`text-sm text-gray-600`};
+  ${tw`text-xs text-gray-700 font-light leading-loose`};
 `;
 
-// TODO: start here
-const Icons = styled.div`
-  ${tw`mt-8`}
+const Icons = styled.span`
+  ${tw`mt-8 text-gray-800 hover:text-gray-700 text-xs`}
+
+  svg {
+    ${tw`inline-block`}
+  }
 `;
