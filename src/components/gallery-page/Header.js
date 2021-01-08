@@ -18,7 +18,7 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-  ${tw`container py-12 px-4`};
+  ${tw`container py-12`};
 `;
 
 const Heading = styled.h2`

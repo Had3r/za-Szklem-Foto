@@ -36,7 +36,7 @@ export default () => {
 };
 
 const Wrapper = styled.div`
-  ${tw`container py-16 px-4 md:py-20`};
+  ${tw`container py-16 px-4 sm:px-0 md:py-20`};
 `;
 
 const Heading = styled.h2`

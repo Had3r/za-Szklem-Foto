@@ -17,7 +17,7 @@ export const MultipleCarousel = ({
   const settings = {
     dots: appendDots,
     fade,
-    autoplay,
+    autoplay: false,
     autoplaySpeed,
     pauseOnHover,
     infinite: true,

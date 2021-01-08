@@ -29,7 +29,7 @@ export default () => {
 };
 
 const Section = styled.section`
-  ${tw`container py-16 px-4 md:py-20 flex flex-col md:flex-row`};
+  ${tw`container py-16 px-4 sm:px-0 md:py-20 flex flex-col md:flex-row`};
 `;
 
 const TextPart = styled.div`

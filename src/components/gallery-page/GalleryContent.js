@@ -153,7 +153,7 @@ export default ({ location }) => {
 
 const Wrapper = styled.div`
   ${tw`pb-16 md:pb-20`};
-`
+`;
 const GridGallery = styled.div`
   ${tw`grid mt-16 md:pt-20 pt-16 md:pt-20`};
   grid-template-columns: repeat(3, 1fr);
@@ -185,7 +185,7 @@ const AdditionalText = styled.div`
 `;
 
 const CategoryNavigation = styled.div`
-  ${tw`bg-secondary-gray mx-auto pb-16 px-4 md:pb-20`};
+  ${tw`bg-secondary-gray mx-auto  pb-16 md:pb-20`};
 `;
 
 const Navigation = styled.nav`
