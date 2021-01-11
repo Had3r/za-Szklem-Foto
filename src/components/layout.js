@@ -3,10 +3,10 @@ import React from 'react';
 import Navbar from './navigation/Navbar';
 import Footer from './Footer';
 
-export default ({ children }) => {
+export default ({ children, pageType }) => {
   return (
     <>
-      <Navbar />
+      <Navbar pageType={pageType} />
       {children}
       <Footer />
     </>

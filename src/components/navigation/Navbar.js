@@ -1,73 +1,106 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import tw from 'twin.macro';
 import { Link } from 'gatsby';
-
 import OptimizedImage from '../OptimizedImage';
 
-export default () => {
-  const styles = {
-    activeClassName: `active`,
+const styles = {
+  activeClassName: `active`,
+};
+
+const links = [
+  {
+    id: 1,
+    activeClassName: styles.activeClassName,
+    to: '/',
+    name: 'Strona Główna',
+  },
+  {
+    id: 2,
+    activeClassName: styles.activeClassName,
+    to: '/oferta',
+    name: 'Oferta',
+  },
+  {
+    id: 3,
+    activeClassName: styles.activeClassName,
+    to: '/galeria',
+    name: 'Galeria',
+  },
+  {
+    id: 4,
+    activeClassName: styles.activeClassName,
+    to: '/kontakt',
+    name: 'kontakt',
+  },
+];
+
+export default ({ pageType }) => {
+  const [scrolledPage, setScrolledPage] = useState(false);
+
+  const changeNavbar = () => {
+    const scrolled = window.pageYOffset > 0;
+    setScrolledPage(scrolled);
   };
 
-  const links = [
-    {
-      id: 1,
-      activeClassName: styles.activeClassName,
-      to: '/',
-      name: 'Strona Główna',
-    },
-    {
-      id: 2,
-      activeClassName: styles.activeClassName,
-      to: '/oferta',
-      name: 'Oferta',
-    },
-    {
-      id: 3,
-      activeClassName: styles.activeClassName,
-      to: '/galeria',
-      name: 'Galeria',
-    },
-    {
-      id: 4,
-      activeClassName: styles.activeClassName,
-      to: '/kontakt',
-      name: 'kontakt',
-    },
-  ];
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavbar, { passive: true });
+    window.addEventListener('orientationchange', changeNavbar, { passive: true });
+    window.addEventListener('resize', changeNavbar, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', changeNavbar);
+      window.removeEventListener('orientationchange', changeNavbar);
+      window.removeEventListener('resize', changeNavbar);
+    };
+  });
 
   return (
-    <Wrapper>
-      <Link to="/">
-        <OptimizedImage src="logo.png" />
-      </Link>
-      <Navigation>
-        <NavInput type="checkbox" id="navi-toggle" />
-        <NavButton htmlFor="navi-toggle">
-          <NavIcon>&nbsp;</NavIcon>
-        </NavButton>
-        <Background className="bg">&nbsp;</Background>
-        <Nav className="nav">
-          <NavList>
-            {links.map((link, linkIdx) => {
-              return (
-                <NavItem key={link.id}>
-                  <Link activeClassName={link.activeClassName} to={link.to}>
-                    <span>0{linkIdx + 1}</span> {link.name}
-                  </Link>
-                </NavItem>
-              );
-            })}
-          </NavList>
-        </Nav>
-      </Navigation>
-    </Wrapper>
+    <ContainerFluid className={classNames({ scrolled: scrolledPage })}>
+      <Wrapper>
+        <Link to="/">
+          <OptimizedImage src="logo.png" />
+        </Link>
+        <Navigation>
+          <NavInput type="checkbox" id="navi-toggle" />
+          <NavButton htmlFor="navi-toggle">
+            <NavIcon>&nbsp;</NavIcon>
+          </NavButton>
+          <Background className="bg">&nbsp;</Background>
+          <Nav className="nav">
+            <NavList>
+              {links.map((link, linkIdx) => {
+                return (
+                  <NavItem pageType={pageType} key={link.id}>
+                    <Link activeClassName={link.activeClassName} to={link.to}>
+                      <span>0{linkIdx + 1}</span> {link.name}
+                    </Link>
+                  </NavItem>
+                );
+              })}
+            </NavList>
+          </Nav>
+        </Navigation>
+      </Wrapper>
+    </ContainerFluid>
   );
 };
 
+const ContainerFluid = styled.div`
+  ${tw`sticky top-0 z-50`};
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  &.scrolled {
+    ${tw`bg-white`};
+    transition: all 0.4s;
+
+    li {
+      ${tw`sm:text-gray-800`};
+    }
+  }
+`;
+
 const Wrapper = styled.div`
-  ${tw`container relative h-20 py-2 px-4 sm:px-0 sticky top-0 z-50 flex items-center justify-between`};
+  ${tw`container relative h-20 py-2 px-4 sm:px-0  z-50 flex items-center justify-between`};
 
   .gatsby-image-wrapper {
     ${tw`sm:w-16`}
@@ -145,9 +178,10 @@ const NavList = styled.ul`
     transform: none;
   }
 `;
-
 const NavItem = styled.li`
   ${tw`text-lg font-light text-white uppercase sm:mx-4 sm:my-2 sm:text-base sm:font-normal sm:tracking-wider sm:flex items-center`};
+  color: ${props => (props.pageType === 'home' ? tw`text-white` : tw`text-gray-800`)};
+
   &:last-child {
     ${tw`sm:mr-0`}
   }
@@ -204,7 +238,7 @@ const NavItem = styled.li`
 `;
 
 const NavIcon = styled.span`
-  ${tw`relative `};
+  ${tw`relative`};
   margin-top: 1.5rem;
   &,
   &::before,
