@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
 import classNames from 'classnames';
 import tw from 'twin.macro';
 import styled from 'styled-components';
@@ -101,12 +100,12 @@ export default ({ location }) => {
       <CategoryNavigation>
         <Navigation>
           <NavList>
-            {categories.map(category => {
+            {categories.map((category, idx) => {
               const btnClasses = classNames('btn-primary', {
                 active: category === selected,
               });
               return (
-                <NavItem key={nanoid()}>
+                <NavItem key={category + idx}>
                   <NavButton className={btnClasses} onClick={() => handleImageChange(category)}>
                     {category}
                   </NavButton>
@@ -122,9 +121,9 @@ export default ({ location }) => {
               <Arrow />
             </SelectTrigger>
             <Options className="custom-options">
-              {categories.map(category => (
+              {categories.map((category, idx) => (
                 <Option
-                  key={nanoid()}
+                  key={category + idx}
                   onClick={() => handleImageChange(category)}
                   onKeyDown={() => handleImageChange(category)}
                   role="button"
@@ -138,9 +137,9 @@ export default ({ location }) => {
         </SelectWrapper>
       </CategoryNavigation>
       <GridGallery>
-        {slicedImages.map(image => {
+        {slicedImages.map((image, idx) => {
           return (
-            <Zoom key={nanoid()}>
+            <Zoom key={idx}>
               <Img style={wrapperStyle} fluid={image.fluid} />
             </Zoom>
           );

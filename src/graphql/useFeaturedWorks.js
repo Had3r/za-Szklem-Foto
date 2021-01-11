@@ -6,6 +6,7 @@ export default function useSessionData() {
       allContentfulFeaturedWorks {
         edges {
           node {
+            id
             category
             shortDescription
             image {

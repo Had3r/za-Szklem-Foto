@@ -4,7 +4,6 @@ import tw from 'twin.macro';
 import useFeaturedWorks from '../../graphql/useFeaturedWorks';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
-import { nanoid } from 'nanoid';
 
 export default () => {
   const featuredWorks = useFeaturedWorks();
@@ -18,9 +17,9 @@ export default () => {
         <PhotographyGrid>
           <GridRow>
             {featuredWorks.map(({ node }) => {
-              const { category, image, shortDescription } = node;
+              const { category, image, shortDescription, id } = node;
               return (
-                <GridItem key={nanoid()}>
+                <GridItem key={id}>
                   <Link to="/galeria/" state={{ category: category }}>
                     <Img fluid={image.fluid} />
                     <Figcaption>{shortDescription}</Figcaption>
