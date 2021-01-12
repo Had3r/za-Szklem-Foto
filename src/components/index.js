@@ -8,7 +8,7 @@ import AboutMe from './home-page/AboutMe';
 import FeaturedWorks from './home-page/FeaturedWorks';
 
 import GalleryHeader from './gallery-page/Header';
-import GalleryContent from './gallery-page/GalleryContent';
+import { GalleryContent } from './gallery-page/GalleryContent';
 
 export {
   Layout,
