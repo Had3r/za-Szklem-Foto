@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Navbar from './navigation/Navbar';
-import Footer from './Footer';
+import { Navigationn } from './navigation/Navbar';
+import { Footer } from './Footer';
 
-export default ({ children }) => {
+export const Layout = ({ children, pageType }) => {
   return (
     <>
-      <Navbar />
+      <Navigationn pageType={pageType} />
       {children}
       <Footer />
     </>

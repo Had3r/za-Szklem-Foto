@@ -3,7 +3,7 @@ import { Layout, Banner, GalleryHeader, GalleryContent } from '../components/ind
 
 export default ({ location }) => {
   return (
-    <Layout>
+    <Layout pageType="galeria">
       <Banner image="photo-bg.jpg" />
       <GalleryHeader />
       <GalleryContent location={location} />

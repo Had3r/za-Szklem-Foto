@@ -9,7 +9,7 @@ import {
   FaLongArrowAltLeft,
 } from '../../assets/icons/icons';
 
-export default ({ onClick, type }) => {
+export const SliderArrow = ({ onClick, type }) => {
   const createArrow = type => {
     const { component, direction } = type;
 

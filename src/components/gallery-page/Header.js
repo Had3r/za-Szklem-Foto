@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-export default () => {
+export const GalleryHeader = () => {
   return (
     <Section className="long-line">
       <Wrapper>
@@ -18,7 +18,7 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-  ${tw`container py-12 px-4`};
+  ${tw`container py-12`};
 `;
 
 const Heading = styled.h2`
