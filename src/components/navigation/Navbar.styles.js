@@ -4,10 +4,10 @@ import tw from 'twin.macro';
 export const ContainerFluid = styled.nav`
   ${tw`sticky top-0 z-50`};
   ${props => (props.scrolled ? tw`bg-white` : tw`bg-transparent`)};
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
 
   &.scrolled {
     ${tw`bg-white`};
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
     transition: all 0.4s;
 
     li {
@@ -37,6 +37,10 @@ export const NavInput = styled.input`
   }
   &:checked ~ .nav {
     ${tw`opacity-100 w-full`};
+
+    a {
+      transform: translateX(0);
+    }
   }
 
   &:checked + label span {
@@ -97,7 +101,7 @@ export const NavList = styled.ul`
 `;
 export const NavItem = styled.li`
   ${tw`text-lg font-light text-white uppercase sm:mx-4 sm:my-2 sm:text-base sm:font-normal sm:tracking-wider sm:flex items-center`};
-  ${props => (props.pageType === 'home' ? tw`text-white` : tw`text-gray-800`)};
+  ${props => (props.pageType === 'home' ? tw`text-white` : tw`sm:text-gray-800`)};
 
   &:last-child {
     ${tw`sm:mr-0`}
@@ -121,6 +125,12 @@ export const NavItem = styled.li`
     ${tw`text-gray-800`}
   }
 
+  a {
+    transform: translateX(-800px);
+    @media screen and (min-width: 640px) {
+      transform: translateX(0);
+    }
+  }
   span {
     ${tw`mr-2 inline-block sm:hidden`}
   }
