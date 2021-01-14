@@ -6,7 +6,7 @@ import { GalleryDesktopNav } from './GalleryDesktopNav';
 import { GalleryMobileNav } from './GalleryMobileNav';
 import { GalleryGrid } from './GalleryGrid';
 
-import { Wrapper, AdditionalText, CategoryNavigation } from './Gallery.styles';
+import { Wrapper, AdditionalText, CategoryNavigation } from './GalleryContent.styles';
 
 export const GalleryContent = ({ location }) => {
   const presetCategory = location.state ? location.state.category : null;

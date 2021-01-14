@@ -9,7 +9,7 @@ import {
   Options,
   Option,
   Arrow,
-} from './Gallery.styles';
+} from './GalleryMobileNav.styles';
 
 export const GalleryMobileNav = ({
   dropdownOpen,

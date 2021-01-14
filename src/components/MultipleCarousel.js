@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import SliderArrow from './SliderArrow';
+import { SliderArrow } from './SliderArrow';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -17,7 +17,7 @@ export const MultipleCarousel = ({
   const settings = {
     dots: appendDots,
     fade,
-    autoplay: false,
+    autoplay,
     autoplaySpeed,
     pauseOnHover,
     infinite: true,

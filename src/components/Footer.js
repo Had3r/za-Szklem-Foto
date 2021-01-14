@@ -4,9 +4,9 @@ import tw from 'twin.macro';
 
 import { FaFacebookF } from '../../assets/icons/icons';
 
-export default () => {
+export const Footer = () => {
   return (
-    <Footer className="long-line">
+    <Container className="long-line">
       <Wrapper>
         <Paragraph>
           Tel: <a href="tel:601 995 363">+48 601 995 363</a>
@@ -21,11 +21,11 @@ export default () => {
           </a>
         </Icons>
       </Wrapper>
-    </Footer>
+    </Container>
   );
 };
 
-const Footer = styled.footer`
+const Container = styled.footer`
   &.long-line::before {
     ${tw`block`}
     top: 1rem;

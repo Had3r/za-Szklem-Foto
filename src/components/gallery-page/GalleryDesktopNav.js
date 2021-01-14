@@ -2,7 +2,7 @@ import React from 'react';
 
 import classNames from 'classnames';
 
-import { NavList, NavItem, NavButton, Container } from './Gallery.styles';
+import { NavList, NavItem, NavButton, Container } from './GalleryDesktopNav.styles';
 
 export const GalleryDesktopNav = ({ categories, imagesChange, selected }) => {
   return (

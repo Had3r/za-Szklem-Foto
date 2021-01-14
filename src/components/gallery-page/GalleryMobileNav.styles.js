@@ -1,60 +1,6 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-export const Wrapper = styled.div`
-  ${tw`pb-16 md:pb-20`};
-`;
-
-export const GridGallery = styled.div`
-  ${tw`grid mt-16 md:pt-20 pt-16 md:pt-20`};
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(auto, 100px);
-  gap: 1px;
-  margin: 0 1px;
-
-  @media screen and (min-width: 530px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media screen and (min-width: 768px) {
-    ${tw`container`}
-    grid-auto-rows: minmax(auto, 200px);
-  }
-
-  @media screen and (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(auto, 200px);
-    gap: 2px;
-  }
-  .gatsby-image-wrapper {
-    ${tw`rounded-sm h-full`};
-  }
-`;
-
-export const AdditionalText = styled.div`
-  ${tw`container mt-3 text-sm md:text-base`};
-`;
-
-export const CategoryNavigation = styled.nav`
-  ${tw`bg-secondary-gray mx-auto  pb-16 md:pb-20`};
-`;
-
-export const Container = styled.div`
-  ${tw`container hidden invisible md:visible md:block`};
-`;
-
-export const NavList = styled.ul`
-  ${tw`text-center`};
-`;
-
-export const NavItem = styled.li`
-  ${tw`inline-block`};
-`;
-
-export const NavButton = styled.button`
-  ${tw`transition duration-500 ease-in-out`};
-`;
-
 export const SelectWrapper = styled.div`
   ${tw`block md:hidden relative select-none w-64 mx-auto`};
 `;

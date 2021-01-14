@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import OptimizedImage from './OptimizedImage';
 
-export default ({ image }) => {
+export const Banner = ({ image }) => {
   return (
     <Container>
       <OptimizedImage background src={image} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { NavList, NavItem } from './Navbar.styles';
+import { NavList, NavItem } from './NavList.styles';
 
 const links = [
   {
@@ -26,7 +26,7 @@ const links = [
   },
 ];
 
-export default ({ pageType, scrolledPage }) => {
+export const NavigationList = ({ pageType, scrolledPage }) => {
   return (
     <NavList>
       {links.map((link, linkIdx) => {

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import OptimizedImage from '../OptimizedImage';
 import classNames from 'classnames';
 
-import NavList from './NavList';
+import { NavigationList } from './NavList';
 
 import {
   ContainerFluid,
@@ -47,7 +47,7 @@ export const Navigationn = ({ pageType }) => {
           </Label>
           <Background className="bg">&nbsp;</Background>
           <Nav className="nav">
-            <NavList pageType={pageType} scrolledPage={scrolledPage} />
+            <NavigationList pageType={pageType} scrolledPage={scrolledPage} />
           </Nav>
         </ListPart>
       </Wrapper>
