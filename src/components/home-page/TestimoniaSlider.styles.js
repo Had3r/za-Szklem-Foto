@@ -6,12 +6,8 @@ export const Heading = styled.h2`
   ${tw``}
 `;
 
-// export const styledMultipleCarousel = styled(Carousel)`
-//   ${tw`relative`};
-// `;
-
 export const ContainerFluid = styled.section`
-  ${tw`bg-secondary-gray`};
+  ${tw`bg-primary-light`};
 
   @media screen and (min-width: 500px) {
     ${tw`px-12`};
