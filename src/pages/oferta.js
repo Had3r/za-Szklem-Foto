@@ -3,6 +3,7 @@ import { Layout, Banner, PageHeader, OfferSection } from '../components/index';
 
 const styles = {
   filter: 'brightness(0.4)',
+  backgroundAttachment: 'fixed',
 };
 
 export default () => {
@@ -17,10 +18,12 @@ export default () => {
       <Banner
         image="photo-bg.jpg"
         imgStyles={styles}
-        additionalInfo={{
+        additionalOptions={{
           title: 'Porozmawiaj ze mną o swoim pomyśle',
           subtitle:
             'Skontaktuj się ze mną i dowiedz się, jak mogę pomóc Ci stworzyć pamiątkę na całe zycie',
+          CTA: true,
+          questionBanner: true,
         }}
       />
     </Layout>
