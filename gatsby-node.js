@@ -8,3 +8,26 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
     fs: 'empty',
   };
 };
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query getOffer {
+      offer: allContentfulOffer {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+  result.data.offer.nodes.forEach(singleOffer => {
+    createPage({
+      path: `/oferta/${singleOffer.slug}/`,
+      component: path.resolve('src/templates/offer-template.js'),
+      context: {
+        slug: singleOffer.slug,
+      },
+    });
+  });
+};

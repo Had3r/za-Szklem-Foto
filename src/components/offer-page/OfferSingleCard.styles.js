@@ -6,24 +6,18 @@ export const Wrapper = styled.div`
   transition: all 0.3s;
 
   &::before {
-    ${tw`absolute  rounded-lg`}
+    ${tw`absolute rounded-lg block opacity-0 invisible`}
     content: '';
     transition: all 0.5s;
-
     width: calc(100% + 3.1rem);
     height: calc(100% + 3.1rem);
     left: -1.55rem;
     top: -1.55rem;
-    display: block;
     z-index: -1;
-    opacity: 0;
-    visibility: hidden;
   }
 
   &:hover&::before {
-    ${tw`bg-white`}
-    opacity: 1;
-    visibility: visible;
+    ${tw`bg-white opacity-100 visible`}
     box-shadow: 0 9px 60px 0 rgba(73, 149, 225, 0.15);
   }
 
@@ -36,14 +30,16 @@ export const ImagePart = styled.div`
   ${tw`w-full`};
 
   .gatsby-image-wrapper {
-    ${tw`rounded-tl-lg rounded-tr-lg`}
+    ${tw`rounded-tl-lg rounded-tr-lg h-48 `}
   }
 `;
 export const TextPart = styled.div`
-  ${tw``}
-
   svg {
     ${tw`inline-block ml-2`}
+  }
+
+  a {
+    ${tw`text-base text-red-700`}
   }
 `;
 
