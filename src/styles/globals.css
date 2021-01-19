@@ -36,13 +36,25 @@ p {
   @apply text-sm leading-7;
 }
 
-.link-primary {
-  @apply text-white text-base p-3 relative uppercase bg-primary-darker tracking-wider border border-white inline-block;
+.link {
+  @apply text-base p-3 relative uppercase tracking-wider border inline-block;
   transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.link-primary {
+  @apply text-white bg-primary-darker  border-white;
+}
+
+.link-primary-outline {
+  @apply text-primary-darker border-primary-darker;
 }
 
 .link-primary:hover {
   @apply bg-white border-primary-darker text-primary-darker;
+}
+
+.link-primary-outline:hover {
+  @apply bg-primary-darker border-white text-white;
 }
 
 .btn-primary {

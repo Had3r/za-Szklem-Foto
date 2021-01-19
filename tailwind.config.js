@@ -19,9 +19,10 @@ module.exports = {
       },
       colors: {
         primary: '#DBEAF9',
+        'primary-light': '#f5f9fb',
         'primary-darker': '#4995e1',
         'primary-gray': '#3D4842',
-        'secondary-gray': '#f2f2f2',
+        'tertiary-gray': '#3c4856',
       },
       spacing: {
         '80': '20rem',

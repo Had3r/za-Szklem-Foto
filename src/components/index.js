@@ -2,13 +2,13 @@
 import { Layout } from './layout';
 import { Hero } from './Hero';
 import { Banner } from './Banner';
+import { PageHeader } from './PageHeader';
 
 import { TestimonialSlider } from './home-page/TestimonialSlider';
 import { AboutMe } from './home-page/AboutMe';
 import { FeaturedWorks } from './home-page/FeaturedWorks';
-
-import { GalleryHeader } from './gallery-page/Header';
-import { GalleryContent } from './gallery-page/GalleryContent';
+import { GallerySection } from './gallery-page/GallerySection';
+import { OfferSection } from './offer-page/OfferSection';
 
 export {
   Layout,
@@ -17,6 +17,7 @@ export {
   AboutMe,
   FeaturedWorks,
   Banner,
-  GalleryHeader,
-  GalleryContent,
+  PageHeader,
+  GallerySection,
+  OfferSection,
 };

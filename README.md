@@ -79,8 +79,12 @@ A quick look at the files and directories you'll see in my Gatsby project.
     │
     └── ...
 
-## Hints
+## Draft
 
-Spacing between sections should be:
+- Spacing between sections should be:
 
 `${tw'container px-4 sm:px-0 py-16 md:py-20'}`
+
+Only css:
+
+- navigation with checkbox hack
