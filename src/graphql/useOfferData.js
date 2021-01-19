@@ -15,14 +15,6 @@ export const useOfferData = () => {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
-            detailsImages {
-              fluid {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
-            detailsOfOffer {
-              json
-            }
           }
         }
       }

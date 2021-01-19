@@ -6,7 +6,7 @@ export default ({ location }) => {
     <Layout pageType="galeria">
       <Banner image="photo-bg.jpg" />
       <PageHeader
-        title="Galeria."
+        title="Galeria"
         subtitle="Spójrz na rezultat mojej pracy. Jest świetny!"
         background="#f5f9fb"
       />

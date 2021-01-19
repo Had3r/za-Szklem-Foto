@@ -7,7 +7,7 @@ import { Content } from './offer-template.styles';
 
 const ComponentName = ({
   data: {
-    offer: { typeOfService, detailsOfOffer, detailsImages },
+    offer: { typeOfService, detailsOfOffer },
   },
 }) => {
   return (

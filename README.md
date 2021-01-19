@@ -88,4 +88,3 @@ A quick look at the files and directories you'll see in my Gatsby project.
 Only css:
 
 - navigation with checkbox hack
-- popup with :target pseudo-class
