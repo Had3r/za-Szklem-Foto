@@ -15,7 +15,7 @@ export const AboutMe = () => {
           aliquid recusandae. Maxime rerum debitis recusandae voluptatibus rem dolorem, laborum
           minima sit est architecto quae modi at.
         </Paragraph>
-        <Link to="/oferta" className="link-primary">
+        <Link to="/oferta" className="link link-primary">
           Sprawdź ofertę
         </Link>
       </TextPart>

@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
 
 import { FaFacebookF } from '../../assets/icons/icons';
+import { Link } from 'gatsby';
+import { Container, Wrapper, Paragraph, Icons } from './Footer.styles';
 
 export const Footer = () => {
   return (
@@ -15,6 +15,9 @@ export const Footer = () => {
           Email: <a href="mailto: zaszklemfotografia@outlook.com">zaszklemfotografia@outlook.com</a>
         </Paragraph>
         <Paragraph>Adres: ul. Feliksa Stamma 59-300 Lubin</Paragraph>
+        <Paragraph>
+          <Link to="/">Polityka prywatności</Link>
+        </Paragraph>
         <Icons>
           <a href="https://www.facebook.com/zaszklemfotografia">
             <FaFacebookF />
@@ -24,26 +27,3 @@ export const Footer = () => {
     </Container>
   );
 };
-
-const Container = styled.footer`
-  &.long-line::before {
-    ${tw`block`}
-    top: 1rem;
-  }
-`;
-
-const Wrapper = styled.div`
-  ${tw`container py-16 px-4 sm:px-0 md:py-20 `};
-`;
-
-const Paragraph = styled.p`
-  ${tw`text-xs text-gray-700 font-light leading-loose`};
-`;
-
-const Icons = styled.span`
-  ${tw`mt-8 text-gray-800 hover:text-gray-700 text-xs`}
-
-  svg {
-    ${tw`inline-block`}
-  }
-`;

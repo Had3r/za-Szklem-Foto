@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import { Layout, PageHeader } from '../components/index';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -13,7 +13,12 @@ const ComponentName = ({
   return (
     <Layout>
       <PageHeader title={typeOfService} subtitle="wazne - zapoznaj się ze szczegółami oferty" />
-      <Content>{documentToReactComponents(detailsOfOffer.json)}</Content>
+      <Content>
+        {documentToReactComponents(detailsOfOffer.json)}
+        <Link to="/kontakt" className="link link-primary">
+          Dowiedz się więcej
+        </Link>
+      </Content>
     </Layout>
   );
 };

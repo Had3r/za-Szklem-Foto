@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   transition: all 0.3s;
 
   &::before {
-    ${tw`absolute rounded-lg block opacity-0 invisible`}
+    ${tw`absolute rounded-sm block opacity-0 invisible`}
     content: '';
     transition: all 0.5s;
     width: calc(100% + 3.1rem);
@@ -30,7 +30,7 @@ export const ImagePart = styled.div`
   ${tw`w-full`};
 
   .gatsby-image-wrapper {
-    ${tw`rounded-tl-lg rounded-tr-lg h-48 `}
+    ${tw`rounded-tl-sm rounded-tr-sm h-48 `}
   }
 `;
 export const TextPart = styled.div`
