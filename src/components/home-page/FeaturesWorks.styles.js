@@ -67,3 +67,14 @@ export const Figcaption = styled.figcaption`
   transition: 0.5s all;
   backface-visibility: hidden;
 `;
+
+export const Section = styled.section`
+  ${tw`relative`}
+
+  &::before {
+    ${tw`h-1 border-gray-900 w-20 absolute hidden lg:block`};
+    content: '';
+    border-bottom: solid 1px;
+    top: 180px;
+  }
+`;

@@ -20,11 +20,7 @@ export default () => {
         imgStyles={styles}
       />
       <ContactBoxes />
-      <PageHeader
-        onlySubtitle
-        title="Galeria"
-        subtitle="Spójrz na rezultat mojej pracy. Jest świetny!"
-      />
+      <PageHeader onlySubtitle />
       <ContactForm />
     </Layout>
   );

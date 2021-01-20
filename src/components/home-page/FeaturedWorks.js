@@ -11,12 +11,13 @@ import {
   GridRow,
   GridItem,
   Figcaption,
+  Section,
 } from './FeaturesWorks.styles';
 
 export const FeaturedWorks = () => {
   const featuredWorks = useFeaturedWorks();
   return (
-    <section className="long-line">
+    <Section>
       <Wrapper>
         <Heading className="short-line">Wyróżnione zdjęcia.</Heading>
         <Paragraph>
@@ -38,6 +39,6 @@ export const FeaturedWorks = () => {
           </GridRow>
         </PhotographyGrid>
       </Wrapper>
-    </section>
+    </Section>
   );
 };

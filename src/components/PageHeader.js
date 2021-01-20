@@ -3,8 +3,9 @@ import React from 'react';
 import { Header, Wrapper, Heading, Paragraph, SingleSubtitle } from './PageHeader.styles';
 
 export const PageHeader = ({ title, subtitle, background, onlySubtitle }) => {
+  console.log(onlySubtitle);
   return (
-    <Header onlySubtitle bgColor={background} className="long-line">
+    <Header onlySubtitle={onlySubtitle} bgColor={background} className="long-line">
       <Wrapper onlySubtitle>
         {onlySubtitle ? (
           <SingleSubtitle>

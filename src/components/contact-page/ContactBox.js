@@ -13,7 +13,7 @@ export const ContactBox = ({ data }) => {
       {data.number ? (
         <Number href="tel:601 995 363">{data.number}</Number>
       ) : (
-        <AnchorLink to="/kontakt#form">
+        <AnchorLink to="/kontakt#formularz">
           <CTA className="btn btn-secondary">{data.btnText}</CTA>
         </AnchorLink>
       )}
