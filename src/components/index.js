@@ -10,6 +10,7 @@ import { FeaturedWorks } from './home-page/FeaturedWorks';
 import { GallerySection } from './gallery-page/GallerySection';
 import { OfferSection } from './offer-page/OfferSection';
 import { ContactBoxes } from './contact-page/ContactBoxes';
+import { ContactForm } from './contact-page/ContactForm';
 
 export {
   Layout,
@@ -22,4 +23,5 @@ export {
   GallerySection,
   OfferSection,
   ContactBoxes,
+  ContactForm,
 };

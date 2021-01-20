@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Banner, ContactBoxes } from '../components/index';
+import { Layout, Banner, ContactBoxes, PageHeader, ContactForm } from '../components/index';
 
 const styles = {
   filter: 'contrast(2) grayscale(100%)',
@@ -20,6 +20,12 @@ export default () => {
         imgStyles={styles}
       />
       <ContactBoxes />
+      <PageHeader
+        onlySubtitle
+        title="Galeria"
+        subtitle="Spójrz na rezultat mojej pracy. Jest świetny!"
+      />
+      <ContactForm />
     </Layout>
   );
 };

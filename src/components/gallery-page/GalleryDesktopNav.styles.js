@@ -10,7 +10,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavButton = styled.button`
-  ${tw`transition duration-500 ease-in-out rounded-sm`};
+  ${tw` rounded-sm`};
 `;
 
 export const Container = styled.div`

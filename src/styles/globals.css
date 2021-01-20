@@ -37,8 +37,7 @@ p {
 }
 
 .link {
-  @apply text-base p-3 relative uppercase tracking-wider border inline-block;
-  transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+  @apply text-base p-3 relative uppercase tracking-wider border inline-block transition duration-500 ease-in-out;
 }
 
 .link-primary {
@@ -57,8 +56,12 @@ p {
   @apply bg-primary-darker border-white text-white;
 }
 
+.btn {
+  @apply border rounded-md select-none uppercase text-sm tracking-wide px-4 py-2 m-2 transition duration-500 ease-in-out;
+}
+
 .btn-primary {
-  @apply border border-gray-700 text-gray-700 rounded-md px-4 py-2 m-2 select-none uppercase text-sm tracking-wide;
+  @apply border-gray-700 text-gray-700;
 }
 
 .btn-primary:hover,
@@ -68,6 +71,14 @@ p {
 
 .btn-primary:focus {
   @apply outline-none shadow-outline;
+}
+
+.btn-secondary {
+  @apply border-red-200 text-red-200;
+}
+
+.btn-secondary:hover {
+  @apply text-white bg-red-200;
 }
 
 a {
