@@ -5,7 +5,7 @@ import { OfferCards } from './OfferCards';
 
 export const OfferSection = () => {
   return (
-    <Section>
+    <Section id="szczegoly">
       <OfferCards />
     </Section>
   );

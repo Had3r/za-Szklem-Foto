@@ -11,6 +11,7 @@ import { GallerySection } from './gallery-page/GallerySection';
 import { OfferSection } from './offer-page/OfferSection';
 import { ContactBoxes } from './contact-page/ContactBoxes';
 import { ContactForm } from './contact-page/ContactForm';
+import { ErrorPageContent } from './404-page/ErrorPageContent';
 
 export {
   Layout,
@@ -24,4 +25,5 @@ export {
   OfferSection,
   ContactBoxes,
   ContactForm,
+  ErrorPageContent,
 };

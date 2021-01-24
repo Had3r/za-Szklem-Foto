@@ -20,7 +20,10 @@ export default () => {
         imgStyles={styles}
       />
       <ContactBoxes />
-      <PageHeader onlySubtitle />
+      <PageHeader
+        singleSubtitle="Wraz z Tobą doskonalę się i rozwijam, dlatego chętnie przyjmę wszelkie Twoje opinie,
+            krytykę, sugestie i pytania."
+      />
       <ContactForm />
     </Layout>
   );

@@ -1,26 +1,30 @@
 import React from 'react';
 
-import { Header, Wrapper, Heading, Paragraph, SingleSubtitle } from './PageHeader.styles';
+import {
+  Header,
+  Wrapper,
+  Heading,
+  Paragraph,
+  SingleSubtitle,
+  ScrollDown,
+} from './PageHeader.styles';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-export const PageHeader = ({ title, subtitle, background, onlySubtitle }) => {
+export const PageHeader = ({ title, subtitle, background, singleSubtitle }) => {
   return (
-    <Header
-      id="naglowek-formularza"
-      onlySubtitle={onlySubtitle}
-      bgColor={background}
-      className="long-line">
-      <Wrapper onlySubtitle>
-        {onlySubtitle ? (
-          <SingleSubtitle>
-            Wraz z Tobą doskonalę się i rozwijam, dlatego chętnie przyjmę wszelkie Twoje opinie,
-            krytykę, sugestie i pytania.
-          </SingleSubtitle>
+    <Header id="naglowek-formularza" bgColor={background} className="long-line">
+      <Wrapper singleSubtitle>
+        {singleSubtitle ? (
+          <SingleSubtitle>{singleSubtitle}</SingleSubtitle>
         ) : (
           <>
             <Heading className="short-line">{title}</Heading>
             <Paragraph>{subtitle}</Paragraph>
           </>
         )}
+        <AnchorLink to="/oferta/#szczegoly">
+          <ScrollDown>&darr;</ScrollDown>
+        </AnchorLink>
       </Wrapper>
     </Header>
   );
