@@ -24,7 +24,7 @@ module.exports = {
         'primary-gray': '#3D4842',
         secondary: '#ff682b',
         'secondary-light': '#ff986f',
-        'tertiary-gray': '#3c4856',
+        tertiary: '#eaebf1',
       },
       spacing: {
         '80': '20rem',

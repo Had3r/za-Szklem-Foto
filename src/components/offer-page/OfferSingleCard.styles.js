@@ -44,7 +44,8 @@ export const TextPart = styled.div`
 `;
 
 export const Heading = styled.h3`
-  ${tw`text-xl font-bold text-tertiary-gray mt-4`}
+  ${tw`text-xl font-bold  mt-4`};
+  color: #3c4856;
 `;
 
 export const Paragraph = styled.p`

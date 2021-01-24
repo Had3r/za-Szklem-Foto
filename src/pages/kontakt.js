@@ -23,6 +23,11 @@ export default () => {
       <PageHeader
         singleSubtitle="Wraz z Tobą doskonalę się i rozwijam, dlatego chętnie przyjmę wszelkie Twoje opinie,
             krytykę, sugestie i pytania."
+        additionalOptions={{
+          mobileWrapper: false,
+          mobileBg: '#fff',
+          desktopBg: '#fff',
+        }}
       />
       <ContactForm />
     </Layout>

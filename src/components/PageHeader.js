@@ -9,10 +9,17 @@ import {
   ScrollDown,
 } from './PageHeader.styles';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { MdArrowDownward } from '../../assets/icons/icons';
 
-export const PageHeader = ({ title, subtitle, background, singleSubtitle }) => {
+export const PageHeader = ({ title, subtitle, singleSubtitle, additionalOptions }) => {
+  const { mobileWrapper, desktopBg, mobileBg, arrow } = additionalOptions;
   return (
-    <Header id="naglowek-formularza" bgColor={background} className="long-line">
+    <Header
+      id="naglowek-formularza"
+      mobileBg={mobileBg}
+      desktopBg={desktopBg}
+      mobileWrapper={mobileWrapper}
+      className="long-line">
       <Wrapper singleSubtitle>
         {singleSubtitle ? (
           <SingleSubtitle>{singleSubtitle}</SingleSubtitle>
@@ -22,9 +29,13 @@ export const PageHeader = ({ title, subtitle, background, singleSubtitle }) => {
             <Paragraph>{subtitle}</Paragraph>
           </>
         )}
-        <AnchorLink to="/oferta/#szczegoly">
-          <ScrollDown>&darr;</ScrollDown>
-        </AnchorLink>
+        {mobileWrapper && arrow && (
+          <AnchorLink to="/oferta/#szczegoly">
+            <ScrollDown>
+              <MdArrowDownward />
+            </ScrollDown>
+          </AnchorLink>
+        )}
       </Wrapper>
     </Header>
   );

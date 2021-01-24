@@ -13,6 +13,12 @@ export default () => {
       <PageHeader
         title="Oferta."
         subtitle="Wybierz swoją sesję zdjęciową z niezbędnymi opcjami, które Ci odpowiadają."
+        additionalOptions={{
+          mobileWrapper: true,
+          mobileBg: '#eaebf1',
+          desktopBg: '#fff',
+          arrow: true,
+        }}
       />
       <OfferSection />
       <Banner

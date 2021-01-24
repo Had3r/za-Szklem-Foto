@@ -2,16 +2,17 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const Header = styled.header`
-  ${tw`mx-auto mx-4 -mt-20 relative`};
-  background: ${props => props.bgColor || '#fff'};
-  background: #eaebf1;
+  ${tw`mx-auto relative`};
+  ${props => (props.mobileWrapper ? tw`mx-4 -mt-20 md:mt-0 md:mx-0` : '')};
+  background: ${props => (props.mobileBg ? props.mobileBg : '#fff')};
 
-  /* &::after {
-    ${tw`w-12 h-12 bg-secondary block absolute rounded-full text-2xl flex justify-center items-center text-white cursor-pointer`}
-    content: "↓";
-    bottom: -25px;
-    right: 10px;
-  } */
+  @media screen and (min-width: 768px) {
+    background: ${props => (props.desktopBg ? props.desktopBg : '#fff')};
+  }
+
+  a {
+    ${tw`md:hidden`}
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -31,7 +32,7 @@ export const SingleSubtitle = styled.p`
 `;
 
 export const ScrollDown = styled.span`
-  ${tw`absolute w-12 h-12 bg-secondary block absolute rounded-full text-2xl flex justify-center items-center text-white cursor-pointer`};
+  ${tw`absolute w-12 h-12 bg-secondary block absolute rounded-full text-3xl flex justify-center items-center text-white cursor-pointer`};
   bottom: -25px;
   right: 10px;
 `;
