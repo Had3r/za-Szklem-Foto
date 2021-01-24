@@ -14,7 +14,7 @@ export const ContactBoxes = () => {
           description: `Interesuje Cię profesjonalna usługa fotograficzna? Po prostu podnieś telefon, aby
         porozmawiać z i dowiedzieć się więcej.`,
           icon: MdLocalPhone,
-          number: '111 111 111',
+          number: '+48 111 111 111',
         }}
       />
       <ContactBox

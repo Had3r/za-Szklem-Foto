@@ -57,7 +57,7 @@ p {
 }
 
 .btn {
-  @apply border rounded-md select-none uppercase text-sm tracking-wide px-4 py-2 m-2 transition duration-500 ease-in-out;
+  @apply border select-none uppercase text-sm tracking-wide px-4 py-2 m-2 transition duration-500 ease-in-out;
 }
 
 .btn-primary {
@@ -74,11 +74,11 @@ p {
 }
 
 .btn-secondary {
-  @apply border-red-200 text-red-200;
+  @apply text-white bg-secondary;
 }
 
 .btn-secondary:hover {
-  @apply text-white bg-red-200;
+  @apply text-white bg-secondary-light;
 }
 
 a {

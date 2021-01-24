@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   }
 
   svg {
-    ${tw`text-4xl mb-6`}
+    ${tw`text-4xl lg:text-5xl mb-6`}
   }
 `;
 
@@ -25,9 +25,9 @@ export const Description = styled.div`
 `;
 
 export const Number = styled.a`
-  ${tw`text-xl text-blue-400 `}
+  ${tw`text-2xl text-blue-400 `}
 `;
 
 export const CTA = styled.button`
-  ${tw``}
+  ${tw`px-6 py-4 text-base`}
 `;

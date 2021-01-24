@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const Form = styled.form`
-  ${tw`container px-4 sm:px-0 text-lg `};
-  margin-top: 6rem;
+  ${tw`container px-4 sm:px-0 text-lg mb-20 lg:mt-8`};
 `;
 
 export const InputField = styled.input`

@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Banner, ContactBoxes, PageHeader, ContactForm } from '../components/index';
 
 const styles = {
-  filter: 'contrast(2) grayscale(100%)',
+  filter: 'contrast(.6) grayscale(100%)',
   zIndex: '-1',
 };
 

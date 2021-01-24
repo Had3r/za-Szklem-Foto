@@ -12,7 +12,7 @@ import {
 
 export const ContactForm = () => {
   return (
-    <Form id="formularz">
+    <Form action="https://formspree.io/f/xnqowgko" method="POST">
       <Wrapper>
         <LeftSide>
           <InputBox>
@@ -21,11 +21,18 @@ export const ContactForm = () => {
           </InputBox>
           <InputBox>
             <label htmlFor="email" />
-            <InputField type="email" name="email" id="email" placeholder="Email" />
+            <InputField required type="email" name="email" id="email" placeholder="Email *" />
           </InputBox>
         </LeftSide>
         <label htmlFor="textarea" />
-        <Textarea rows="6" type="textarea" name="textarea" id="textarea" placeholder="Wiadomość" />
+        <Textarea
+          required
+          rows="6"
+          type="textarea"
+          name="textarea"
+          id="textarea"
+          placeholder="Wiadomość *"
+        />
         <SubmitBtn className="btn btn-primary">Wyślij</SubmitBtn>
       </Wrapper>
     </Form>
