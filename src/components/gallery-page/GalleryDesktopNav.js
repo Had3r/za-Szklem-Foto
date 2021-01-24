@@ -8,7 +8,7 @@ export const GalleryDesktopNav = ({ categories, imagesChange, selected }) => {
     <Container>
       <NavList>
         {categories.map((category, idx) => {
-          const btnClasses = classNames('btn-primary', {
+          const btnClasses = classNames('btn btn-primary', {
             active: category === selected,
           });
           return (

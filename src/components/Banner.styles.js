@@ -3,9 +3,9 @@ import tw from 'twin.macro';
 
 export const Container = styled.div`
   ${tw`relative`};
-  ${props => (props.additionalInfo ? tw`sm:mx-0 my-16 md:my-20` : '')}
+  ${props => (props.additionalOptions.questionBanner ? tw`sm:mx-0 my-16 md:my-20` : '')}
   & div:first-child {
-    min-height: ${props => (props.additionalInfo ? '50vh' : '40vh')};
+    min-height: ${props => (props.additionalOptions ? '50vh' : '40vh')};
     @media screen and (min-width: 640px) {
       min-height: 50vh;
     }
@@ -29,4 +29,8 @@ export const Heading = styled.h2`
 
 export const Paragraph = styled.div`
   ${tw`text-white text-base text-center my-4`}
+`;
+
+export const BgLayer = styled.div`
+  background: ${props => (props.layer ? 'rgba(73, 149, 225, 0.5)' : 'none')};
 `;

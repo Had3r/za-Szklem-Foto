@@ -39,7 +39,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
-        offset: 0,
+        offset: -50,
       },
     },
     // gatsby-plugin-purgecss should be AFTER other css/postcss plugins
