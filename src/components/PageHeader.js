@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Header,
@@ -39,4 +40,10 @@ export const PageHeader = ({ title, subtitle, singleSubtitle, additionalOptions 
       </Wrapper>
     </Header>
   );
+};
+
+PageHeader.propTypes = {
+  additionalOptions: {
+    mobileWrapper: PropTypes.bool.isRequired,
+  },
 };

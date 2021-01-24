@@ -12,7 +12,13 @@ const ComponentName = ({
 }) => {
   return (
     <Layout>
-      <PageHeader title={typeOfService} subtitle="wazne - zapoznaj się ze szczegółami oferty" />
+      <PageHeader
+        additionalOptions={{
+          mobileWrapper: false,
+        }}
+        title={typeOfService}
+        subtitle="wazne - zapoznaj się ze szczegółami oferty"
+      />
       <Content>
         {documentToReactComponents(detailsOfOffer.json)}
         <Link to="/kontakt" className="link link-primary">
