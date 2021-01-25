@@ -28,10 +28,12 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "babel-jest": "^26.6.3",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "gatsby": "^2.17.0",
@@ -48,6 +50,8 @@
     "gatsby-source-contentful": "^3.0.3",
     "gatsby-source-filesystem": "^2.3.31",
     "gatsby-transformer-sharp": "^2.5.16",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
     "postcss-import": "^12.0.1",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
@@ -57,6 +61,7 @@
     "react-icons": "^3.11.0",
     "react-medium-image-zoom": "^4.3.1",
     "react-slick": "^0.27.13",
+    "react-test-renderer": "^17.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.0.0-rc.1",
     "twin.macro": "^1.11.0"
@@ -65,7 +70,7 @@
     "@babel/core": "^7.7.2",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
-    "babel-preset-gatsby": "^0.2.20",
+    "babel-preset-gatsby": "^0.11.0",
     "gatsby-plugin-styled-components": "^3.1.11",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.9.0"
