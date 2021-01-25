@@ -16,7 +16,7 @@ export const Header = styled.header`
 `;
 
 export const Wrapper = styled.div`
-  ${tw`container pb-12 pt-4 px-4`};
+  ${tw`container pb-12 pt-4 md:pt-10 px-4`};
 `;
 
 export const Heading = styled.h2`
