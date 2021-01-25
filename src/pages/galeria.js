@@ -8,12 +8,11 @@ export default ({ location }) => {
       <PageHeader
         title="Galeria"
         subtitle="Spójrz na rezultat mojej pracy. Jest świetny!"
-        bgColor="#f5f9fb"
         additionalOptions={{
           mobileWrapper: true,
+          arrow: false,
           mobileBg: '#f5f9fb',
           desktopBg: '#f5f9fb',
-          arrow: false,
         }}
       />
       <GallerySection location={location} />
