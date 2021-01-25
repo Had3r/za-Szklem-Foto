@@ -1,27 +1,49 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Header, Wrapper, Heading, Paragraph, SingleSubtitle } from './PageHeader.styles';
+import {
+  Header,
+  Wrapper,
+  Heading,
+  Paragraph,
+  SingleSubtitle,
+  ScrollDown,
+} from './PageHeader.styles';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { MdArrowDownward } from '../../assets/icons/icons';
 
-export const PageHeader = ({ title, subtitle, background, onlySubtitle }) => {
+export const PageHeader = ({ title, subtitle, singleSubtitle, additionalOptions }) => {
+  const { mobileWrapper, desktopBg, mobileBg, arrow } = additionalOptions;
   return (
     <Header
       id="naglowek-formularza"
-      onlySubtitle={onlySubtitle}
-      bgColor={background}
+      mobileBg={mobileBg}
+      desktopBg={desktopBg}
+      mobileWrapper={mobileWrapper}
       className="long-line">
-      <Wrapper onlySubtitle>
-        {onlySubtitle ? (
-          <SingleSubtitle>
-            Wraz z Tobą doskonalę się i rozwijam, dlatego chętnie przyjmę wszelkie Twoje opinie,
-            krytykę, sugestie i pytania.
-          </SingleSubtitle>
+      <Wrapper singleSubtitle>
+        {singleSubtitle ? (
+          <SingleSubtitle>{singleSubtitle}</SingleSubtitle>
         ) : (
           <>
             <Heading className="short-line">{title}</Heading>
             <Paragraph>{subtitle}</Paragraph>
           </>
         )}
+        {mobileWrapper && arrow && (
+          <AnchorLink to="/oferta/#szczegoly">
+            <ScrollDown>
+              <MdArrowDownward />
+            </ScrollDown>
+          </AnchorLink>
+        )}
       </Wrapper>
     </Header>
   );
+};
+
+PageHeader.propTypes = {
+  additionalOptions: {
+    mobileWrapper: PropTypes.bool.isRequired,
+  },
 };

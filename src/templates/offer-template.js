@@ -5,14 +5,20 @@ import { Layout, PageHeader } from '../components/index';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Content } from './offer-template.styles';
 
-const ComponentName = ({
+const OfferTemplate = ({
   data: {
     offer: { typeOfService, detailsOfOffer },
   },
 }) => {
   return (
     <Layout>
-      <PageHeader title={typeOfService} subtitle="wazne - zapoznaj się ze szczegółami oferty" />
+      <PageHeader
+        additionalOptions={{
+          mobileWrapper: false,
+        }}
+        title={typeOfService}
+        subtitle="wazne - zapoznaj się ze szczegółami oferty"
+      />
       <Content>
         {documentToReactComponents(detailsOfOffer.json)}
         <Link to="/kontakt" className="link link-primary">
@@ -39,4 +45,4 @@ export const query = graphql`
   }
 `;
 
-export default ComponentName;
+export default OfferTemplate;

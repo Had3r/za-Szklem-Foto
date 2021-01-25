@@ -10,5 +10,5 @@ export const AdditionalText = styled.div`
 `;
 
 export const CategoryNavigation = styled.nav`
-  ${tw`bg-primary-light mx-auto pb-16 md:pb-20`};
+  ${tw`bg-primary-light mx-4 md:mx-auto pb-16 md:pb-20`};
 `;
