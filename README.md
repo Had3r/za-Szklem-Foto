@@ -60,6 +60,22 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 
   - The gallery page contains dozens of photos and their number will grow, so I needed a way to present the data in user-friendly ways. For this purpose, I created my own infinite scroll. It is also optimized for touch screens. So I added event listeners for `touchend` and `resize` (to handle situations where someone resizes their browser).
 
+#### Short info about testing - Jest + Enzyme
+
+At the beginning of writing tests I broken components into two parts: a pure component without any queries (pure because its return value is entirely dependent on the props passed to it) and a surrounding component that only handles the query. Then I tested only pure components. However renaming components, replacing Gatsby fragments, creating graphql query mockups was really confusing.
+
+Fortunately I found `gatsby-plugin-testing`. This plugin stores query data when we build a project.
+
+During `gatsby build` or `gatsby develop` command, we can see
+
+```
+[gatsby-plugin-testing] stored static queries
+```
+
+in the build output, which means that queries will be stored in a file `.testing-static-queries.json`.
+
+**_Important - after modifying the queries of components, we must rerun `gatsby build`._**
+
 ## Documentation files
 
 A quick look at the files and directories you'll see in my Gatsby project.
@@ -77,6 +93,15 @@ A quick look at the files and directories you'll see in my Gatsby project.
     │         └── ...
     ├── tailwind.config.js   # customization of Tailwind default design system
     │
+    │
+    │                     ##### testing #####
+    │
+    ├── jest.config.js    # Because Gatsby handles its own Babel configuration, here are Jest setting to use babel-jest.
+    ├── jest-preprocess.js # transform all js files
+    ├── __mocks__
+    │       └── gatsby.js  # mocking Gatsby module
+    ├── loadershim.js      # This sets enqueue to return a jest.fn().
+    ├── .testing-static-queries.json # stored GraphQL queries (created after the build)
     └── ...
 
 ## Draft

@@ -36,6 +36,8 @@
     "babel-jest": "^26.6.3",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "gatsby": "^2.17.0",
     "gatsby-background-image-es5": "^1.1.2",
     "gatsby-image": "^2.4.20",
@@ -52,6 +54,7 @@
     "gatsby-transformer-sharp": "^2.5.16",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
     "postcss-import": "^12.0.1",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
@@ -61,7 +64,6 @@
     "react-icons": "^3.11.0",
     "react-medium-image-zoom": "^4.3.1",
     "react-slick": "^0.27.13",
-    "react-test-renderer": "^17.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.0.0-rc.1",
     "twin.macro": "^1.11.0"
@@ -72,6 +74,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-gatsby": "^0.11.0",
     "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-plugin-testing": "^0.3.4",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.9.0"
   }
