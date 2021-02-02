@@ -96,7 +96,6 @@ export const GallerySection = ({ location }) => {
       <CategoryNavigation>
         <GalleryDesktopNav
           selected={selected}
-          categories={categories}
           imagesChange={category => handleImageChange(category)}
         />
         <GalleryMobileNav

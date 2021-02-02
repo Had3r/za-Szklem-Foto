@@ -43,7 +43,5 @@ export const PageHeader = ({ title, subtitle, singleSubtitle, additionalOptions 
 };
 
 PageHeader.propTypes = {
-  additionalOptions: {
-    mobileWrapper: PropTypes.bool.isRequired,
-  },
+  additionalOptions: PropTypes.object,
 };

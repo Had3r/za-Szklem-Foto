@@ -15,8 +15,8 @@ import {
 export const Hero = () => {
   const heroData = useHeroData();
   return (
-    <Section data-test="hero-section">
-      <MultipleCarousel appendDots autoplaySpeed={4500} arrType="hero">
+    <Section data-test="component-hero">
+      <MultipleCarousel data-test="carousel-display" appendDots autoplaySpeed={4500} arrType="hero">
         {heroData.map(singleItem => {
           const { image, headingPrimary, headingSecondary: paragraphText, id } = singleItem.node;
           return (

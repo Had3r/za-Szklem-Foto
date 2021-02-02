@@ -76,6 +76,10 @@ in the build output, which means that queries will be stored in a file `.testing
 
 **_Important - after modifying the queries of components, we must rerun `gatsby build`._**
 
+#### PropTypes testing
+
+For this, I used the `check-prop-types` package because instead of getting a warning in case of incorrect props, I get an error. Thanks to this, I do not check the warnings (I don't need to mock console.error).
+
 ## Documentation files
 
 A quick look at the files and directories you'll see in my Gatsby project.
