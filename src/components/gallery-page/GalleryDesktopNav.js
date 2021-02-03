@@ -6,7 +6,6 @@ import { NavList, NavItem, NavButton, Container } from './GalleryDesktopNav.styl
 
 /**
  * Functional react component for desktop navigation buttons
- * @function
  * @param {array} param
  * @param {function} param
  * @param {string} param
