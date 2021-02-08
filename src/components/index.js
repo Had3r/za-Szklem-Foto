@@ -1,11 +1,11 @@
 // Components globally available
 
 import { Layout } from './layout';
-import { Hero } from './Hero';
 import { Banner } from './Banner';
 import { PageHeader } from './PageHeader';
 
 import { TestimonialSlider } from './home-page/TestimonialSlider';
+import { Hero } from './home-page/Hero';
 import { AboutMe } from './home-page/AboutMe';
 import { FeaturedWorks } from './home-page/FeaturedWorks';
 

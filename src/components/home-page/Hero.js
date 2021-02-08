@@ -1,6 +1,6 @@
 import React from 'react';
-import useHeroSliderData from '../graphql/useHeroSliderData';
-import MultipleCarousel from './MultipleCarousel';
+import { useHeroData } from '../../graphql/useHeroSliderData';
+import MultipleCarousel from '../MultipleCarousel';
 import BackgroundImage from 'gatsby-background-image-es5';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import {
@@ -13,10 +13,10 @@ import {
 } from './Hero.styles';
 
 export const Hero = () => {
-  const heroData = useHeroSliderData();
+  const heroData = useHeroData();
   return (
-    <Section>
-      <MultipleCarousel appendDots autoplaySpeed={4500} arrType="hero">
+    <Section data-test="component-hero">
+      <MultipleCarousel data-test="carousel-display" appendDots autoplaySpeed={4500} arrType="hero">
         {heroData.map(singleItem => {
           const { image, headingPrimary, headingSecondary: paragraphText, id } = singleItem.node;
           return (

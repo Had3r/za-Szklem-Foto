@@ -28,12 +28,17 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "babel-jest": "^26.6.3",
+    "check-prop-types": "^1.1.2",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "gatsby": "^2.17.0",
     "gatsby-background-image-es5": "^1.1.2",
     "gatsby-image": "^2.4.20",
@@ -48,6 +53,9 @@
     "gatsby-source-contentful": "^3.0.3",
     "gatsby-source-filesystem": "^2.3.31",
     "gatsby-transformer-sharp": "^2.5.16",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
     "postcss-import": "^12.0.1",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
@@ -65,8 +73,9 @@
     "@babel/core": "^7.7.2",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
-    "babel-preset-gatsby": "^0.2.20",
+    "babel-preset-gatsby": "^0.11.0",
     "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-plugin-testing": "^0.3.4",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.9.0"
   }

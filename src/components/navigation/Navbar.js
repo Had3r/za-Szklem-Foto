@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import OptimizedImage from '../OptimizedImage';
 import classNames from 'classnames';
@@ -16,7 +17,12 @@ import {
   NavIcon,
 } from './Navbar.styles';
 
-export const Navigationn = ({ pageType }) => {
+/**
+ * Renders a beam with navigation
+ * @param {object} props
+ * @param {string} props.pageType - the type of the current page
+ */
+export const Navigation = ({ pageType }) => {
   const [scrolledPage, setScrolledPage] = useState(false);
 
   const changeNavbar = () => {
@@ -53,4 +59,8 @@ export const Navigationn = ({ pageType }) => {
       </Wrapper>
     </ContainerFluid>
   );
+};
+
+Navigation.propTypes = {
+  pageType: PropTypes.string.isRequired,
 };

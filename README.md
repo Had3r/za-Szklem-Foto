@@ -1,30 +1,12 @@
 # Za Szkłem Fotografia
 
-## My helpers, which I referred to when building the site
-
-#### Naming branches
-
-- https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
-
-#### Naming commits
-
-- https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
-
-#### Semantics
-
-- https://tutorials.comandeer.pl/html5-blog.html
-
-#### Code review
-
-- https://www.ulam.io/blog/how-to-do-code-review/
-
 ## Technologies (and why I used it)
 
 #### Main tools
 
 - Tailwindcss:
-  - makes me easy to implement custom design in a fast way
-  - helps me to achieve fast professional looking results without experience designer
+  - the design is highly custom, it is not based on any templates and ready-made components that I did not want to use to make the website unique
+  - helps me to achieve fast professional looking results without experience designer. It gives me a design system to work from
   - it doesn't require naming things
     - CSS naming methodologies like BEM exist to solve this exact problem, like name collision and CSS globals (we have also other solutions like Atomic CSS, OOCSS, SMACSS, SUITCSS). However they introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming could be hard.
   - provides small size with PurgeCss
@@ -60,6 +42,34 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 
   - The gallery page contains dozens of photos and their number will grow, so I needed a way to present the data in user-friendly ways. For this purpose, I created my own infinite scroll. It is also optimized for touch screens. So I added event listeners for `touchend` and `resize` (to handle situations where someone resizes their browser).
 
+- JSDoc
+
+  - TypeScript is great, but in this case it will be overkill. To use it, code should be compiled or somehow changed to be executable. JSDocs is supported out-of-box, and does not require additional dependencies
+
+## Short info about testing with Jest + Enzyme
+
+**_Note:_**
+
+> While writing tests, I realized that a better solution would be to use `react-testing-library`, and it will be changed to that.
+
+At the beginning of writing tests I broken components into two parts: a pure component without any queries (pure because its return value is entirely dependent on the props passed to it) and a surrounding component that only handles the query. Then I tested only pure components. However renaming components, replacing Gatsby fragments, creating graphql query mockups was really confusing.
+
+Fortunately I found <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-testing/?=gatsby-plugin-te">gatsby-plugin-testing</a>. This plugin stores query data when we build a project.
+
+During `gatsby build` or `gatsby develop` command, we can see
+
+```
+[gatsby-plugin-testing] stored static queries
+```
+
+in the build output, which means that queries will be stored in a file `.testing-static-queries.json`.
+
+**_Important - after modifying the queries of components, we must rerun `gatsby build`._**
+
+#### PropTypes testing
+
+For this, I used the `check-prop-types` package because instead of getting a warning in case of incorrect props, I get an error. Thanks to this, I do not check the warnings (I don't need to mock console.error).
+
 ## Documentation files
 
 A quick look at the files and directories you'll see in my Gatsby project.
@@ -68,16 +78,37 @@ A quick look at the files and directories you'll see in my Gatsby project.
     ├── ...
     ├── src
     │   ├── styles
-    │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind styles. Global.css is imported within gatsby-browser.js
+    │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind │styles. Global.css is imported within gatsby-browser.js
+    │   │
     │   ├── components
     │   │    ├── index.js    # imported components that are used globally
-    │   │    └──
+    │   │    └── ...
     │   └── graphql          # graphql queries
     │         ├── useOptimizedImage.js   # query for images by filtering by extension
     │         └── ...
+    │
     ├── tailwind.config.js   # customization of Tailwind default design system
     │
+    │                     ##### testing #####
+    │
+    ├── jest.config.js    # Because Gatsby handles its own Babel configuration, here are Jest setting to use babel-jest.
+    │
+    ├── jest-preprocess.js # transform all js files
+    │
+    ├── __mocks__
+    │       └── gatsby.js  # mocking Gatsby module
+    │
+    ├── loadershim.js      # This sets enqueue to return a jest.fn().
+    │
+    ├── .testing-static-queries.json # stored GraphQL queries (created after the build)
     └── ...
+
+## My helpers, which I referred to when building the site
+
+- Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
+- Naming commits: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
+- Semantics: https://tutorials.comandeer.pl/html5-blog.html
+- JSDoc - https://jsdoc.app/index.html
 
 ## Draft
 

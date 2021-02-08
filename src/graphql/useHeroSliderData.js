@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export default function useTestimonial() {
+export const useHeroData = () => {
   const data = useStaticQuery(graphql`
     {
       allContentfulHeroSlider {
@@ -20,4 +20,4 @@ export default function useTestimonial() {
     }
   `);
   return data.allContentfulHeroSlider.edges;
-}
+};

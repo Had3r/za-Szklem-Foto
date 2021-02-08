@@ -4,6 +4,18 @@ import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image-es5';
 import useOptimizedImage from '../graphql/useOptimizedImage';
 
+/**
+ * Component for creating images or backgrounds optimized by gatsby-image plugin
+ * @param {object} props
+ * @param {string} props.src
+ * @param {string} props.alt
+ * @param {string} props.className
+ * @param {boolean} props.background
+ * @param {Object} props.style
+ * @param {array} props.children
+ * @param {Object} props.imgStyle
+ * @returns {JSX.Element} - Renders an image or a background
+ */
 const OptimizedImage = ({ src, alt, title, className, background, style, children, imgStyle }) => {
   const imageFluid = useOptimizedImage(src).fluid;
   if (!background) {
@@ -38,6 +50,8 @@ OptimizedImage.propTypes = {
   className: PropTypes.string,
   background: PropTypes.bool,
   style: PropTypes.object,
+  children: PropTypes.array,
+  imgStyle: PropTypes.object,
 };
 
 OptimizedImage.defaultProps = {
@@ -46,6 +60,8 @@ OptimizedImage.defaultProps = {
   className: '',
   background: false,
   style: {},
+  children: [],
+  imgStyle: {},
 };
 
 export default OptimizedImage;
