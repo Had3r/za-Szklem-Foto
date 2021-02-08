@@ -5,8 +5,8 @@
 #### Main tools
 
 - Tailwindcss:
-  - makes me easy to implement custom design in a fast way
-  - helps me to achieve fast professional looking results without experience designer
+  - the design is highly custom, it is not based on any templates and ready-made components that I did not want to use to make the website unique
+  - helps me to achieve fast professional looking results without experience designer. It gives me a design system to work from
   - it doesn't require naming things
     - CSS naming methodologies like BEM exist to solve this exact problem, like name collision and CSS globals (we have also other solutions like Atomic CSS, OOCSS, SMACSS, SUITCSS). However they introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming could be hard.
   - provides small size with PurgeCss
@@ -42,6 +42,10 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 
   - The gallery page contains dozens of photos and their number will grow, so I needed a way to present the data in user-friendly ways. For this purpose, I created my own infinite scroll. It is also optimized for touch screens. So I added event listeners for `touchend` and `resize` (to handle situations where someone resizes their browser).
 
+- JSDoc
+
+  - TypeScript is great, but in this case it will be overkill. To use it, code should be compiled or somehow changed to be executable. JSDocs is supported out-of-box, and does not require additional dependencies
+
 ## Short info about testing with Jest + Enzyme
 
 **_Note:_**
@@ -75,7 +79,7 @@ A quick look at the files and directories you'll see in my Gatsby project.
     ├── src
     │   ├── styles
     │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind │styles. Global.css is imported within gatsby-browser.js
-    │
+    │   │
     │   ├── components
     │   │    ├── index.js    # imported components that are used globally
     │   │    └── ...
