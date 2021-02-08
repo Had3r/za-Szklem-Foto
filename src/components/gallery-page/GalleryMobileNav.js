@@ -30,7 +30,7 @@ export const GalleryMobileNav = ({
   const isSelected = category => selected === category;
   return (
     <SelectWrapper onClick={() => changeDropdown()}>
-      <Selection className={classNames({ open: dropdownOpen })}>
+      <Selection data-test="dropdown-selection" className={classNames({ open: dropdownOpen })}>
         <SelectTrigger>
           <SelectedText>{selected}</SelectedText>
           <Arrow />

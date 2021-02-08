@@ -10,6 +10,11 @@ const defaultProps = {
   changeDropdown: () => false,
 };
 
+/**
+ * Factory function to create a ShallowWrapper for the Hero component.
+ * @function setup
+ * @returns {ShallowWrapper}
+ */
 const setup = (props = {}) => {
   const setupProps = {
     ...defaultProps,
@@ -21,5 +26,6 @@ const setup = (props = {}) => {
 describe('<GalleryMobileNav />', () => {
   it('renders', () => {
     const wrapper = setup();
+    expect(wrapper.length).toBe(1);
   });
 });

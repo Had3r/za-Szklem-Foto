@@ -44,6 +44,10 @@ The choice of CMS was probably the most difficult. I really liked Forestry, but 
 
 ## Short info about testing with Jest + Enzyme
 
+**_Note:_**
+
+> While writing tests, I realized that a better solution would be to use `react-testing-library`, and it will be changed to that.
+
 At the beginning of writing tests I broken components into two parts: a pure component without any queries (pure because its return value is entirely dependent on the props passed to it) and a surrounding component that only handles the query. Then I tested only pure components. However renaming components, replacing Gatsby fragments, creating graphql query mockups was really confusing.
 
 Fortunately I found <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-testing/?=gatsby-plugin-te">gatsby-plugin-testing</a>. This plugin stores query data when we build a project.
@@ -70,7 +74,7 @@ A quick look at the files and directories you'll see in my Gatsby project.
     ├── ...
     ├── src
     │   ├── styles
-    │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind styles. Global.css is imported within gatsby-browser.js
+    │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind │styles. Global.css is imported within gatsby-browser.js
     │
     │   ├── components
     │   │    ├── index.js    # imported components that are used globally
