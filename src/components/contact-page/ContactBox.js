@@ -1,8 +1,13 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { Wrapper, Title, Description, Number, CTA } from './ContactBox.styles';
 
+/**
+ * Renders a single container with contact information
+ * @param {object} props
+ * @param {object} props.data - the text content of the container
+ */
 export const ContactBox = ({ data }) => {
   const Icon = data.icon;
   return (
@@ -19,4 +24,8 @@ export const ContactBox = ({ data }) => {
       )}
     </Wrapper>
   );
+};
+
+ContactBox.propTypes = {
+  data: PropTypes.object.isRequired,
 };

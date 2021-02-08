@@ -8,7 +8,7 @@ const styles = {
 
 export default () => {
   return (
-    <Layout>
+    <Layout pageType="contact">
       <Banner
         additionalOptions={{
           title: 'Skontaktuj się',

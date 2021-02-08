@@ -1,5 +1,7 @@
 # Za Szkłem Fotografia
 
+## Technologies (and why I used it)
+
 #### Main tools
 
 - Tailwindcss:
@@ -98,17 +100,7 @@ A quick look at the files and directories you'll see in my Gatsby project.
 - Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
 - Naming commits: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
 - Semantics: https://tutorials.comandeer.pl/html5-blog.html
-- Code review https://www.ulam.io/blog/how-to-do-code-review/
-
-#### JSDoc
-
-- https://www.inkoop.io/blog/a-guide-to-js-docs-for-react-js/
-- https://jsdoc.app/index.html
-- https://medium.com/@antonkrinitsyn/why-use-jsdoc-19d19e40822c
-- https://medium.com/@antonkrinitsyn/jsdoc-frequent-patterns-436dad6dbee1
-- https://gist.github.com/DeruiDENG/074b15de1ebc23ee8d307c14198c1231
-
-## Technologies (and why I used it)
+- JSDoc - https://jsdoc.app/index.html
 
 ## Draft
 

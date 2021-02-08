@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import { TestimonialArrow, HeroArrow } from './SliderArrow.styles';
 import {
@@ -8,6 +9,12 @@ import {
   FaLongArrowAltLeft,
 } from '../../assets/icons/icons';
 
+/**
+ * Returns the carousel navigation arrows
+ * @param {object} props
+ * @param {object} props.type - carousel type and arrow direction
+ * @param {function} props.onClick - click carousel navigation event
+ */
 export const SliderArrow = ({ onClick, type }) => {
   const createArrow = type => {
     const { component, direction } = type;
@@ -33,4 +40,9 @@ export const SliderArrow = ({ onClick, type }) => {
   const arrow = createArrow(type);
 
   return arrow;
+};
+
+SliderArrow.propTypes = {
+  onClick: PropTypes.func,
+  type: PropTypes.object.isRequired,
 };

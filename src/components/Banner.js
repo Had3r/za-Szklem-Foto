@@ -4,6 +4,14 @@ import OptimizedImage from './OptimizedImage';
 import { Link } from 'gatsby';
 import { Container, TextSection, Heading, Paragraph, BgLayer } from './Banner.styles';
 
+/**
+ * Renders the banner
+ * @param {object} props
+ * @param {string} props.image
+ * @param {Object} props.imgStyles
+ * @param {Object} props.additionalOptions
+ * @param {boolean} props.addLayer
+ */
 export const Banner = ({ image, imgStyles, additionalOptions, addLayer }) => {
   return (
     <BgLayer layer={addLayer}>
@@ -26,7 +34,10 @@ export const Banner = ({ image, imgStyles, additionalOptions, addLayer }) => {
 };
 
 Banner.propTypes = {
+  image: PropTypes.string.isRequired,
+  imgStyles: PropTypes.object,
   additionalOptions: PropTypes.object,
+  addLayer: PropTypes.bool,
 };
 
 Banner.defaultProps = {
@@ -34,4 +45,5 @@ Banner.defaultProps = {
     CTA: false,
     questionBanner: false,
   },
+  addLayer: false,
 };

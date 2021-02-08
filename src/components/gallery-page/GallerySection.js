@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import useSessionsData from '../../graphql/useSessionsData';
 import 'react-medium-image-zoom/dist/styles.css';
 
 import { GalleryDesktopNav } from './GalleryDesktopNav';
 import { GalleryMobileNav } from './GalleryMobileNav';
 import { GalleryGrid } from './GalleryGrid';
-
 import { Wrapper, AdditionalText, CategoryNavigation } from './GallerySection.styles';
 
+/**
+ * Returns GallerySection component
+ * @param {object} props
+ * @param {object} props.location - data passes via <Link /> component
+ */
 export const GallerySection = ({ location }) => {
   const presetCategory = location.state ? location.state.category : null;
 
@@ -111,4 +116,8 @@ export const GallerySection = ({ location }) => {
       {hasMore && <AdditionalText>Przewiń w dół, aby załadować więcej...</AdditionalText>}
     </Wrapper>
   );
+};
+
+GallerySection.propTypes = {
+  location: PropTypes.object.isRequired,
 };

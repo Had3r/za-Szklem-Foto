@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
+import PropTypes from 'prop-types';
 import { NavList, NavItem } from './NavList.styles';
 
 const links = [
@@ -26,6 +26,12 @@ const links = [
   },
 ];
 
+/**
+ *
+ * @param {object} props
+ * @param {string} props.pageType - the type of the current page
+ * @param {boolean} props.scrolledPage - indicates whether the user has started a scroll
+ */
 export const NavigationList = ({ pageType, scrolledPage }) => {
   return (
     <NavList>
@@ -40,4 +46,9 @@ export const NavigationList = ({ pageType, scrolledPage }) => {
       })}
     </NavList>
   );
+};
+
+NavigationList.propTypes = {
+  pageType: PropTypes.string.isRequired,
+  scrolledPage: PropTypes.bool.isRequired,
 };

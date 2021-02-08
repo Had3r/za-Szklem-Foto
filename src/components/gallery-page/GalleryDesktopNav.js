@@ -5,10 +5,11 @@ import classNames from 'classnames';
 import { NavList, NavItem, NavButton, Container } from './GalleryDesktopNav.styles';
 
 /**
- * Functional react component for desktop navigation buttons
- * @param {array} param
- * @param {function} param
- * @param {string} param
+ * Component for desktop navigation buttons
+ * @param {object} props
+ * @param {array} props.categories
+ * @param {function} props.imagesChange
+ * @param {string} props.selected
  * @returns {JSX.Element} - Rendered list of buttons
  */
 
