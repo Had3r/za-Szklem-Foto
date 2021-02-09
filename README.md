@@ -5,7 +5,6 @@
 #### Main tools
 
 - Tailwindcss:
-<<<<<<< HEAD
 
   - the design is highly custom. It is not based on any templates and ready-made components that I didn't want to use to make the website unique. Tailwind is easy to customizable. It comes with a default configuration, but it’s straightforward to override,
   - helps me to achieve fast professional looking results without experience designer. It gives me a design system to work from,
@@ -13,14 +12,6 @@
     - CSS naming methodologies like BEM exist to solve exact problem, like name collision and CSS globals (we have also other solutions like Atomic CSS, OOCSS, SMACSS, SUITCSS). However they introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming could be hard,
   - provides small size with PurgeCss,
 
-=======
-  - the design is highly custom, it is not based on any templates and ready-made components that I did not want to use to make the website unique
-  - helps me to achieve fast professional looking results without experience designer. It gives me a design system to work from
-  - it doesn't require naming things
-    - CSS naming methodologies like BEM exist to solve this exact problem, like name collision and CSS globals (we have also other solutions like Atomic CSS, OOCSS, SMACSS, SUITCSS). However they introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming could be hard.
-  - provides small size with PurgeCss
-  - for more information check my Tailwind tutorial from Adam Wathan -> <a href="https://github.com/Had3r/Learning-Code/tree/master/tailwindcss-adamWathan#tailwindcss">tailwind tutorial</a>
->>>>>>> 854296e962a39e0b32e1827efc7d483b4de360dc
 - Styled Components:
 
   - CSS in JS abstracts style to the component level. With naming methodologies like BEM, we can get pseudo encapsulation. With Shadow DOM (spec introduced in web components to isolate styling to a particular subset of the DOM), I got true encapsulation at the component level.
@@ -59,13 +50,6 @@ Contentful was my choice. Reasones:
 
   - The gallery page contains dozens of photos and their number will grow, so I needed a way to present the data in user-friendly ways. For this purpose, I created my own infinite scroll. It is also optimized for touch screens. So I added event listeners for `touchend` and `resize` (to handle situations where someone resizes their browser).
 
-<<<<<<< HEAD
-=======
-- JSDoc
-
-  - TypeScript is great, but in this case it will be overkill. To use it, code should be compiled or somehow changed to be executable. JSDocs is supported out-of-box, and does not require additional dependencies
-
->>>>>>> 854296e962a39e0b32e1827efc7d483b4de360dc
 ## Short info about testing with Jest + Enzyme
 
 **_Note:_**
@@ -98,7 +82,6 @@ A quick look at the files and directories you'll see in my Gatsby project.
     ├── ...
     ├── src
     │   ├── styles
-<<<<<<< HEAD
     │   │    └── globals.css              # when compiling css through postcss, Tailwind finds directives here and converts to tailwind │styles. Global.css is imported within gatsby-browser.js
     │   │
     │   ├── components
@@ -125,41 +108,6 @@ A quick look at the files and directories you'll see in my Gatsby project.
     └── ...
 
 ## My helpers, which I referred to when building the site
-=======
-    │   │    └── globals.css # when compiling css through postcss, Tailwind finds directives here and converts to tailwind │styles. Global.css is imported within gatsby-browser.js
-    │   │
-    │   ├── components
-    │   │    ├── index.js    # imported components that are used globally
-    │   │    └── ...
-    │   └── graphql          # graphql queries
-    │         ├── useOptimizedImage.js   # query for images by filtering by extension
-    │         └── ...
-    │
-    ├── tailwind.config.js   # customization of Tailwind default design system
-    │
-    │                     ##### testing #####
-    │
-    ├── jest.config.js    # Because Gatsby handles its own Babel configuration, here are Jest setting to use babel-jest.
-    │
-    ├── jest-preprocess.js # transform all js files
-    │
-    ├── __mocks__
-    │       └── gatsby.js  # mocking Gatsby module
-    │
-    ├── loadershim.js      # This sets enqueue to return a jest.fn().
-    │
-    ├── .testing-static-queries.json # stored GraphQL queries (created after the build)
-    └── ...
-
-## My helpers, which I referred to when building the site
-
-- Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
-- Naming commits: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
-- Semantics: https://tutorials.comandeer.pl/html5-blog.html
-- JSDoc - https://jsdoc.app/index.html
-
-## Draft
->>>>>>> 854296e962a39e0b32e1827efc7d483b4de360dc
 
 - Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
 - Naming commits: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
