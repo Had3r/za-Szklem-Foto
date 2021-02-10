@@ -3,7 +3,7 @@
 
   <div>
   A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
-  <div>
+  </div>
 
 </div>
 
