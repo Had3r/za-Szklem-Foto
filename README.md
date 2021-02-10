@@ -1,8 +1,27 @@
+<div align="center">
+
 # Za Szkłem Fotografia
+
+  <div>
+  A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
+  </div>
+  <hr style="border:1px solid gray"> </hr> <br />
+
+</div>
+
+- [Technologies](#technologies-and-why-i-used-it)
+- [Testing](#short-info-about-testing-with-jest-and-enzyme)
+- [Documentation files](#documentation-files)
+- [My helpers, which I referred to when building the site](#my-helpers-which-i-referred-to-when-building-the-site)
+- [TODO](#todo)
 
 ## Technologies (and why I used it)
 
 #### Main tools
+
+- Gatsby.js
+
+  - to create highly performant website according to the latest web standards
 
 - Tailwindcss:
 
@@ -16,16 +35,17 @@
 
   - CSS in JS abstracts style to the component level. With naming methodologies like BEM, we can get pseudo encapsulation. With Shadow DOM (spec introduced in web components to isolate styling to a particular subset of the DOM), I got true encapsulation at the component level.
   - gave me unlimited semantic elements. HTML5 provide `header`, `footer`, `section`, and others. Styled components are semantically clear, their purpose is incredibly understandable ex: `Logo`, `Navbar`, `Toolbar`,
-  - I really like feature called prop injection (props can be passed to styled components)
+  - I really like feature called prop injection (props can be passed to styled components),
+  - It allows me to create a clean component so that I extract all the styles into a separate file.
 
 - CMS:
 
 The choice of CMS was probably the most difficult. I really like idea of Git-based CMS, which gives us full version control on all content out of the box.
-However, my choice fell on a different approach, called pure headless CMSs (API-first). The reason was that there were so many options available that allow me to completely customize the CMS. It also handles large amounts of data with ease, which is a key point (multiple photos).
+However, my choice fell on a different approach, called pure headless CMS (API-first). The reason was that there were so many options available that allow me to completely customize the CMS. It also handles large amounts of data with ease, which is a key point (multiple photos).
 
 Contentful was my choice. Reasones:
 
-- **_Contantful images API offers media processing of various formats. I can upload and store pretty much every popular file format like image, video, pdf, spreadsheet, markdown, etc. Thanks to the Contentful Images API, I can manipulate any image. For example it is possibility to resize, crop, decrease quality to optimize the size, and even change the format to JPG, PNG, and/or WebP._**
+- **_Contantful images API_** offers media processing of various formats. I can upload and store pretty much every popular file format like image, video, pdf, spreadsheet, markdown, etc. Thanks to the Contentful Images API, I can manipulate any image. For example it is possibility to resize, crop, decrease quality to optimize the size, and even change the format to JPG, PNG, and/or WebP.
 - **pricing**: I'm oriented towards the free version (for now). My free micro space includes 24 content types. Additionally, I can get up to 5000 records and 10 free users to manage all content. This is all I need to build this website
 - It has many languages, including polish, which is important for the person who manages it,
 - does not require technical knowledge of git or md files to create changes to the site,
@@ -50,7 +70,7 @@ Contentful was my choice. Reasones:
 
   - The gallery page contains dozens of photos and their number will grow, so I needed a way to present the data in user-friendly ways. For this purpose, I created my own infinite scroll. It is also optimized for touch screens. So I added event listeners for `touchend` and `resize` (to handle situations where someone resizes their browser).
 
-## Short info about testing with Jest + Enzyme
+## Short info about testing with Jest and Enzyme
 
 **_Note:_**
 
@@ -113,6 +133,12 @@ A quick look at the files and directories you'll see in my Gatsby project.
 - Naming commits: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
 - Semantics: https://tutorials.comandeer.pl/html5-blog.html
 - JSDoc - https://jsdoc.app/index.html
+
+## TODO
+
+- [ ] optimize the website for SEO
+- [ ] correct the correctness of the text display by CMS
+- [ ] add a privacy policy
 
 #### Draft
 
