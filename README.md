@@ -1,16 +1,24 @@
 <div align="center">
 # Za Szkłem Fotografia
-A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
+
+  <div>
+  A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
+  <div>
+
 </div>
 
-- [Technologies](#technologies)
+- [Technologies](#technologies-and-why-i-used-it)
 - [Testing](#short-info-about-testing-with-jest-and-enzyme)
 - [Documentation files](#documentation-files)
-- [My helpers, which I referred to when building the site](#my-helpers,-which-i-referred-to-when-building-the-site)
+- [My helpers, which I referred to when building the site](#my-helpers-which-i-referred-to-when-building-the-site)
 
 ## Technologies (and why I used it)
 
 #### Main tools
+
+- Gatsby.js
+
+  - to create highly performant website according to the latest web standards
 
 - Tailwindcss:
 
@@ -24,7 +32,8 @@ A website for a photo studio with a wide range of services - weddings, communion
 
   - CSS in JS abstracts style to the component level. With naming methodologies like BEM, we can get pseudo encapsulation. With Shadow DOM (spec introduced in web components to isolate styling to a particular subset of the DOM), I got true encapsulation at the component level.
   - gave me unlimited semantic elements. HTML5 provide `header`, `footer`, `section`, and others. Styled components are semantically clear, their purpose is incredibly understandable ex: `Logo`, `Navbar`, `Toolbar`,
-  - I really like feature called prop injection (props can be passed to styled components)
+  - I really like feature called prop injection (props can be passed to styled components),
+  - It allows me to create a clean component so that I extract all the styles into a separate file.
 
 - CMS:
 
