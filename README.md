@@ -5,6 +5,7 @@
   <div>
   A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
   </div>
+  <hr style="border:2px solid gray"> </hr> <br />
 
 </div>
 
