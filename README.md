@@ -13,6 +13,7 @@
 - [Testing](#short-info-about-testing-with-jest-and-enzyme)
 - [Documentation files](#documentation-files)
 - [My helpers, which I referred to when building the site](#my-helpers-which-i-referred-to-when-building-the-site)
+- [TODO](#todo)
 
 ## Technologies (and why I used it)
 
@@ -132,6 +133,12 @@ A quick look at the files and directories you'll see in my Gatsby project.
 - Naming commits: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit
 - Semantics: https://tutorials.comandeer.pl/html5-blog.html
 - JSDoc - https://jsdoc.app/index.html
+
+## TODO
+
+- [ ] optimize the website for SEO
+- [ ] correct the correctness of the text display by CMS
+- [ ] add a privacy policy
 
 #### Draft
 
