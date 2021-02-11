@@ -132,7 +132,6 @@ A quick look at the files and directories you'll see in my Gatsby project.
 
 - I use <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyzer/">webpack-bundle-analyzer</a> to monitor the size of the website resources.
 - To manage SEO-related head tags I used <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-head/?=react-hea">react-head</a> instead of react-helmet, which has less minzipped size
-- with React 13,3 MB, with Preact (12 MB) so no need for this
 - <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-optimize-svgs/?=svgr">gatsby-plugin-optimize-svgs</a> allowed me to minimize the SVG output to the filesystem during compilation
 - finally, using <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts/?=preload-f">gatsby-plugin-preload-fonts</a> enables preloads all necessary fonts per route to decrease time to first meaningful paint
 
