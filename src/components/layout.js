@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Navigation } from './navigation/Navbar';
 import { Footer } from './Footer';
+import { SEO } from './SEO';
 
 /**
  * Component that wraps the page content
@@ -10,9 +11,10 @@ import { Footer } from './Footer';
  * @param {string} props.pageType
  * @returns {JSX.Element} - Returns the item wrapper
  */
-export const Layout = ({ children, pageType }) => {
+export const Layout = ({ children, pageType, SEOdata }) => {
   return (
     <>
+      <SEO SEOdata={SEOdata} />
       <Navigation pageType={pageType} />
       {children}
       <Footer />

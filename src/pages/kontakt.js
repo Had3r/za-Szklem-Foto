@@ -6,9 +6,16 @@ const styles = {
   zIndex: '-1',
 };
 
-export default () => {
+export default ({ location }) => {
   return (
-    <Layout pageType="contact">
+    <Layout
+      pageType="contact"
+      SEOdata={{
+        title: 'Za Szkłem Fotografia - Kontakt',
+        description:
+          'W mojej ofercie znajduje się fotografia noworodkowa, okolicznościowa, weselna i wiele innych!',
+        canonical: location.href,
+      }}>
       <Banner
         additionalOptions={{
           title: 'Skontaktuj się',
