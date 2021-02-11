@@ -16,7 +16,7 @@ export const Footer = () => {
         </Paragraph>
         <Paragraph>Adres: ul. Feliksa Stamma 59-300 Lubin</Paragraph>
         <Paragraph>
-          <Link to="/">Polityka prywatności</Link>
+          <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
         </Paragraph>
         <Icons>
           <a href="https://www.facebook.com/zaszklemfotografia">
