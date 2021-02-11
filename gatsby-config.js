@@ -5,9 +5,16 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Za Szkłem Fotografia',
+    description: 'Fotografia weselna, okolicznościowa, portretowa i inne',
     shortName: 'Za Szkłem',
+    siteUrl: 'https://www.zaSzklemFotografia.pl/',
+    canonical: 'https://www.zaSzklemFotografia.pl/',
+    mainIcon: `static/icons/quote.svg`,
   },
   plugins: [
+    `gatsby-plugin-react-head`,
+    'gatsby-plugin-optimize-svgs',
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,7 +40,6 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-react-helmet`,
     'gatsby-plugin-resolve-src',
     `gatsby-plugin-playground`,
     'gatsby-plugin-testing',
@@ -57,13 +63,15 @@ module.exports = {
         ],
       },
     },
-    // only for debugging:
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-    //   options: {
-    //     analyzerPort: 3000,
-    //     production: true,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        analyzerPort: 3000,
+        production: true,
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        generateStatsFile: true,
+        analyzerMode: 'static',
+      },
+    },
   ],
 };

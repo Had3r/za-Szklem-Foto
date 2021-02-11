@@ -3,7 +3,14 @@ import { Layout, Banner, PageHeader, GallerySection } from '../components/index'
 
 export default ({ location }) => {
   return (
-    <Layout pageType="galeria">
+    <Layout
+      pageType="galeria"
+      SEOdata={{
+        title: 'Za Szkłem Fotografia - Galeria',
+        description:
+          'W mojej ofercie znajduje się fotografia noworodkowa, okolicznościowa, weselna i wiele innych!',
+        canonical: location.href,
+      }}>
       <Banner image="photo-bg.jpg" />
       <PageHeader
         title="Galeria"
