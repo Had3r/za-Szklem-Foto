@@ -18,6 +18,8 @@ import { ContactForm } from './contact-page/ContactForm';
 
 import { ErrorPageContent } from './404-page/ErrorPageContent';
 
+import { PrivacyPolicyContent } from './privacy-policy-page/PrivacyPolicyContent';
+
 export {
   Layout,
   Hero,
@@ -31,4 +33,5 @@ export {
   ContactBoxes,
   ContactForm,
   ErrorPageContent,
+  PrivacyPolicyContent,
 };

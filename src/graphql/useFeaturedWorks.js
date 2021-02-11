@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export default function useSessionData() {
+export default function useFeaturedWorks() {
   const data = useStaticQuery(graphql`
     {
       allContentfulFeaturedWorks {
