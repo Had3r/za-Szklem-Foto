@@ -7,8 +7,9 @@ export const useHeroData = () => {
         edges {
           node {
             id
-            headingPrimary
-            headingSecondary
+            textPrimary
+            textSecondary
+            textTertiary
             image {
               fluid {
                 ...GatsbyContentfulFluid_withWebp

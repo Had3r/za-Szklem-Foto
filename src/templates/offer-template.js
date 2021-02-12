@@ -16,8 +16,8 @@ const OfferTemplate = ({
         additionalOptions={{
           mobileWrapper: false,
         }}
-        title={typeOfService}
-        subtitle="wazne - zapoznaj się ze szczegółami oferty"
+        title={typeOfService.charAt(0).toUpperCase() + typeOfService.slice(1)}
+        subtitle="Zapoznaj się ze szczegółami oferty"
       />
       <Content>
         {documentToReactComponents(detailsOfOffer.json)}
