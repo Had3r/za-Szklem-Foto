@@ -3,6 +3,7 @@ import React from 'react';
 import { Layout, PageHeader, PrivacyPolicyContent } from '../components/index';
 
 export default () => {
+
   return (
     <Layout pageType="privacy-policy">
       <PageHeader
