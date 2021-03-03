@@ -10,6 +10,7 @@ export const useHeroData = () => {
             textPrimary
             textSecondary
             textTertiary
+            order
             image {
               fluid {
                 ...GatsbyContentfulFluid_withWebp

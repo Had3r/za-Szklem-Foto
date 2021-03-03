@@ -14,7 +14,7 @@ import {
 } from './Hero.styles';
 
 export const Hero = () => {
-  const heroData = useHeroData();
+  const heroData = useHeroData().sort((a, b) => a.node.order - b.node.order);
   return (
     <Section data-test="component-hero">
       <MultipleCarousel data-test="carousel-display" appendDots autoplaySpeed={7000} arrType="hero">

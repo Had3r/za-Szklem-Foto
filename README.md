@@ -5,8 +5,9 @@
   <div>
   A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
   </div>
+  <div>Click<a href="https://za-szklem-foto.vercel.app/">here</a> to see the page.</div>
   <div>
-  This is a fun project to get to know the TailwindCSS library and the Gatsby.js ecosystem better.
+  This is a fun project to get to know the TailwindCSS library and the Gatsby.js ecosystem better. However, the company is real, so one day it may find a practical usage.
   </div>
   <hr style="border:1px solid gray"> </hr> <br />
 
