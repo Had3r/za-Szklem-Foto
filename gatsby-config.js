@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-react-head`,
     'gatsby-plugin-optimize-svgs',
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-no-index`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
