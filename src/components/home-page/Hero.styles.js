@@ -43,6 +43,10 @@ export const Section = styled.section`
   }
 `;
 
+export const Slide = styled.div`
+  ${tw`outline-none`};
+`;
+
 export const Wrapper = styled.div`
   ${tw`absolute w-screen flex flex-col justify-center`};
   height: calc(100vh - 5rem);

@@ -37,7 +37,7 @@ export const GallerySection = ({ location }) => {
   }, [hasMore, slicedImages]);
 
   useEffect(() => {
-    filterData('Wszystko');
+    filterData(selected);
     createCategories(sessions);
   }, []);
 
