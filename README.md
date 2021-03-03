@@ -143,6 +143,8 @@ A quick look at the files and directories you'll see in my Gatsby project.
 
 The content of the website can be fully managed by a non-technical person. Thanks to the integration with Contentful, the user, by changing the content and clicking publish, triggers the webhook which runs the build on the Vercel platform.
 
+**_Build time is a maximum of 2 minutes._**
+
 ## My helpers, which I referred to when building the site
 
 - Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
