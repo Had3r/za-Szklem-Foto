@@ -9,7 +9,7 @@
   <div>Click <a href="https://za-szklem-foto.vercel.app/">here</a> to see the page.</div> 
   <br />
   <div>
-  This is a fun project to get to know the TailwindCSS library and the Gatsby.js ecosystem better. However, the company is real, so one day it may find a practical usage.
+  This is a fun project to get to know the TailwindCSS library and the Gatsby.js ecosystem better. For this reason, the page is not indexed. However, the company is real, so one day it may find a practical usage.
   </div>
   <hr style="border:1px solid gray"> </hr> <br />
 
