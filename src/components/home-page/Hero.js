@@ -7,28 +7,30 @@ import {
   Section,
   Wrapper,
   TextContent,
-  HeadingPrimary,
+  Heading,
   Paragraph,
   ScrollDown,
+  Slide,
 } from './Hero.styles';
 
 export const Hero = () => {
   const heroData = useHeroData();
   return (
     <Section data-test="component-hero">
-      <MultipleCarousel data-test="carousel-display" appendDots autoplaySpeed={4500} arrType="hero">
+      <MultipleCarousel data-test="carousel-display" appendDots autoplaySpeed={7000} arrType="hero">
         {heroData.map(singleItem => {
-          const { image, headingPrimary, headingSecondary: paragraphText, id } = singleItem.node;
+          const { image, textPrimary, textSecondary, textTertiary, id } = singleItem.node;
           return (
-            <div key={id}>
+            <Slide key={id}>
               <Wrapper>
                 <TextContent>
-                  <HeadingPrimary>{headingPrimary}</HeadingPrimary>
-                  <Paragraph>{paragraphText}</Paragraph>
+                  <Heading>{textPrimary}</Heading>
+                  <Paragraph>{textSecondary}</Paragraph>
+                  <Paragraph>{textTertiary}</Paragraph>
                 </TextContent>
               </Wrapper>
               <BackgroundImage className="background" preserveStackingContext fluid={image.fluid} />
-            </div>
+            </Slide>
           );
         })}
       </MultipleCarousel>

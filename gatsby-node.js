@@ -31,3 +31,13 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ContentfulTestimonial implements Node {
+      positionOrCompany: String
+    }
+  `;
+  createTypes(typeDefs);
+};

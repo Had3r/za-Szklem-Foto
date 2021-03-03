@@ -5,6 +5,9 @@
   <div>
   A website for a photo studio with a wide range of services - weddings, communions, holidays, etc.
   </div>
+  <div>
+  This is a fun project to get to know the TailwindCSS library and the Gatsby.js ecosystem better.
+  </div>
   <hr style="border:1px solid gray"> </hr> <br />
 
 </div>
@@ -13,6 +16,7 @@
 - [Testing](#short-info-about-testing-with-jest-and-enzyme)
 - [Documentation files](#documentation-files)
 - [Website Performance](#website-performance)
+- [WorkFlow](#workflow)
 - [My helpers, which I referred to when building the site](#my-helpers-which-i-referred-to-when-building-the-site)
 - [TODO](#todo)
 
@@ -135,6 +139,12 @@ A quick look at the files and directories you'll see in my Gatsby project.
 - <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-optimize-svgs/?=svgr">gatsby-plugin-optimize-svgs</a> allowed me to minimize the SVG output to the filesystem during compilation
 - finally, using <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts/?=preload-f">gatsby-plugin-preload-fonts</a> enables preloads all necessary fonts per route to decrease time to first meaningful paint
 
+## Workflow
+
+The content of the website can be fully managed by a non-technical person. Thanks to the integration with Contentful, the user, by changing the content and clicking publish, triggers the webhook which runs the build on the Vercel platform.
+
+**_Build time is a maximum of 2 minutes._**
+
 ## My helpers, which I referred to when building the site
 
 - Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
@@ -145,11 +155,4 @@ A quick look at the files and directories you'll see in my Gatsby project.
 ## TODO
 
 - [ ] optimize the website for SEO
-- [ ] correct the correctness of the text display by CMS
-- [ ] add a privacy policy
-
-#### Draft
-
-- Spacing between sections should be:
-
-`${tw'container px-4 sm:px-0 py-16 md:py-20'}`
+- [ ] check the correctness of the text display by CMS

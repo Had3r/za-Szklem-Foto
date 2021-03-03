@@ -23,7 +23,7 @@ export default ({ location }) => {
             'Chcesz się ze mną skontaktować? Poniej wybierz formę kontaktu. Oto, jak możesz się z nami skontaktować',
         }}
         addLayer
-        image="photo-bg.jpg"
+        image="keyboard.jpg"
         imgStyles={styles}
       />
       <ContactBoxes />

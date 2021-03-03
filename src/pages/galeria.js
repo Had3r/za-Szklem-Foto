@@ -11,7 +11,7 @@ export default ({ location }) => {
           'W mojej ofercie znajduje się fotografia noworodkowa, okolicznościowa, weselna i wiele innych!',
         canonical: location.href,
       }}>
-      <Banner image="photo-bg.jpg" />
+      <Banner image="gallery-banner-img.jpg" />
       <PageHeader
         title="Galeria"
         subtitle="Spójrz na rezultat mojej pracy. Jest świetny!"

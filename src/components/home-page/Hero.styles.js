@@ -43,6 +43,10 @@ export const Section = styled.section`
   }
 `;
 
+export const Slide = styled.div`
+  ${tw`outline-none`};
+`;
+
 export const Wrapper = styled.div`
   ${tw`absolute w-screen flex flex-col justify-center`};
   height: calc(100vh - 5rem);
@@ -52,11 +56,11 @@ export const TextContent = styled.div`
   ${tw`p-4 sm:p-0 container`};
 `;
 
-export const HeadingPrimary = styled.h1`
-  ${tw`my-5`};
+export const Heading = styled.h2`
+  ${tw`my-5 uppercase leading-snug text-white`};
 `;
 export const Paragraph = styled.p`
-  ${tw`sm:w-7/12 text-base font-light leading-7`};
+  ${tw`sm:w-7/12 block text-base font-light leading-7`};
 `;
 
 export const moveDots = y => keyframes`

@@ -9,11 +9,13 @@ export const AboutMe = () => {
     <Section id="about-me">
       <TextPart>
         <h3>o mnie</h3>
-        <h2>Jestem bardzo dobrym fotografem.</h2>
+        <h2>Profesjonalne zdjęcia i doskonałe wrazenia z sesji.</h2>
         <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad totam facere rerum velit
-          aliquid recusandae. Maxime rerum debitis recusandae voluptatibus rem dolorem, laborum
-          minima sit est architecto quae modi at.
+          Uchwycę najlepszą wersję Ciebie i sprawię, że poczujesz się wspaniale. Fotografuję ludzi,
+          których kochasz najbardziej i którzy są dla Ciebie najcenniejsi: rodzinę, dzieci,
+          bliskich. Utrwalam wyjątkowe wydarzenia i ważne momenty w Twoim życiu. Tworzę wspomnienia,
+          które trwają wiecznie. Robiąc to, sprawię, że się uśmiechniesz i zapewnię Ci zabawne i
+          podnoszące na duchu doświadczenie.
         </Paragraph>
         <Link to="/oferta" className="link link-primary">
           Sprawdź ofertę
