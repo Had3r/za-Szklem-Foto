@@ -9,7 +9,7 @@ export const AboutMe = () => {
     <Section id="about-me">
       <TextPart>
         <h3>o mnie</h3>
-        <h2>Profesjonalne zdjęcia i doskonałe wrazenia z sesji.</h2>
+        <h2>Profesjonalne zdjęcia i doskonałe wrażenia z sesji.</h2>
         <Paragraph>
           Uchwycę najlepszą wersję Ciebie i sprawię, że poczujesz się wspaniale. Fotografuję ludzi,
           których kochasz najbardziej i którzy są dla Ciebie najcenniejsi: rodzinę, dzieci,

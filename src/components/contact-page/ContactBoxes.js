@@ -14,14 +14,14 @@ export const ContactBoxes = () => {
           description: `Interesuje Cię profesjonalna usługa fotograficzna? Po prostu podnieś telefon, aby
         porozmawiać z i dowiedzieć się więcej.`,
           icon: MdLocalPhone,
-          number: '+48 111 111 111',
+          number: '+48 601 995 363',
         }}
       />
       <ContactBox
         data={{
           title: 'Kontakt mailowy',
           description: `Potrzebujesz pomocy ale wolisz wysłać wiadomość? 
-          Nie martw się… jestem tu dla Ciebie`,
+          Nie martw się… Jestem tu dla Ciebie.`,
           icon: TiMessages,
           btnText: 'napisz do mnie',
         }}

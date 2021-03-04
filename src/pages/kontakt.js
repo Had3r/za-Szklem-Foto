@@ -19,8 +19,7 @@ export default ({ location }) => {
       <Banner
         additionalOptions={{
           title: 'Skontaktuj się',
-          subtitle:
-            'Chcesz się ze mną skontaktować? Poniej wybierz formę kontaktu. Oto, jak możesz się z nami skontaktować',
+          subtitle: 'Chcesz się ze mną skontaktować? Poniej wybierz formę kontaktu.',
         }}
         addLayer
         image="keyboard.jpg"
