@@ -14,7 +14,7 @@ export default ({ location }) => {
       <Banner image="gallery-banner-img.jpg" />
       <PageHeader
         title="Galeria"
-        subtitle="Spójrz na rezultat mojej pracy. Jest świetny!"
+        subtitle="Spójrz na rezultat mojej pracy."
         additionalOptions={{
           mobileWrapper: true,
           arrow: false,

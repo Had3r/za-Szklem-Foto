@@ -1,4 +1,6 @@
 import React from 'react';
+import { useForm } from '@formspree/react';
+import { Link } from 'gatsby';
 
 import {
   Form,
@@ -8,11 +10,27 @@ import {
   Textarea,
   SubmitBtn,
   LeftSide,
+  ErrorMsgs,
+  Head,
+  Paragraph,
 } from './ContactForm.styles';
 
 export const ContactForm = () => {
+  const [state, handleSubmit] = useForm('xnqowgko');
+  if (state.succeeded) {
+    return (
+      <ErrorMsgs>
+        <Head>Dziękuję za wypełnienie formularza!</Head>
+        <Paragraph>
+          Sprawdzę Twoją wiadomość i skontaktuję się z Tobą do jutra. W międzyczasie możesz
+          sprawdzić sekcję z <Link to="/oferta">ofertą</Link> lub przejrzeć moją{' '}
+          <Link to="/galeria">galerię</Link> zdjęć.
+        </Paragraph>
+      </ErrorMsgs>
+    );
+  }
   return (
-    <Form action="https://formspree.io/f/xnqowgko" method="POST">
+    <Form onSubmit={handleSubmit}>
       <Wrapper>
         <LeftSide>
           <InputBox>
@@ -33,7 +51,9 @@ export const ContactForm = () => {
           id="textarea"
           placeholder="Wiadomość *"
         />
-        <SubmitBtn className="btn btn-primary">Wyślij</SubmitBtn>
+        <SubmitBtn className="btn btn-primary">
+          {state.submitting ? 'Wysyłanie...' : 'Wyślij'}
+        </SubmitBtn>
       </Wrapper>
     </Form>
   );
