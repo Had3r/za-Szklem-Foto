@@ -24,9 +24,25 @@ export const Textarea = styled.textarea`
 `;
 
 export const SubmitBtn = styled.button`
-  ${tw``}
+  ${tw`w-32`}
 `;
 
 export const Wrapper = styled.div`
   ${tw`mx-auto max-w-xl lg:max-w-3xl`}
+`;
+
+export const ErrorMsgs = styled.div`
+  ${tw`max-w-2xl  mx-auto  text-center px-4 my-12`}
+`;
+
+export const Head = styled.h4`
+  ${tw`text-lg mb-8`};
+`;
+
+export const Paragraph = styled.p`
+  ${tw`text-base`};
+
+  a {
+    ${tw`underline text-primary-darker`}
+  }
 `;
