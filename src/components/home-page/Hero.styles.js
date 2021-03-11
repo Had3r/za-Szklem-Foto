@@ -36,7 +36,7 @@ export const Section = styled.section`
       ${tw`h-8`};
     }
     li button {
-      ${tw`p-0 bg-primary-darker`};
+      ${tw`p-0 bg-primary-medium`};
       width: 2px;
       height: 12px;
     }

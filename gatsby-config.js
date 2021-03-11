@@ -2,20 +2,86 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const meta = {
+  title: 'Za Szkłem Fotografia',
+  shortName: 'Za Szkłem Fotografia',
+  description: 'Fotografia weselna, okolicznościowa, portretowa i inne',
+  shortName: 'Za Szkłem',
+  startUrl: `/`,
+  backgroundColor: '#fff',
+  themeColor: '#4995e1',
+  display: `standalone`,
+  siteUrl: 'https://www.zaSzklemFotografia.pl/',
+  canonical: 'https://www.zaSzklemFotografia.pl/',
+  mainIcon: `static/icons/logo.png`,
+};
+
 module.exports = {
   siteMetadata: {
-    title: 'Za Szkłem Fotografia',
-    description: 'Fotografia weselna, okolicznościowa, portretowa i inne',
-    shortName: 'Za Szkłem',
-    siteUrl: 'https://www.zaSzklemFotografia.pl/',
-    canonical: 'https://www.zaSzklemFotografia.pl/',
-    mainIcon: `static/icons/quote.svg`,
+    ...meta,
   },
   plugins: [
     `gatsby-plugin-react-head`,
     'gatsby-plugin-optimize-svgs',
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-no-index`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: meta.title,
+        short_name: meta.shortName,
+        start_url: meta.startUrl,
+        background_color: meta.backgroundColor,
+        theme_color: meta.themeColor,
+        display: meta.display,
+        icon: meta.mainIcon,
+        icons: [
+          {
+            src: `static/icons/android-icon-48x48.png`,
+            sizes: '48x48',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: `static/icons/android-icon-72x72.png`,
+            sizes: '72x72',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: `static/icons/android-icon-96x96.png`,
+            sizes: '96x96',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: `static/icons/apple-icon-144x144.png`,
+            sizes: '144x144',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: `static/icons/apple-icon-152x152.png`,
+            sizes: '152x152',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: `static/icons/apple-icon-180x180.png`,
+            sizes: '180x180',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: `static/icons/splash-screen-icon-768x512.png`,
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,6 +94,12 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'pl',
       },
     },
     `gatsby-transformer-sharp`,

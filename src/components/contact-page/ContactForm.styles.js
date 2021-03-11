@@ -43,6 +43,6 @@ export const Paragraph = styled.p`
   ${tw`text-base`};
 
   a {
-    ${tw`underline text-primary-darker`}
+    ${tw`underline text-primary-dark`}
   }
 `;

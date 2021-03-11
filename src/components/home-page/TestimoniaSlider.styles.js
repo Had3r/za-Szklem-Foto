@@ -109,7 +109,7 @@ export const Cite = styled.cite`
 `;
 
 export const PersonsName = styled.div`
-  ${tw`font-bold text-primary-darker text-lg lg:text-3xl`};
+  ${tw`font-bold text-primary-dark text-lg lg:text-3xl`};
 `;
 
 export const Position = styled.div`

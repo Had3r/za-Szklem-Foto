@@ -35,7 +35,7 @@ export const Hero = () => {
         })}
       </MultipleCarousel>
       <AnchorLink to="/#about-me">
-        <ScrollDown>
+        <ScrollDown aria-label="Scroll Down">
           <span />
         </ScrollDown>
       </AnchorLink>

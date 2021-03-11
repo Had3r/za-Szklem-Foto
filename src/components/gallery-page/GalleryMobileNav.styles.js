@@ -6,7 +6,7 @@ export const SelectWrapper = styled.div`
 `;
 
 export const Selection = styled.div`
-  ${tw`relative bg-white flex flex-col border-primary-darker border-r-2 border-l-2 text-base`};
+  ${tw`relative bg-white flex flex-col border-primary-medium border-r-2 border-l-2 text-base`};
 
   &.open .custom-options {
     ${tw`opacity-100 visible uppercase`};
@@ -15,7 +15,7 @@ export const Selection = styled.div`
 `;
 
 export const SelectTrigger = styled.div`
-  ${tw`relative flex justify-between items-center text-base px-4 text-black h-10 leading-tight cursor-pointer border-primary-darker border-t-2 border-b-2`};
+  ${tw`relative flex justify-between items-center text-base px-4 text-black h-10 leading-tight cursor-pointer border-primary-medium border-t-2 border-b-2`};
 `;
 
 export const SelectedText = styled.span`
@@ -23,7 +23,7 @@ export const SelectedText = styled.span`
 `;
 
 export const Options = styled.div`
-  ${tw`absolute block bg-white tracking-wide text-sm left-0 right-0 border-primary-darker border-2 opacity-0 invisible pointer-events-none z-10 transition-all duration-500`};
+  ${tw`absolute block bg-white tracking-wide text-sm left-0 right-0 border-primary-medium border-2 opacity-0 invisible pointer-events-none z-10 transition-all duration-500`};
   border-top: 0;
   top: 100%;
 `;

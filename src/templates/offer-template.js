@@ -11,7 +11,12 @@ const OfferTemplate = ({
   },
 }) => {
   return (
-    <Layout>
+    <Layout
+      SEOdata={{
+        title: 'Za Szkłem Fotografia | Oferta',
+        description:
+          'W mojej ofercie znajduje się fotografia noworodkowa, okolicznościowa, weselna i wiele innych!',
+      }}>
       <PageHeader
         additionalOptions={{
           mobileWrapper: false,

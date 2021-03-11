@@ -22,7 +22,7 @@ export const Banner = ({ image, imgStyles, additionalOptions, addLayer }) => {
             <Heading>{additionalOptions.title}</Heading>
             <Paragraph>{additionalOptions.subtitle}</Paragraph>
             {additionalOptions.CTA && (
-              <Link to="/kontakt" className="link link-primary-outline">
+              <Link to="/kontakt" className="link link-primary">
                 napisz do mnie
               </Link>
             )}

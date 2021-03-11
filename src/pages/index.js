@@ -19,7 +19,7 @@ export default ({ location }) => {
     <Layout
       pageType="home"
       SEOdata={{
-        title: 'Fotografia na kazdą okazje',
+        title: 'Za Szkłem Fotografia | Studio Fotograficzne',
         description:
           'Fotografia: -noworodkowa -dziecięca -ślubna - okolicznościowa itp. Studio w Lubinie oraz w Lwówku Śląskim.',
         canonical: location.href,

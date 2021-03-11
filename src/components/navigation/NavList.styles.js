@@ -29,7 +29,7 @@ export const NavItem = styled.li`
   }
   a:hover,
   a:active {
-    ${tw`text-gray-800 sm:p-0 sm:hover:bg-left-top sm:text-primary-darker`};
+    ${tw`text-gray-800 sm:p-0 sm:hover:bg-left-top sm:text-primary-medium`};
     background-position: 100%;
     transform: translateX(1rem);
   }
@@ -61,7 +61,7 @@ export const NavItem = styled.li`
       transform: none;
     }
     a.active::after {
-      ${tw`text-primary-darker`};
+      ${tw`text-primary-medium`};
       display: block;
       content: '';
       border-bottom: solid 2px #4995e1;
@@ -72,7 +72,7 @@ export const NavItem = styled.li`
       transform: scaleX(1);
     }
     a.active {
-      ${tw`text-primary-darker`}
+      ${tw`text-primary-medium`}
     }
   }
 `;

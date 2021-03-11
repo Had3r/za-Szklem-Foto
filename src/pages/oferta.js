@@ -11,7 +11,7 @@ export default ({ location }) => {
     <Layout
       pageType="galeria"
       SEOdata={{
-        title: 'Za Szkłem Fotografia - Oferta',
+        title: 'Za Szkłem Fotografia | Oferta',
         description:
           'W mojej ofercie znajduje się fotografia noworodkowa, okolicznościowa, weselna i wiele innych!',
         canonical: location.href,
