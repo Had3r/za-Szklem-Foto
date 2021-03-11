@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const TestimonialArrow = styled.div`
-  ${tw`absolute cursor-pointer bg-primary-darker rounded-sm hover:bg-white hover:shadow-lg transition duration-500 outline-none`};
+  ${tw`absolute cursor-pointer bg-primary-medium rounded-sm hover:bg-white hover:shadow-lg transition duration-500 outline-none`};
   right: -35px;
   top: 30%;
   transform: translate(-50%, -50%);
@@ -12,7 +12,7 @@ export const TestimonialArrow = styled.div`
     top: 50%;
   }
   .testimonial-icon {
-    ${tw`text-white text-5xl hover:text-primary-darker`};
+    ${tw`text-white text-5xl hover:text-primary-medium`};
 
     @media screen and (min-width: 500px) {
       ${tw`text-6xl`};
@@ -25,7 +25,7 @@ export const HeroArrow = styled.div`
 
   &.next,
   &.prev {
-    ${tw`text-xl text-primary-darker`};
+    ${tw`text-xl text-primary-medium`};
   }
 
   &.next {

@@ -19,7 +19,7 @@ export const Footer = () => {
           <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
         </Paragraph>
         <Icons>
-          <a href="https://www.facebook.com/zaszklemfotografia">
+          <a aria-label="Facebook" href="https://www.facebook.com/zaszklemfotografia">
             <FaFacebookF />
           </a>
         </Icons>

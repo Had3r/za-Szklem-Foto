@@ -17,9 +17,10 @@
 
 - [Technologies](#technologies-and-why-i-used-it)
 - [Testing](#short-info-about-testing-with-jest-and-enzyme)
-- [Documentation files](#documentation-files)
 - [Website Performance](#website-performance)
+- [Accessibility](#Accessibility)
 - [WorkFlow](#workflow)
+- [Documentation files](#documentation-files)
 - [My helpers, which I referred to when building the site](#my-helpers-which-i-referred-to-when-building-the-site)
 - [TODO](#todo)
 
@@ -102,6 +103,31 @@ in the build output, which means that queries will be stored in a file `.testing
 
 For this, I used the `check-prop-types` package because instead of getting a warning in case of incorrect props, I get an error. Thanks to this, I do not check the warnings (I don't need to mock console.error).
 
+## Website Performance
+
+- I use <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyzer/">webpack-bundle-analyzer</a> to monitor the size of the website resources.
+- To manage SEO-related head tags I used <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-head/?=react-hea">react-head</a> instead of react-helmet, which has less minzipped size
+- <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-optimize-svgs/?=svgr">gatsby-plugin-optimize-svgs</a> allowed me to minimize the SVG output to the filesystem during compilation
+- finally, using <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts/?=preload-f">gatsby-plugin-preload-fonts</a> enables preloads all necessary fonts per route to decrease time to first meaningful paint
+
+## Accessibility
+
+### (key adjustments)
+
+- html elements are adjusted to be readed by screen readers, for example:
+  - buttons with visible labels have clear text content
+  - buttons without visible labels have `aria-label` attribute to clearly describe the action
+  - links without text (ex. with icons) have also `aria-label`
+- to ensure correct pronunciation, screen readers use a different sound library. To make it easier to change the language library, the correct html properties are used
+- all page elements have high contrast ratio, whitch is particularly useful for people with low vision
+- page is easy to traversing thanks to tabbing on focused elements
+
+## Workflow
+
+The content of the website can be fully managed by a non-technical person. Thanks to the integration with Contentful, the user, by changing the content and clicking publish, triggers the webhook which runs the build on the Vercel platform.
+
+**_Build time is a maximum of 2 minutes._**
+
 ## Documentation files
 
 A quick look at the files and directories you'll see in my Gatsby project.
@@ -135,19 +161,6 @@ A quick look at the files and directories you'll see in my Gatsby project.
     ├── .testing-static-queries.json      # stored GraphQL queries (created after the build)
     └── ...
 
-## Website Performance
-
-- I use <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyzer/">webpack-bundle-analyzer</a> to monitor the size of the website resources.
-- To manage SEO-related head tags I used <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-head/?=react-hea">react-head</a> instead of react-helmet, which has less minzipped size
-- <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-optimize-svgs/?=svgr">gatsby-plugin-optimize-svgs</a> allowed me to minimize the SVG output to the filesystem during compilation
-- finally, using <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts/?=preload-f">gatsby-plugin-preload-fonts</a> enables preloads all necessary fonts per route to decrease time to first meaningful paint
-
-## Workflow
-
-The content of the website can be fully managed by a non-technical person. Thanks to the integration with Contentful, the user, by changing the content and clicking publish, triggers the webhook which runs the build on the Vercel platform.
-
-**_Build time is a maximum of 2 minutes._**
-
 ## My helpers, which I referred to when building the site
 
 - Naming branches: https://codeburst.io/let-the-branch-name-do-all-the-talking-in-git-e614ff85aa30
@@ -159,3 +172,4 @@ The content of the website can be fully managed by a non-technical person. Thank
 
 - [ ] optimize the website for SEO
 - [ ] check the correctness of the text display by CMS
+- [ ] add skip links (https://css-tricks.com/how-to-create-a-skip-to-content-link/) For example: "przejdź do sekcji 'o mnie' lub 'oferta'"
